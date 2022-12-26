@@ -11,4 +11,14 @@ public class GamePieceSO : ScriptableObject
    
    public Vector2 currentPos;
    public Vector2 nextPos;
+
+   public void SetActivePiece()
+   {
+      activePiece = !activePiece;
+   }
+
+   public void ChangeCurrentPositionToNextPosition()
+   {
+      currentPos = nextPos;
+   }
 }
