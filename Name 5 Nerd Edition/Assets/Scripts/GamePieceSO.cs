@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class GamePieceSO : ScriptableObject
 {
+   public GameObject pieceObj;
    public SpriteRenderer pieceSprite;
 
    public bool activePiece = false;

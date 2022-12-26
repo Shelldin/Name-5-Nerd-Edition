@@ -8,15 +8,14 @@ public class PieceMovement : MonoBehaviour
 
     public List<GameObject> movePositionsList = new List<GameObject>();
 
-    // Start is called before the first frame update
     void Start()
     {
+        //add all move points to a list and sort them in order they appear on the board
         movePositionsList.AddRange(GameObject.FindGameObjectsWithTag("MovePoint"));
         
         movePositionsList.Sort();
     }
 
-    // Update is called once per frame
     void Update()
     {
         
