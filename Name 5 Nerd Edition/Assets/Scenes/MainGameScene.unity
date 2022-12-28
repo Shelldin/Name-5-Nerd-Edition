@@ -133,7 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2652385}
   m_Layer: 0
-  m_Name: MovePoint (9)
+  m_Name: MovePoint (09)
   m_TagString: MovePoint
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -195,7 +195,7 @@ GameObject:
   m_Component:
   - component: {fileID: 33410986}
   m_Layer: 0
-  m_Name: MovePoint (5)
+  m_Name: MovePoint (05)
   m_TagString: MovePoint
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -523,7 +523,7 @@ GameObject:
   m_Component:
   - component: {fileID: 361780495}
   m_Layer: 0
-  m_Name: MovePoint (3)
+  m_Name: MovePoint (03)
   m_TagString: MovePoint
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -647,7 +647,7 @@ GameObject:
   m_Component:
   - component: {fileID: 401528995}
   m_Layer: 0
-  m_Name: MovePoint (7)
+  m_Name: MovePoint (07)
   m_TagString: MovePoint
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -1100,7 +1100,7 @@ GameObject:
   m_Component:
   - component: {fileID: 853873105}
   m_Layer: 0
-  m_Name: MovePoint (1)
+  m_Name: MovePoint (01)
   m_TagString: MovePoint
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -1131,7 +1131,7 @@ GameObject:
   m_Component:
   - component: {fileID: 930628941}
   m_Layer: 0
-  m_Name: MovePoint (8)
+  m_Name: MovePoint (08)
   m_TagString: MovePoint
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -1343,7 +1343,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1112625276}
   m_Layer: 0
-  m_Name: MovePoint (6)
+  m_Name: MovePoint (06)
   m_TagString: MovePoint
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -1737,7 +1737,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1569328464}
   m_Layer: 0
-  m_Name: MovePoint (2)
+  m_Name: MovePoint (02)
   m_TagString: MovePoint
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -1985,7 +1985,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1781196057}
   m_Layer: 0
-  m_Name: MovePoint (0)
+  m_Name: MovePoint (00)
   m_TagString: MovePoint
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -2140,7 +2140,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1960491264}
   m_Layer: 0
-  m_Name: MovePoint (4)
+  m_Name: MovePoint (04)
   m_TagString: MovePoint
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0

@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,8 +12,9 @@ public class PieceMovement : MonoBehaviour
     {
         Debug.Log("move piece list thing");
         movePositionsList.AddRange(GameObject.FindGameObjectsWithTag("MovePoint"));
-        
-        movePositionsList.Sort();
+
+        movePositionsList.Sort(delegate(GameObject i1, GameObject i2)
+        {return String.Compare(i1.name, i2.name, StringComparison.Ordinal);});
     }
     
 }

@@ -37,11 +37,6 @@ public class GameManager : MonoBehaviour
 
         pieceMovement = gameObject.GetComponent(typeof(PieceMovement)) as PieceMovement;
         
-        //get all the move points and sort them
-        pieceMovement.PopulateMovePositionsList();
-
-        //if main game scene loads populate list of current players. else clear same list.
-        PopulateOrClearPlayerList();
     }
 
     private void OnEnable()
@@ -90,7 +85,6 @@ public class GameManager : MonoBehaviour
                 currentPlayerPieceSOList.Add(gamePieceSOList[i]);
                 Debug.Log(i);
             }
-            currentPlayerPieceSOList.Sort();
         }
         //if active scene is not the main game scene clear the list of current players.
         else
@@ -98,5 +92,8 @@ public class GameManager : MonoBehaviour
             Debug.Log("else statement");
             currentPlayerPieceSOList.Clear();
         }
+
+        currentPlayerPieceSOList.Sort(delegate(GamePieceSO i1, GamePieceSO i2)
+        {return String.Compare(i1.name, i2.name, StringComparison.Ordinal);});
     }
 }
