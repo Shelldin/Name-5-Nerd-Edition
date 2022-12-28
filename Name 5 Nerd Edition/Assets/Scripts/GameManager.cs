@@ -49,8 +49,13 @@ public class GameManager : MonoBehaviour
     {
         //get all the move points and sort them
         pieceMovement.PopulateMovePositionsList();
+        
         //if main game scene loads populate list of current players. else clear same list.
         PopulateOrClearPlayerList();
+        
+        //set the Render Camera to the main camera of the current scene
+        UIController.instance.SetRenderCamera();
+        
     }
 
     private void OnDisable()

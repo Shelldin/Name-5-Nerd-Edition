@@ -14,7 +14,13 @@ public class UIController : MonoBehaviour
         playerCountMenu,
         colorSelectMenu;
 
+    public Canvas canvas;
+
     public TMP_Text colorInstructionText;
+
+    //public List<Image> colorButtonImagesList = new List<Image>();
+
+    public Image colorButtonImage;
 
     private int playerColorChoiceCoutdown;
 
@@ -33,6 +39,12 @@ public class UIController : MonoBehaviour
 
     private void Start()
     {
+        //colorButtonImagesList.AddRange(GameObject.FindGameObjectsWithTag("ColorButton"));
+        
+        //set the Render Camera to the main camera of the current scene
+        canvas = gameObject.GetComponent(typeof(Canvas)) as Canvas;
+        canvas.worldCamera = FindObjectOfType(typeof(Camera)) as Camera;
+        
         startMenu.SetActive(true);
     }
 
@@ -64,18 +76,28 @@ public class UIController : MonoBehaviour
         //choose color and subtract 1 from countdown as long as there are still players left ot choose color
         if (playerColorChoiceCoutdown > 1)
         {
-            Debug.Log("Color Choice");
+            GameManager.instance.gamePieceSOList[playerColorChoiceCoutdown-1].SetPieceColor(colorButtonImage.color);
             playerColorChoiceCoutdown--;
             SetInstructionText();
         }
         //move on to main game after final color is chosen
         else if (playerColorChoiceCoutdown == 1)
         {
-            Debug.Log(" final color choice");
+            GameManager.instance.gamePieceSOList[playerColorChoiceCoutdown-1].SetPieceColor(colorButtonImage.color);
             colorSelectMenu.SetActive(false);
             GameManager.instance.LoadMainGameScene();
         }
         
+    }
+
+    //set the Render Camera to the main camera of the current scene
+    public void SetRenderCamera()
+    {
+        if (canvas == null)
+        {
+            canvas = gameObject.GetComponent(typeof(Canvas)) as Canvas;
+        }
+        canvas.worldCamera = FindObjectOfType(typeof(Camera)) as Camera;
     }
     
     //set the instruction text for which player/team is selecting their color
