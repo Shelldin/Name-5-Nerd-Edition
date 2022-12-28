@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae63ccd7a6a68ac4ca4bd5069496cb85, type: 3}
   m_Name: Player1SO
   m_EditorClassIdentifier: 
-  pieceSprite: {fileID: 0}
+  pieceObj: {fileID: 2575936999107763732, guid: ef32f003c015dc24fa4e4724a2e3bfee, type: 3}
+  pieceSprite: {fileID: 2575936999107763733, guid: ef32f003c015dc24fa4e4724a2e3bfee, type: 3}
   activePiece: 0
   currentPos: {x: 0, y: 0}
   nextPos: {x: 0, y: 0}

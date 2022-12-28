@@ -37,6 +37,10 @@ public class GameManager : MonoBehaviour
 
         pieceMovement = gameObject.GetComponent(typeof(PieceMovement)) as PieceMovement;
         
+        //get all the move points and sort them
+        pieceMovement.PopulateMovePositionsList();
+
+        //if main game scene loads populate list of current players. else clear same list.
         PopulateOrClearPlayerList();
     }
 
@@ -48,6 +52,9 @@ public class GameManager : MonoBehaviour
     //calls when a new scene is loaded
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        //get all the move points and sort them
+        pieceMovement.PopulateMovePositionsList();
+        //if main game scene loads populate list of current players. else clear same list.
         PopulateOrClearPlayerList();
     }
 
@@ -56,11 +63,13 @@ public class GameManager : MonoBehaviour
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
+    //load the start menu scene
     public void LoadStartMenuScene()
     {
         SceneManager.LoadScene("StartMenuScene");
     }
 
+    //load the main game scene
     public void LoadMainGameScene()
     {
         SceneManager.LoadScene("MainGameScene");
