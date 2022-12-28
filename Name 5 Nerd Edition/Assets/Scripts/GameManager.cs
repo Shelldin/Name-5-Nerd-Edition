@@ -7,8 +7,17 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
+
+    public List<GamePieceSO> gamePieceSOList = new List<GamePieceSO>();
+    public List<GamePieceSO> currentPlayerPieceSOList = new List<GamePieceSO>();
+
+    public PieceMovement pieceMovement;
+
+    private Scene currentScene;
+    private String currentSceneName;
     
-    
+
+
 
     //number of players or teams playing
     //[HideInInspector]
@@ -25,6 +34,26 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        pieceMovement = gameObject.GetComponent(typeof(PieceMovement)) as PieceMovement;
+        
+        PopulateOrClearPlayerList();
+    }
+
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    //calls when a new scene is loaded
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        PopulateOrClearPlayerList();
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
     public void LoadStartMenuScene()
@@ -35,5 +64,30 @@ public class GameManager : MonoBehaviour
     public void LoadMainGameScene()
     {
         SceneManager.LoadScene("MainGameScene");
+    }
+
+    //populates the currentPlayerList or clears it depending on the current scene.
+    private void PopulateOrClearPlayerList()
+    {
+        //check to see which scene is currently active
+        currentScene = SceneManager.GetActiveScene();
+        currentSceneName = currentScene.name;
+
+        //if the current scene is the main game scene, populate the current player list based on playerCountInt.
+        if (currentSceneName == "MainGameScene")
+        {
+            for (int i = 0; i < playerCountInt; i++)
+            {
+                currentPlayerPieceSOList.Add(gamePieceSOList[i]);
+                Debug.Log(i);
+            }
+            currentPlayerPieceSOList.Sort();
+        }
+        //if active scene is not the main game scene clear the list of current players.
+        else
+        {
+            Debug.Log("else statement");
+            currentPlayerPieceSOList.Clear();
+        }
     }
 }

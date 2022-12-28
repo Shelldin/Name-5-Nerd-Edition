@@ -8,9 +8,10 @@ public class PieceMovement : MonoBehaviour
 
     public List<GameObject> movePositionsList = new List<GameObject>();
 
-    void Start()
+    //add all move points to a list and sort them in order they appear on the board
+    private void PopulateMovePositionsList()
     {
-        //add all move points to a list and sort them in order they appear on the board
+        
         movePositionsList.AddRange(GameObject.FindGameObjectsWithTag("MovePoint"));
         
         movePositionsList.Sort();

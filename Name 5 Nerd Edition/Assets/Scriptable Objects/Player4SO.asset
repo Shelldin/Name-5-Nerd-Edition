@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ae63ccd7a6a68ac4ca4bd5069496cb85, type: 3}
-  m_Name: PlayerOneSO
+  m_Name: Player4SO
   m_EditorClassIdentifier: 
   pieceSprite: {fileID: 0}
   activePiece: 0
