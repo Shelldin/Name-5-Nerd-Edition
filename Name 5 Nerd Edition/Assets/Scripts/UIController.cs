@@ -73,7 +73,7 @@ public class UIController : MonoBehaviour
         {
             Debug.Log(" final color choice");
             colorSelectMenu.SetActive(false);
-            //****************** code to load main game scene here  *****************
+            GameManager.instance.LoadMainGameScene();
         }
         
     }

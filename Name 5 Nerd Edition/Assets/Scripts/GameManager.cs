@@ -2,10 +2,13 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
+    
+    
 
     //number of players or teams playing
     //[HideInInspector]
@@ -22,5 +25,15 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    public void LoadStartMenuScene()
+    {
+        SceneManager.LoadScene("StartMenuScene");
+    }
+
+    public void LoadMainGameScene()
+    {
+        SceneManager.LoadScene("MainGameScene");
     }
 }
