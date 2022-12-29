@@ -11,8 +11,10 @@ public class GamePieceSO : ScriptableObject
 
    public bool activePiece = false;
    
-   public Vector2 currentPos;
-   public Vector2 nextPos;
+   public Vector3 currentPos;
+   public Vector3 nextPos;
+
+   public Vector3 offset;
 
    //used the change the color of the game piece sprites
    public void SetPieceColor(Color color)

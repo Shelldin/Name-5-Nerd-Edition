@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
 
     public List<GamePieceSO> gamePieceSOList = new List<GamePieceSO>();
     public List<GamePieceSO> currentPlayerPieceSOList = new List<GamePieceSO>();
+    public List<GameObject> gamePieceObjList = new List<GameObject>();
 
     public PieceMovement pieceMovement;
 
@@ -64,7 +65,7 @@ public class GameManager : MonoBehaviour
         //start the game if current scene is the main game scene
         if (currentSceneName == "MainGameScene")
         {
-            BeginPlayerTurn();
+          StartGame();
         }
     }
 
@@ -124,5 +125,57 @@ public class GameManager : MonoBehaviour
         UIController.instance.SwapRenderModeToOverlay();
         UIController.instance.ChangeDiceMenuActiveState();
         UIController.instance.diceButton.interactable = true;
+    }
+
+    //begin the game after finishing setup in main menu
+    private void StartGame()
+    {
+        PrepareAllPlayerPieces();
+        BeginPlayerTurn();
+    }
+
+    //instantiate the players at the beginning of the game with proper color and turn order
+    private void PrepareAllPlayerPieces()
+    {
+        
+        //instantiate each player according to how many teams will be playing
+        for (int i = 0; i < currentPlayerPieceSOList.Count; i++)
+        {
+            //set the current position to the start space of the game board
+            currentPlayerPieceSOList[i].currentPos = pieceMovement.movePositionsList[0].gameObject.transform.position;
+
+            //change player name for sorting later
+            currentPlayerPieceSOList[i].pieceObj.name = "Player" + i;
+
+            //set spawn point with an offset so player pieces are slightly spread and don't overlap;
+            Vector3 spawnPoint =
+                new Vector3(currentPlayerPieceSOList[i].currentPos.x + currentPlayerPieceSOList[i].offset.x,
+                    currentPlayerPieceSOList[i].currentPos.y + currentPlayerPieceSOList[i].offset.y, 0);
+
+            //instantiation
+            Instantiate(currentPlayerPieceSOList[i].pieceObj, spawnPoint, Quaternion.identity);
+        }
+        
+        //add the newly spawned pieces to list of game objects and sort it
+        gamePieceObjList.AddRange(GameObject.FindGameObjectsWithTag("PlayerPiece"));
+        gamePieceObjList.Sort(delegate(GameObject go1, GameObject go2)
+        {return String.Compare(go1.name, go2.name, StringComparison.Ordinal);});
+
+        
+        //A probably way-more-complicated-than-needed way to change the instantiated game pieces to the correct color.
+        List<SpriteRenderer> gamePieceSpriteList = new List<SpriteRenderer>();
+        
+        for (int i = 0; i < gamePieceObjList.Count; i++)
+        {
+             SpriteRenderer hasSpriteRenderer = gamePieceObjList[i].GetComponent<SpriteRenderer>();
+
+            if (hasSpriteRenderer)
+            {
+                gamePieceSpriteList.Add(hasSpriteRenderer);
+            }
+
+            gamePieceSpriteList[i].color = currentPlayerPieceSOList[i].gamePieceColor;
+        }
+        
     }
 }

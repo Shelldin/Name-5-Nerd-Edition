@@ -6,6 +6,7 @@ TagManager:
   tags:
   - MovePoint
   - ColorButton
+  - PlayerPiece
   layers:
   - Default
   - TransparentFX

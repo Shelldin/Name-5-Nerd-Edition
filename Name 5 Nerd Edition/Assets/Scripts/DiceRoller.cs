@@ -7,7 +7,9 @@ using Random = UnityEngine.Random;
 public class DiceRoller : MonoBehaviour
 {
    public float rollAnimationTime = 3f;
-   private int rollResultInt;
+   
+   [HideInInspector]
+   public int rollResultInt;
 
    private WaitForSeconds wfs;
 

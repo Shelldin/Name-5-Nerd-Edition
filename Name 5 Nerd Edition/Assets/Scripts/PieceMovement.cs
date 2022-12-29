@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PieceMovement : MonoBehaviour
 {
+    public bool isMovePhase;
+    public DiceRoller diceRoller;
 
     public List<GameObject> movePositionsList = new List<GameObject>();
 
@@ -16,5 +18,17 @@ public class PieceMovement : MonoBehaviour
         movePositionsList.Sort(delegate(GameObject i1, GameObject i2)
         {return String.Compare(i1.name, i2.name, StringComparison.Ordinal);});
     }
-    
+
+    private void Update()
+    {
+        if (isMovePhase)
+        {
+            if (diceRoller.rollResultInt > 0 && 
+                GameManager.instance.currentPlayerPieceSOList[GameManager.instance.currentPlayerTurnCount].activePiece)
+            {
+                
+            }
+                
+        }
+    }
 }

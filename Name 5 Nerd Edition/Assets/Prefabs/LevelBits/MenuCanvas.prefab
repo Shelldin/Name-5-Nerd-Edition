@@ -3872,4 +3872,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rollAnimationTime: 1.5
+  rollResultInt: 0
   anim: {fileID: 1421025995}
