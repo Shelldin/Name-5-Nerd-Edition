@@ -1459,10 +1459,6 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 519420031}
-    - target: {fileID: 7618414982324988524, guid: 04150b126b3e043449b91bd9b2f41746, type: 3}
-      propertyPath: playerTurnTextDisplayTime
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 7618414982324988525, guid: 04150b126b3e043449b91bd9b2f41746, type: 3}
       propertyPath: m_Name
       value: MenuCanvas

@@ -117,4 +117,12 @@ public class GameManager : MonoBehaviour
     {
         UIController.instance.StartPlayerTurn();
     }
+    
+    //take another roll
+    public void RollDiceAgain()
+    {
+        UIController.instance.SwapRenderModeToOverlay();
+        UIController.instance.ChangeDiceMenuActiveState();
+        UIController.instance.diceButton.interactable = true;
+    }
 }

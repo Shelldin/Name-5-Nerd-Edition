@@ -15,6 +15,8 @@ public class UIController : MonoBehaviour
         colorSelectMenu,
         diceRollMenu;
 
+    public Button diceButton;
+
     public Canvas canvas;
 
     public TMP_Text colorInstructionText,
@@ -133,12 +135,14 @@ public class UIController : MonoBehaviour
         else
         {
             diceRollMenu.gameObject.SetActive(false);
+            
         }
     }
     
     //start of turn stuff
     public void StartPlayerTurn()
     {
+        SwapRenderModeToOverlay();
         StartCoroutine(StartPlayerTurnCoroutine());
     }
 
@@ -147,11 +151,30 @@ public class UIController : MonoBehaviour
     {
         playerTurnText.text = "Team " + GameManager.instance.currentPlayerTurnCount + "\nIt's your turn";
         playerTurnText.gameObject.SetActive(true);
+        diceButton.interactable = true;
 
         yield return wfs;
         
         playerTurnText.gameObject.SetActive(false);
         ChangeDiceMenuActiveState();
+        SwapRenderModeToCamera();
+    }
+
+    //swaps the canvas's camera mode to screen space camera
+    public void SwapRenderModeToCamera()
+    {
+        if (canvas.renderMode == RenderMode.ScreenSpaceOverlay)
+        {
+            canvas.renderMode = RenderMode.ScreenSpaceCamera;
+        }
     }
     
+    //swap the canvas's camera mode to screen space overlay
+    public void SwapRenderModeToOverlay()
+    {
+        if (canvas.renderMode == RenderMode.ScreenSpaceCamera)
+        {
+            canvas.renderMode = RenderMode.ScreenSpaceOverlay;
+        }
+    }
 }

@@ -3785,7 +3785,7 @@ Canvas:
   m_GameObject: {fileID: 7618414982324988525}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -3853,6 +3853,7 @@ MonoBehaviour:
   playerCountMenu: {fileID: 7618414981463852557}
   colorSelectMenu: {fileID: 7618414981225098250}
   diceRollMenu: {fileID: 668265748}
+  diceButton: {fileID: 825293422}
   canvas: {fileID: 0}
   colorInstructionText: {fileID: 7618414981697968942}
   playerTurnText: {fileID: 2471084977204051632}
