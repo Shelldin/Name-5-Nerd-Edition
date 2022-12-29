@@ -27,7 +27,7 @@ public class UIController : MonoBehaviour
     private int playerColorChoiceCoutdown;
 
     private WaitForSeconds wfs;
-    public float playerTurnTextDisplayTime = 2f;
+    public float playerTurnTextDisplayTime = 5f;
 
     private void Awake()
     {
@@ -126,7 +126,14 @@ public class UIController : MonoBehaviour
     //Change the active state of the dice menu
     public void ChangeDiceMenuActiveState()
     {
-        diceRollMenu.SetActive(!diceRollMenu.activeSelf);
+        if (!diceRollMenu.gameObject.activeSelf)
+        {
+            diceRollMenu.gameObject.SetActive(true);
+        }
+        else
+        {
+            diceRollMenu.gameObject.SetActive(false);
+        }
     }
     
     //start of turn stuff
@@ -143,6 +150,7 @@ public class UIController : MonoBehaviour
 
         yield return wfs;
         
+        playerTurnText.gameObject.SetActive(false);
         ChangeDiceMenuActiveState();
     }
     

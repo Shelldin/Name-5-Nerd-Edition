@@ -3855,7 +3855,9 @@ MonoBehaviour:
   diceRollMenu: {fileID: 668265748}
   canvas: {fileID: 0}
   colorInstructionText: {fileID: 7618414981697968942}
+  playerTurnText: {fileID: 2471084977204051632}
   colorButtonImage: {fileID: 7618414981544883659}
+  playerTurnTextDisplayTime: 3
 --- !u!114 &2638666531332660903
 MonoBehaviour:
   m_ObjectHideFlags: 0

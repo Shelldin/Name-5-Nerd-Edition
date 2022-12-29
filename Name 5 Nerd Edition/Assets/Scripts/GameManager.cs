@@ -61,8 +61,11 @@ public class GameManager : MonoBehaviour
         //set the Render Camera to the main camera of the current scene
         UIController.instance.SetRenderCamera();
         
-        //start the game
-        
+        //start the game if current scene is the main game scene
+        if (currentSceneName == "MainGameScene")
+        {
+            BeginPlayerTurn();
+        }
     }
 
     private void OnDisable()
