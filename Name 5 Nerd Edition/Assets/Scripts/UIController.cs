@@ -125,19 +125,25 @@ public class UIController : MonoBehaviour
         buttonToDisable.interactable = false;
     }
     
-    //Change the active state of the dice menu
-    public void ChangeDiceMenuActiveState()
+    //Set Dice Menu to Active
+    public void SetDiceMenuActive()
     {
         if (!diceRollMenu.gameObject.activeSelf)
         {
             diceRollMenu.gameObject.SetActive(true);
         }
-        else
+    }
+    
+    //Set Dice Menu to Inactive
+    public void SetDiceMenuInactive()
+    {
+        if(diceRollMenu.gameObject.activeSelf)
         {
             diceRollMenu.gameObject.SetActive(false);
-            
         }
     }
+    
+    
     
     //start of turn stuff
     public void StartPlayerTurn()
@@ -156,8 +162,7 @@ public class UIController : MonoBehaviour
         yield return wfs;
         
         playerTurnText.gameObject.SetActive(false);
-        ChangeDiceMenuActiveState();
-        SwapRenderModeToCamera();
+        SetDiceMenuActive();
     }
 
     //swaps the canvas's camera mode to screen space camera

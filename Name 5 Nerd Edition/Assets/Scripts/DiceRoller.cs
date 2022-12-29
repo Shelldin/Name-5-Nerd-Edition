@@ -41,7 +41,8 @@ public class DiceRoller : MonoBehaviour
       yield return wfs;
       
       //set dice menu inactive after seeing dice result
-      UIController.instance.ChangeDiceMenuActiveState();
+      UIController.instance.SetDiceMenuInactive();
+      UIController.instance.SwapRenderModeToCamera();
    }
 
    public void RollDiceButton()

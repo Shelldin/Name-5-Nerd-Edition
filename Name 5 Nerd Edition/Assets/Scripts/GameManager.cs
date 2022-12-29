@@ -123,7 +123,7 @@ public class GameManager : MonoBehaviour
     public void RollDiceAgain()
     {
         UIController.instance.SwapRenderModeToOverlay();
-        UIController.instance.ChangeDiceMenuActiveState();
+        UIController.instance.SetDiceMenuActive();
         UIController.instance.diceButton.interactable = true;
     }
 
