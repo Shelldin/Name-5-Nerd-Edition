@@ -14,7 +14,9 @@ public class GameManager : MonoBehaviour
     public PieceMovement pieceMovement;
 
     private Scene currentScene;
-    private String currentSceneName;
+    public String currentSceneName;
+
+    public int currentPlayerTurnCount;
     
 
 
@@ -36,7 +38,10 @@ public class GameManager : MonoBehaviour
         }
 
         pieceMovement = gameObject.GetComponent(typeof(PieceMovement)) as PieceMovement;
-        
+
+        currentScene = SceneManager.GetActiveScene();
+        currentSceneName = currentScene.name;
+
     }
 
     private void OnEnable()
@@ -55,6 +60,8 @@ public class GameManager : MonoBehaviour
         
         //set the Render Camera to the main camera of the current scene
         UIController.instance.SetRenderCamera();
+        
+        //start the game
         
     }
 
@@ -100,5 +107,11 @@ public class GameManager : MonoBehaviour
 
         currentPlayerPieceSOList.Sort(delegate(GamePieceSO i1, GamePieceSO i2)
         {return String.Compare(i1.name, i2.name, StringComparison.Ordinal);});
+    }
+    
+    //start of team/player turn
+    public void BeginPlayerTurn()
+    {
+        UIController.instance.StartPlayerTurn();
     }
 }

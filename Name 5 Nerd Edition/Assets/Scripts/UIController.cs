@@ -12,17 +12,22 @@ public class UIController : MonoBehaviour
 
     public GameObject startMenu,
         playerCountMenu,
-        colorSelectMenu;
+        colorSelectMenu,
+        diceRollMenu;
 
     public Canvas canvas;
 
-    public TMP_Text colorInstructionText;
+    public TMP_Text colorInstructionText,
+        playerTurnText;
 
     //public List<Image> colorButtonImagesList = new List<Image>();
 
     public Image colorButtonImage;
 
     private int playerColorChoiceCoutdown;
+
+    private WaitForSeconds wfs;
+    public float playerTurnTextDisplayTime = 2f;
 
     private void Awake()
     {
@@ -44,8 +49,14 @@ public class UIController : MonoBehaviour
         //set the Render Camera to the main camera of the current scene
         canvas = gameObject.GetComponent(typeof(Canvas)) as Canvas;
         canvas.worldCamera = FindObjectOfType(typeof(Camera)) as Camera;
-        
-        startMenu.SetActive(true);
+
+
+        if (GameManager.instance.currentSceneName == "StartMenuScene")
+        {
+            startMenu.SetActive(true);
+        }
+
+        wfs = new WaitForSeconds(playerTurnTextDisplayTime);
     }
 
     //Button to start game on the initial screen. Takes you to player count selection
@@ -112,5 +123,27 @@ public class UIController : MonoBehaviour
         buttonToDisable.interactable = false;
     }
     
+    //Change the active state of the dice menu
+    public void ChangeDiceMenuActiveState()
+    {
+        diceRollMenu.SetActive(!diceRollMenu.activeSelf);
+    }
+    
+    //start of turn stuff
+    public void StartPlayerTurn()
+    {
+        StartCoroutine(StartPlayerTurnCoroutine());
+    }
+
+    //display text for which team/player's turn it is and then swap to the dice roll menu
+    private IEnumerator StartPlayerTurnCoroutine()
+    {
+        playerTurnText.text = "Team " + GameManager.instance.currentPlayerTurnCount + "\nIt's your turn";
+        playerTurnText.gameObject.SetActive(true);
+
+        yield return wfs;
+        
+        ChangeDiceMenuActiveState();
+    }
     
 }
