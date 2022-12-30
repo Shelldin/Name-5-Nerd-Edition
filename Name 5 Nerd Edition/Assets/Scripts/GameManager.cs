@@ -18,6 +18,11 @@ public class GameManager : MonoBehaviour
     public String currentSceneName;
 
     public int currentPlayerTurnCount;
+
+    public int numberOfDiceRollsThisTurn = 0;
+
+    private WaitForSeconds wfs;
+    public float movePhaseDelay = 1f;
     
 
 
@@ -42,6 +47,8 @@ public class GameManager : MonoBehaviour
 
         currentScene = SceneManager.GetActiveScene();
         currentSceneName = currentScene.name;
+
+        wfs = new WaitForSeconds(movePhaseDelay);
 
         currentPlayerTurnCount = 1;
 
@@ -124,9 +131,17 @@ public class GameManager : MonoBehaviour
     //take another roll
     public void RollDiceAgain()
     {
-        UIController.instance.SwapRenderModeToOverlay();
-        UIController.instance.SetDiceMenuActive();
-        UIController.instance.diceButton.interactable = true;
+        if (numberOfDiceRollsThisTurn < 5)
+        {
+            UIController.instance.SwapRenderModeToOverlay();
+            UIController.instance.SetDiceMenuActive();
+            UIController.instance.diceButton.interactable = true;
+            UIController.instance.SetSpaceMenusInactive();
+        }
+        else
+        {
+            //end turn function
+        }
     }
 
     //begin the game after finishing setup in main menu
@@ -186,6 +201,31 @@ public class GameManager : MonoBehaviour
 
             gamePieceSpriteList[i].color = currentPlayerPieceSOList[i].gamePieceColor;
         }
-        
     }
+    
+    //track number of times the dice has been rolled
+    public void IncreaseDiceRollCount()
+    {
+        numberOfDiceRollsThisTurn++;
+    }
+
+    //set the dice roll tracker back to 0
+    public void ResetDiceRollCount()
+    {
+        numberOfDiceRollsThisTurn = 0;
+    }
+
+    public void ActivateMovePhase()
+    {
+        StartCoroutine(ActivateMovePhaseCoroutine());
+    }
+    
+    //activate the move phase after a short delay
+    public IEnumerator ActivateMovePhaseCoroutine()
+    {
+        yield return wfs;
+
+        pieceMovement.isMovePhase = true;
+    }
+
 }

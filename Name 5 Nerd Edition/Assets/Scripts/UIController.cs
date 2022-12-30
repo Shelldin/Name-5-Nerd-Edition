@@ -13,7 +13,12 @@ public class UIController : MonoBehaviour
     public GameObject startMenu,
         playerCountMenu,
         colorSelectMenu,
-        diceRollMenu;
+        diceRollMenu,
+        standardSpaceMenu,
+        allPlaySpaceMenu,
+        flipFlopSpaceMenu,
+        wildSpaceMenu,
+        doubleDownSpaceMenu;
 
     public Button diceButton;
 
@@ -181,5 +186,26 @@ public class UIController : MonoBehaviour
         {
             canvas.renderMode = RenderMode.ScreenSpaceOverlay;
         }
+    }
+    
+    //function for when player lands on a standard space
+    public void ActivateStandardSpaceMenu()
+    {
+        SwapRenderModeToOverlay();
+        
+        standardSpaceMenu.SetActive(true);
+    }
+    
+    //Disable the various space Menus
+    public void SetSpaceMenusInactive()
+    {
+        standardSpaceMenu.SetActive(false);
+       /* wildSpaceMenu.SetActive(false);
+        allPlaySpaceMenu.SetActive(false);
+        flipFlopSpaceMenu.SetActive(false);
+        doubleDownSpaceMenu.SetActive(false);
+        */
+        
+        
     }
 }

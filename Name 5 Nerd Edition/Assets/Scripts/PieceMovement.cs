@@ -54,7 +54,16 @@ public class PieceMovement : MonoBehaviour
                     activeSO.spaceNumber++;
                     if (diceRoller.rollResultInt <= 0)
                     {
-                        activeSO.activePiece = false;
+                        isMovePhase = false;
+                        if (GameManager.instance.numberOfDiceRollsThisTurn < 5)
+                        {
+                            //card method
+                            UIController.instance.ActivateStandardSpaceMenu();
+                        }
+                        else
+                        {
+                            activeSO.activePiece = false;
+                        }
                     }
                 }
             }
