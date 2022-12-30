@@ -13,7 +13,14 @@ public class GamePieceSO : ScriptableObject
    
    public Vector3 currentPos;
    public Vector3 nextPos;
+   
+   public GameObject currentSpace;
+   public GameObject nextSpace;
 
+   //the number of the space according to its spot in in the movePositionList
+   public int spaceNumber = 0;
+
+   //used to make so the pieces are visible when it's not their turn and aren't all stacked on each other
    public Vector3 offset;
 
    //used the change the color of the game piece sprites

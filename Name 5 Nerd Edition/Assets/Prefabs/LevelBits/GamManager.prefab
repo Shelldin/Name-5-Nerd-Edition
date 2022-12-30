@@ -51,7 +51,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b328bf162751ba14c8caffc8df09e2d0, type: 2}
   - {fileID: 11400000, guid: e5746715fbb7ba544b7d498bd3c79f12, type: 2}
   currentPlayerPieceSOList: []
+  gamePieceObjList: []
   pieceMovement: {fileID: 0}
+  currentSceneName: 
+  currentPlayerTurnCount: 0
   playerCountInt: 2
 --- !u!114 &3419754581134716606
 MonoBehaviour:
@@ -65,4 +68,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f48e88147871b8d41bd9f33d58ea12f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isMovePhase: 0
+  diceRoller: {fileID: 0}
+  moveSpeed: 20
   movePositionsList: []

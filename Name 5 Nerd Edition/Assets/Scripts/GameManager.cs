@@ -43,6 +43,8 @@ public class GameManager : MonoBehaviour
         currentScene = SceneManager.GetActiveScene();
         currentSceneName = currentScene.name;
 
+        currentPlayerTurnCount = 1;
+
     }
 
     private void OnEnable()
@@ -141,8 +143,16 @@ public class GameManager : MonoBehaviour
         //instantiate each player according to how many teams will be playing
         for (int i = 0; i < currentPlayerPieceSOList.Count; i++)
         {
+            //reset the current spaces to 0 (start space) when instantiated
+            currentPlayerPieceSOList[i].spaceNumber = 0;
+            
+            //reset the next piece and next position
+            currentPlayerPieceSOList[i].nextSpace = pieceMovement.movePositionsList[0];
+            currentPlayerPieceSOList[i].nextPos = pieceMovement.movePositionsList[0].transform.position;
+            
             //set the current position to the start space of the game board
             currentPlayerPieceSOList[i].currentPos = pieceMovement.movePositionsList[0].gameObject.transform.position;
+            currentPlayerPieceSOList[i].currentSpace = pieceMovement.movePositionsList[0];
 
             //change player name for sorting later
             currentPlayerPieceSOList[i].pieceObj.name = "Player" + i;

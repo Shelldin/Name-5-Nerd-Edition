@@ -190,6 +190,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1246686602 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2638666531332660903, guid: 04150b126b3e043449b91bd9b2f41746, type: 3}
+  m_PrefabInstance: {fileID: 7618414980704027061}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f68c5cce029e909448997578eda853f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1412264077
 GameObject:
   m_ObjectHideFlags: 0
@@ -329,6 +340,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3419754581134716606, guid: c066136e83ca03043b1bb1133f20d5fa, type: 3}
+      propertyPath: diceRoller
+      value: 
+      objectReference: {fileID: 1246686602}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c066136e83ca03043b1bb1133f20d5fa, type: 3}
 --- !u!1001 &7618414980704027061
