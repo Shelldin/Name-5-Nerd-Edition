@@ -15,6 +15,7 @@ public class CameraController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        SetMoveTargetToCurrentPlayer();
         if (moveTarget != transform.position)
         {
             transform.position = Vector3.MoveTowards

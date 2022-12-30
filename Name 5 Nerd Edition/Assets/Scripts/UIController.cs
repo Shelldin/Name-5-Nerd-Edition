@@ -34,7 +34,7 @@ public class UIController : MonoBehaviour
     private int playerColorChoiceCoutdown;
 
     private WaitForSeconds wfs;
-    public float playerTurnTextDisplayTime = 5f;
+    public float timeDelay = 3f;
 
     private void Awake()
     {
@@ -63,7 +63,7 @@ public class UIController : MonoBehaviour
             startMenu.SetActive(true);
         }
 
-        wfs = new WaitForSeconds(playerTurnTextDisplayTime);
+        wfs = new WaitForSeconds(timeDelay);
     }
 
     //Button to start game on the initial screen. Takes you to player count selection
@@ -191,9 +191,7 @@ public class UIController : MonoBehaviour
     //function for when player lands on a standard space
     public void ActivateStandardSpaceMenu()
     {
-        SwapRenderModeToOverlay();
-        
-        standardSpaceMenu.SetActive(true);
+        StartCoroutine(StandardSpaceCoroutine());
     }
     
     //Disable the various space Menus
@@ -205,7 +203,13 @@ public class UIController : MonoBehaviour
         flipFlopSpaceMenu.SetActive(false);
         doubleDownSpaceMenu.SetActive(false);
         */
+    }
+
+    private IEnumerator StandardSpaceCoroutine()
+    {
+        yield return wfs;
+        SwapRenderModeToOverlay();
         
-        
+        standardSpaceMenu.SetActive(true);
     }
 }

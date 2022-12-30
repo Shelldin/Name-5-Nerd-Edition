@@ -355,6 +355,10 @@ PrefabInstance:
       propertyPath: diceRoller
       value: 
       objectReference: {fileID: 1246686602}
+    - target: {fileID: 3419754581134716607, guid: c066136e83ca03043b1bb1133f20d5fa, type: 3}
+      propertyPath: movePhaseDelay
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c066136e83ca03043b1bb1133f20d5fa, type: 3}
 --- !u!1001 &7618414980704027061

@@ -157,6 +157,7 @@ public class GameManager : MonoBehaviour
     {
         PrepareAllPlayerPieces();
         BeginPlayerTurn();
+        currentPlayerPieceSOList[currentPlayerTurnCount -1].activePiece = true;
     }
 
     //instantiate the players at the beginning of the game with proper color and turn order

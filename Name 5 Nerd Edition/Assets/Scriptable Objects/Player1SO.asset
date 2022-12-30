@@ -15,10 +15,10 @@ MonoBehaviour:
   pieceObj: {fileID: 2575936999107763732, guid: ef32f003c015dc24fa4e4724a2e3bfee, type: 3}
   pieceSprite: {fileID: 2575936999107763733, guid: ef32f003c015dc24fa4e4724a2e3bfee, type: 3}
   gamePieceColor: {r: 0.7075472, g: 0.07008722, b: 0.07008722, a: 1}
-  activePiece: 0
-  currentPos: {x: 7.948834, y: -33.07959, z: 0.16133153}
-  nextPos: {x: 7.948834, y: -33.07959, z: 0.16133153}
+  activePiece: 1
+  currentPos: {x: 36.88126, y: 9.208452, z: 0.16133153}
+  nextPos: {x: 36.88126, y: 9.208452, z: 0.16133153}
   currentSpace: {fileID: 0}
   nextSpace: {fileID: 0}
-  spaceNumber: 48
+  spaceNumber: 5
   offset: {x: -4, y: 2, z: 0}
