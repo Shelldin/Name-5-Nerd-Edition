@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     public List<GameObject> gamePieceObjList = new List<GameObject>();
 
     public PieceMovement pieceMovement;
+    public CameraController cameraCon;
 
     private Scene currentScene;
     public String currentSceneName;
@@ -51,6 +52,7 @@ public class GameManager : MonoBehaviour
         wfs = new WaitForSeconds(movePhaseDelay);
 
         currentPlayerTurnCount = 1;
+        
 
     }
 
@@ -71,10 +73,16 @@ public class GameManager : MonoBehaviour
         //set the Render Camera to the main camera of the current scene
         UIController.instance.SetRenderCamera();
         
+        
+        
         //start the game if current scene is the main game scene
         if (currentSceneName == "MainGameScene")
         {
           StartGame();
+
+          cameraCon = FindObjectOfType<CameraController>();
+          
+          cameraCon.SetMoveTargetToCurrentPlayer();
         }
     }
 
