@@ -8,7 +8,7 @@ public class DiceRoller : MonoBehaviour
 {
    public float rollAnimationTime = 3f;
    
-   [HideInInspector]
+   //[HideInInspector]
    public int rollResultInt;
 
    private WaitForSeconds wfs;

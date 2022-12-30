@@ -25,20 +25,37 @@ public class PieceMovement : MonoBehaviour
         //piece movement
         if (isMovePhase)
         {
+            //setting some variables for short coding
             int activeInt = GameManager.instance.currentPlayerTurnCount - 1;
             GamePieceSO activeSO = GameManager.instance.currentPlayerPieceSOList[activeInt];
             GameObject activePieceObj = GameManager.instance.gamePieceObjList[activeInt];
             
-            if (diceRoller.rollResultInt > 0 && activeSO.activePiece && activeSO.spaceNumber < movePositionsList.Count)
+            if (diceRoller.rollResultInt > 0 && activeSO.activePiece &&
+                 diceRoller.rollResultInt + activeSO.spaceNumber +1 <= movePositionsList.Count)
             {
+                //use the movePositionList to determine which space we will move to next
                 activeSO.nextSpace = movePositionsList[activeSO.spaceNumber + 1];
                 activeSO.nextPos = activeSO.nextSpace.transform.position;
                 
+                //behold... movement
                 if (activePieceObj.transform.position != activeSO.nextPos)
                 {
                     activePieceObj.transform.position = Vector3.MoveTowards
                         (activePieceObj.transform.position, activeSO.nextPos,
                             moveSpeed * Time.deltaTime);
+                }
+
+                //based on the dice roll result see if we will move to the next space or not.
+                if (activePieceObj.transform.position == activeSO.nextPos)
+                {
+                    diceRoller.rollResultInt--;
+                    activeSO.currentPos = activePieceObj.transform.position;
+                    activeSO.currentSpace = activeSO.nextSpace;
+                    activeSO.spaceNumber++;
+                    if (diceRoller.rollResultInt <= 0)
+                    {
+                        activeSO.activePiece = false;
+                    }
                 }
             }
                 
