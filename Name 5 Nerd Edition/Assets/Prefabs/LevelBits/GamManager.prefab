@@ -53,8 +53,11 @@ MonoBehaviour:
   currentPlayerPieceSOList: []
   gamePieceObjList: []
   pieceMovement: {fileID: 0}
+  cameraCon: {fileID: 0}
   currentSceneName: 
   currentPlayerTurnCount: 0
+  numberOfDiceRollsThisTurn: 0
+  movePhaseDelay: 4
   playerCountInt: 2
 --- !u!114 &3419754581134716606
 MonoBehaviour:

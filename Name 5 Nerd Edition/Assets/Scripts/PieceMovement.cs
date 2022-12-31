@@ -26,7 +26,7 @@ public class PieceMovement : MonoBehaviour
         if (isMovePhase)
         {
             //setting some variables for short coding
-            int activeInt = GameManager.instance.currentPlayerTurnCount - 1;
+            int activeInt = GameManager.instance.currentPlayerTurnCount;
             GamePieceSO activeSO = GameManager.instance.currentPlayerPieceSOList[activeInt];
             GameObject activePieceObj = GameManager.instance.gamePieceObjList[activeInt];
             
@@ -62,7 +62,7 @@ public class PieceMovement : MonoBehaviour
                         }
                         else
                         {
-                            activeSO.activePiece = false;
+                            GameManager.instance.EndTurn();
                         }
                     }
                 }

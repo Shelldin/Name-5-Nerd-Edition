@@ -160,7 +160,7 @@ public class UIController : MonoBehaviour
     //display text for which team/player's turn it is and then swap to the dice roll menu
     private IEnumerator StartPlayerTurnCoroutine()
     {
-        playerTurnText.text = "Team " + GameManager.instance.currentPlayerTurnCount + "\nIt's your turn";
+        playerTurnText.text = "Team " + (GameManager.instance.currentPlayerTurnCount + 1) + "\nIt's your turn";
         playerTurnText.gameObject.SetActive(true);
         diceButton.interactable = true;
 

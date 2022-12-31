@@ -51,7 +51,7 @@ public class GameManager : MonoBehaviour
 
         wfs = new WaitForSeconds(movePhaseDelay);
 
-        currentPlayerTurnCount = 1;
+        currentPlayerTurnCount = 0;
         
 
     }
@@ -157,7 +157,7 @@ public class GameManager : MonoBehaviour
     {
         PrepareAllPlayerPieces();
         BeginPlayerTurn();
-        currentPlayerPieceSOList[currentPlayerTurnCount -1].activePiece = true;
+        currentPlayerPieceSOList[currentPlayerTurnCount].activePiece = true;
     }
 
     //instantiate the players at the beginning of the game with proper color and turn order
@@ -235,6 +235,34 @@ public class GameManager : MonoBehaviour
         yield return wfs;
 
         pieceMovement.isMovePhase = true;
+    }
+    
+    //swap to next player at the end of the turn
+    public void EndTurn()
+    {
+        //advance the turn to next player
+        currentPlayerPieceSOList[currentPlayerTurnCount].activePiece = false;
+        
+        //reset dice related ints to 0 for next player
+        pieceMovement.diceRoller.rollResultInt = 0;
+        numberOfDiceRollsThisTurn = 0;
+
+        pieceMovement.isMovePhase = false;
+        
+        //make sure playerTurnCount doesnt exceed total number of players
+        if (currentPlayerTurnCount < currentPlayerPieceSOList.Count - 1)
+        {
+            currentPlayerTurnCount++;
+        }
+        else if (currentPlayerTurnCount >= currentPlayerPieceSOList.Count - 1)
+        {
+            currentPlayerTurnCount = 0;
+        }
+        
+        //set next player piece as active
+        currentPlayerPieceSOList[currentPlayerTurnCount].activePiece = true;
+        
+        UIController.instance.StartPlayerTurn();
     }
 
 }

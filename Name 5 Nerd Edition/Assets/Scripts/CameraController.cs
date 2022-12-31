@@ -26,8 +26,8 @@ public class CameraController : MonoBehaviour
     public void SetMoveTargetToCurrentPlayer()
     {
         moveTarget = new  Vector3 (GameManager.instance.gamePieceObjList
-                [GameManager.instance.currentPlayerTurnCount - 1].transform.position.x,
-            GameManager.instance.gamePieceObjList[GameManager.instance.currentPlayerTurnCount - 1]
+                [GameManager.instance.currentPlayerTurnCount].transform.position.x,
+            GameManager.instance.gamePieceObjList[GameManager.instance.currentPlayerTurnCount]
                 .transform.position.y, transform.position.z) ; 
     }
 }
