@@ -37,6 +37,7 @@ public class DiceRoller : MonoBehaviour
       //randomly select which number the dice "lands" on and reflect that in the animation.
       rollResultInt = Random.Range(minRoll, maxRoll);
       anim.SetInteger("RollResultInt", rollResultInt);
+      
 
       yield return wfs;
       

@@ -116,13 +116,11 @@ public class GameManager : MonoBehaviour
             for (int i = 0; i < playerCountInt; i++)
             {
                 currentPlayerPieceSOList.Add(gamePieceSOList[i]);
-                Debug.Log(i);
             }
         }
         //if active scene is not the main game scene clear the list of current players.
         else
         {
-            Debug.Log("else statement");
             currentPlayerPieceSOList.Clear();
         }
 
