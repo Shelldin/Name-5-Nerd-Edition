@@ -67,6 +67,9 @@ public class PieceMovement : MonoBehaviour
                     }
                 }
             }
+            //SUPER COOL ELSE IF STATEMENT FOR WHEN THE ROLL IS HIGHER THAN MOVEPOSISITIONLIST.COUNT.
+            //PROBABLY ALSO A SUPER COOL ELSE IF STATEMENT FOR WHEN ON THE FINAL SPACE? MAYBE NOT THOUGH.
+            //WINNER STATE
                 
         }
     }
