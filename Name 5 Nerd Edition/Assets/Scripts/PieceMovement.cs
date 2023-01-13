@@ -67,7 +67,13 @@ public class PieceMovement : MonoBehaviour
                     }
                 }
             }
-            //SUPER COOL ELSE IF STATEMENT FOR WHEN THE ROLL IS HIGHER THAN MOVEPOSISITIONLIST.COUNT.
+            /*if (at the end of the board) the piece rolls great than the remaining spaces on the board,
+             have roll attempts till out of rolls or roll the exact amount of spaces needed*/
+            else if (diceRoller.rollResultInt > 0 && activeSO.activePiece &&
+                     diceRoller.rollResultInt + activeSO.spaceNumber +1 > movePositionsList.Count)
+            {
+                
+            }
             //PROBABLY ALSO A SUPER COOL ELSE IF STATEMENT FOR WHEN ON THE FINAL SPACE? MAYBE NOT THOUGH.
             //WINNER STATE
                 
