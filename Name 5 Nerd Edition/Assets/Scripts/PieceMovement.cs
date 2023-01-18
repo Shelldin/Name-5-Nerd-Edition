@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,7 +9,16 @@ public class PieceMovement : MonoBehaviour
     public DiceRoller diceRoller;
     public float moveSpeed = 5f;
 
+    public float waitTime = 1f;
+
+    private WaitForSeconds wfs;
+
     public List<GameObject> movePositionsList = new List<GameObject>();
+
+    private void Start()
+    {
+        wfs = new WaitForSeconds(waitTime);
+    }
 
     //add all move points to a list and sort them in order they appear on the board
     public void PopulateMovePositionsList()
@@ -72,11 +82,24 @@ public class PieceMovement : MonoBehaviour
             else if (diceRoller.rollResultInt > 0 && activeSO.activePiece &&
                      diceRoller.rollResultInt + activeSO.spaceNumber +1 > movePositionsList.Count)
             {
+                if (GameManager.instance.numberOfDiceRollsThisTurn < 5)
+                {
+                    //card method
+                    UIController.instance.ActivateStandardSpaceMenu();
+                }
                 
             }
             //PROBABLY ALSO A SUPER COOL ELSE IF STATEMENT FOR WHEN ON THE FINAL SPACE? MAYBE NOT THOUGH.
             //WINNER STATE
                 
         }
+    }
+
+    private IEnumerator FinalSpaceRepeatRollCoroutine()
+    {
+        
+        yield return wfs;
+        
+        
     }
 }
