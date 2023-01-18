@@ -13,7 +13,7 @@ public class DiceRoller : MonoBehaviour
 
    private WaitForSeconds wfs;
 
-   private int minRoll = 1,
+   public int minRoll = 1,
       maxRoll = 6;
 
    private void Start()

@@ -82,10 +82,18 @@ public class PieceMovement : MonoBehaviour
             else if (diceRoller.rollResultInt > 0 && activeSO.activePiece &&
                      diceRoller.rollResultInt + activeSO.spaceNumber +1 > movePositionsList.Count)
             {
+                isMovePhase = false;
+                /*if player hasn't rolled more than 5 times,
+                 continue to roll til they make it to final space or roll 5 times*/
                 if (GameManager.instance.numberOfDiceRollsThisTurn < 5)
                 {
                     //card method
                     UIController.instance.ActivateStandardSpaceMenu();
+                }
+                //if player has rolled 5 times end turn
+                else
+                {
+                    GameManager.instance.EndTurn();
                 }
                 
             }
