@@ -167,7 +167,18 @@ public class UIController : MonoBehaviour
         yield return wfs;
         
         playerTurnText.gameObject.SetActive(false);
-        SetDiceMenuActive();
+        //if the player is not on the final space take turn as normal
+        if (!GameManager.instance.currentPlayerPieceSOList[GameManager.instance.currentPlayerTurnCount].onFinalSpace)
+        {
+            SetDiceMenuActive();
+        }
+        //if player is on final space do final space magic
+        else if (GameManager.instance.currentPlayerPieceSOList[GameManager.instance.currentPlayerTurnCount].onFinalSpace)
+        {
+            //temporary final space magic
+            Debug.Log("final space magic not yet available");
+            GameManager.instance.EndTurn();
+        }
     }
 
     //swaps the canvas's camera mode to screen space camera

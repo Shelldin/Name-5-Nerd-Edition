@@ -175,6 +175,9 @@ public class GameManager : MonoBehaviour
             //set the current position to the start space of the game board
             currentPlayerPieceSOList[i].currentPos = pieceMovement.movePositionsList[0].gameObject.transform.position;
             currentPlayerPieceSOList[i].currentSpace = pieceMovement.movePositionsList[0];
+            
+            //reset all onFinalPiece bools to false
+            currentPlayerPieceSOList[i].onFinalSpace = false;
 
             //change player name for sorting later
             currentPlayerPieceSOList[i].pieceObj.name = "Player" + i;

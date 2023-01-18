@@ -41,7 +41,8 @@ public class PieceMovement : MonoBehaviour
             GameObject activePieceObj = GameManager.instance.gamePieceObjList[activeInt];
             
             if (diceRoller.rollResultInt > 0 && activeSO.activePiece &&
-                 diceRoller.rollResultInt + activeSO.spaceNumber +1 <= movePositionsList.Count)
+                 diceRoller.rollResultInt + activeSO.spaceNumber +1 <= movePositionsList.Count
+                 && !activeSO.onFinalSpace)
             {
                 //use the movePositionList to determine which space we will move to next
                 activeSO.nextSpace = movePositionsList[activeSO.spaceNumber + 1];
@@ -65,14 +66,30 @@ public class PieceMovement : MonoBehaviour
                     if (diceRoller.rollResultInt <= 0)
                     {
                         isMovePhase = false;
-                        if (GameManager.instance.numberOfDiceRollsThisTurn < 5)
+                        /*if the piece land on the final space set onFinalSpace to true
+                        and begin special endgame mechanics*/
+                        if (activeSO.spaceNumber + 1 == movePositionsList.Count)
                         {
-                            //card method
-                            UIController.instance.ActivateStandardSpaceMenu();
+                            activeSO.onFinalSpace = true;
+                            //super awesome try and win the game method
+                            Debug.Log("Sorry but you cannot win the game yet");
+                            
+                            // xxx remove when endgame method is added 
+                            GameManager.instance.EndTurn();
+                            // xxx
                         }
+                        //if not on final space on board continue turns as normal
                         else
                         {
-                            GameManager.instance.EndTurn();
+                            if (GameManager.instance.numberOfDiceRollsThisTurn < 5)
+                            {
+                                //card method
+                                UIController.instance.ActivateStandardSpaceMenu();
+                            }
+                            else
+                            {
+                                GameManager.instance.EndTurn();
+                            }
                         }
                     }
                 }
@@ -80,7 +97,8 @@ public class PieceMovement : MonoBehaviour
             /*if (at the end of the board) the piece rolls great than the remaining spaces on the board,
              have roll attempts till out of rolls or roll the exact amount of spaces needed*/
             else if (diceRoller.rollResultInt > 0 && activeSO.activePiece &&
-                     diceRoller.rollResultInt + activeSO.spaceNumber +1 > movePositionsList.Count)
+                     diceRoller.rollResultInt + activeSO.spaceNumber +1 > movePositionsList.Count &&
+                     !activeSO.onFinalSpace)
             {
                 isMovePhase = false;
                 /*if player hasn't rolled more than 5 times,
@@ -97,9 +115,6 @@ public class PieceMovement : MonoBehaviour
                 }
                 
             }
-            //PROBABLY ALSO A SUPER COOL ELSE IF STATEMENT FOR WHEN ON THE FINAL SPACE? MAYBE NOT THOUGH.
-            //WINNER STATE
-                
         }
     }
 
