@@ -270,17 +270,32 @@ public class GameManager : MonoBehaviour
     public void AttemptToWin()
     {
         
-        int winAttempts = currentPlayerPieceSOList[currentPlayerTurnCount].winAttemptsInt;
-        int numberOfCategoriesToWin = winAttempts;
+        int numberOfCategoriesToWin;
+        float timeToWin;
         
         if (currentPlayerPieceSOList[currentPlayerTurnCount].onFinalSpace)
         {
             currentPlayerPieceSOList[currentPlayerTurnCount].winAttemptsInt++;
-
-            if ()
+            numberOfCategoriesToWin = currentPlayerPieceSOList[currentPlayerTurnCount].winAttemptsInt;
+            if (numberOfCategoriesToWin > 5)
             {
-                
+                numberOfCategoriesToWin = 5;
             }
+
+            if (numberOfCategoriesToWin >= 4)
+            {
+                timeToWin = 90f;
+            }
+
+            else if (numberOfCategoriesToWin == 3)
+            {
+                timeToWin = 60f;
+            }
+            else if (numberOfCategoriesToWin >= 1 && numberOfCategoriesToWin < 3)
+            {
+                timeToWin = 30f;
+            }
+            
         }
         
     }
