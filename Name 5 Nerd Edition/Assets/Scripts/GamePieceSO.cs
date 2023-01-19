@@ -10,7 +10,9 @@ public class GamePieceSO : ScriptableObject
    public Color gamePieceColor;
 
    public bool activePiece = false;
+   
    public bool onFinalSpace = false;
+   public int winAttemptsInt = 0;
    
    public Vector3 currentPos;
    public Vector3 nextPos;

@@ -266,4 +266,23 @@ public class GameManager : MonoBehaviour
         UIController.instance.StartPlayerTurn();
     }
 
+    //method for what happens when player takes a turn after landing on the final space
+    public void AttemptToWin()
+    {
+        
+        int winAttempts = currentPlayerPieceSOList[currentPlayerTurnCount].winAttemptsInt;
+        int numberOfCategoriesToWin = winAttempts;
+        
+        if (currentPlayerPieceSOList[currentPlayerTurnCount].onFinalSpace)
+        {
+            currentPlayerPieceSOList[currentPlayerTurnCount].winAttemptsInt++;
+
+            if ()
+            {
+                
+            }
+        }
+        
+    }
+
 }
