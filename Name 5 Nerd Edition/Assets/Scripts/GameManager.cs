@@ -22,8 +22,13 @@ public class GameManager : MonoBehaviour
 
     public int numberOfDiceRollsThisTurn = 0;
 
-    private WaitForSeconds wfs;
+    private WaitForSeconds movePhaseWFS;
     public float movePhaseDelay = 1f;
+
+    private WaitForSeconds countdownWFS;
+    private float timeToWin = 90f;
+    
+    
     
 
 
@@ -49,7 +54,7 @@ public class GameManager : MonoBehaviour
         currentScene = SceneManager.GetActiveScene();
         currentSceneName = currentScene.name;
 
-        wfs = new WaitForSeconds(movePhaseDelay);
+        movePhaseWFS = new WaitForSeconds(movePhaseDelay);
 
         currentPlayerTurnCount = 0;
         
@@ -233,7 +238,7 @@ public class GameManager : MonoBehaviour
     //activate the move phase after a short delay
     public IEnumerator ActivateMovePhaseCoroutine()
     {
-        yield return wfs;
+        yield return movePhaseWFS;
 
         pieceMovement.isMovePhase = true;
     }
@@ -271,8 +276,7 @@ public class GameManager : MonoBehaviour
     {
         
         int numberOfCategoriesToWin;
-        float timeToWin;
-        
+
         if (currentPlayerPieceSOList[currentPlayerTurnCount].onFinalSpace)
         {
             currentPlayerPieceSOList[currentPlayerTurnCount].winAttemptsInt++;
@@ -291,13 +295,34 @@ public class GameManager : MonoBehaviour
             {
                 timeToWin = 60f;
             }
-            else if (numberOfCategoriesToWin >= 1 && numberOfCategoriesToWin < 3)
+            else if (numberOfCategoriesToWin is >= 1 and < 3)
             {
                 timeToWin = 30f;
             }
             
         }
         
+    }
+
+    public void TestCoroutine()
+    {
+        StartCoroutine(NameFiveCountdownCoroutine(10));
+    }
+
+    public IEnumerator NameFiveCountdownCoroutine(float countdownSeconds)
+    {
+        float counter = countdownSeconds;
+        
+        if (counter > 0)
+        {
+            counter--;
+            Debug.Log(counter);
+            yield break;
+        }
+
+        yield return new WaitForSeconds(1);
+        Debug.Log("the test is over");
+
     }
 
 }
