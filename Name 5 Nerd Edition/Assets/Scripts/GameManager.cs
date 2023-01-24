@@ -313,16 +313,19 @@ public class GameManager : MonoBehaviour
     {
         float counter = countdownSeconds;
         
-        if (counter > 0)
+        while (counter > 0)
         {
+            yield return new WaitForSeconds(1);
             counter--;
             Debug.Log(counter);
-            yield break;
+            
         }
 
-        yield return new WaitForSeconds(1);
+        
         Debug.Log("the test is over");
 
     }
+    
+    
 
 }
