@@ -317,6 +317,7 @@ public class GameManager : MonoBehaviour
         {
             yield return new WaitForSeconds(1);
             counter--;
+            UIController.instance.timerText.text = counter.ToString();
             Debug.Log(counter);
             
         }

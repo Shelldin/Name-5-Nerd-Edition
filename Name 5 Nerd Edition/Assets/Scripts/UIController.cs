@@ -18,14 +18,16 @@ public class UIController : MonoBehaviour
         allPlaySpaceMenu,
         flipFlopSpaceMenu,
         wildSpaceMenu,
-        doubleDownSpaceMenu;
+        doubleDownSpaceMenu,
+        finalSpaceMenu;
 
     public Button diceButton;
 
     public Canvas canvas;
 
     public TMP_Text colorInstructionText,
-        playerTurnText;
+        playerTurnText,
+        timerText;
 
     //public List<Image> colorButtonImagesList = new List<Image>();
 
