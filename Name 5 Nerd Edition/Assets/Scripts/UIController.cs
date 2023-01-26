@@ -227,5 +227,12 @@ public class UIController : MonoBehaviour
         
         standardSpaceMenu.SetActive(true);
         timerTextObj.SetActive(true);
+        StartCountdownTimer(GameManager.instance.standardCountdownTime);
+        
+    }
+
+    private void StartCountdownTimer(float countdownTime)
+    {
+        StartCoroutine(GameManager.instance.NameFiveCountdownCoroutine(countdownTime));
     }
 }
