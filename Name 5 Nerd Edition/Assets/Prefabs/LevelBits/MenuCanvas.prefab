@@ -1315,7 +1315,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2554066182097607309
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5189,6 +5189,7 @@ MonoBehaviour:
   wildSpaceMenu: {fileID: 0}
   doubleDownSpaceMenu: {fileID: 0}
   finalSpaceMenu: {fileID: 1682070437532354993}
+  timerTextObj: {fileID: 3527952794097188158}
   diceButton: {fileID: 825293422}
   canvas: {fileID: 0}
   colorInstructionText: {fileID: 7618414981697968942}

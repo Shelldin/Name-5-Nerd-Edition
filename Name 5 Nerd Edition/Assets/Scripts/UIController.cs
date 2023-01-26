@@ -19,7 +19,8 @@ public class UIController : MonoBehaviour
         flipFlopSpaceMenu,
         wildSpaceMenu,
         doubleDownSpaceMenu,
-        finalSpaceMenu;
+        finalSpaceMenu,
+        timerTextObj;
 
     public Button diceButton;
 
@@ -216,6 +217,7 @@ public class UIController : MonoBehaviour
         flipFlopSpaceMenu.SetActive(false);
         doubleDownSpaceMenu.SetActive(false);
         */
+       timerTextObj.SetActive(false);
     }
 
     private IEnumerator StandardSpaceCoroutine()
@@ -224,5 +226,6 @@ public class UIController : MonoBehaviour
         SwapRenderModeToOverlay();
         
         standardSpaceMenu.SetActive(true);
+        timerTextObj.SetActive(true);
     }
 }
