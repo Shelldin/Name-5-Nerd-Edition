@@ -29,11 +29,9 @@ public class GameManager : MonoBehaviour
     private float timeToWin = 90f;
     public float standardCountdownTime = 30f;
     
+    public IEnumerator standardCountdownTimerCo,
+        winTimeCountdownTimerCo;
     
-    
-    
-
-
 
     //number of players or teams playing
     //[HideInInspector]
@@ -59,7 +57,9 @@ public class GameManager : MonoBehaviour
         movePhaseWFS = new WaitForSeconds(movePhaseDelay);
 
         currentPlayerTurnCount = 0;
-        
+
+        standardCountdownTimerCo = NameFiveCountdownCoroutine(standardCountdownTime);
+        winTimeCountdownTimerCo = NameFiveCountdownCoroutine(timeToWin);
 
     }
 

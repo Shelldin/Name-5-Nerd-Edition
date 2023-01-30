@@ -39,6 +39,7 @@ public class UIController : MonoBehaviour
     private WaitForSeconds wfs;
     public float timeDelay = 3f;
 
+
     private void Awake()
     {
         if (instance == null)
@@ -67,6 +68,7 @@ public class UIController : MonoBehaviour
         }
 
         wfs = new WaitForSeconds(timeDelay);
+
     }
 
     //Button to start game on the initial screen. Takes you to player count selection
@@ -225,14 +227,14 @@ public class UIController : MonoBehaviour
         yield return wfs;
         SwapRenderModeToOverlay();
         
+        StopCoroutine(GameManager.instance.standardCountdownTimerCo);
+        
         standardSpaceMenu.SetActive(true);
         timerTextObj.SetActive(true);
-        StartCountdownTimer(GameManager.instance.standardCountdownTime);
+        
+        StartCoroutine(GameManager.instance.standardCountdownTimerCo);
         
     }
 
-    private void StartCountdownTimer(float countdownTime)
-    {
-        StartCoroutine(GameManager.instance.NameFiveCountdownCoroutine(countdownTime));
-    }
+   
 }
