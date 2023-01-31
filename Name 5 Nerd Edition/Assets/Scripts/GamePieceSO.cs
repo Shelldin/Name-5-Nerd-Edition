@@ -12,7 +12,7 @@ public class GamePieceSO : ScriptableObject
    public bool activePiece = false;
    
    public bool onFinalSpace = false;
-   public int winAttemptsInt = 0;
+   public int categoriesToWinInt = 6;
    
    public Vector3 currentPos;
    public Vector3 nextPos;

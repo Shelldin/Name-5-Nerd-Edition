@@ -222,6 +222,7 @@ public class UIController : MonoBehaviour
        timerTextObj.SetActive(false);
     }
 
+    //coroutine for what happens when landing on a regular space
     private IEnumerator StandardSpaceCoroutine()
     {
         yield return wfs;

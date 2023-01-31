@@ -189,6 +189,8 @@ public class GameManager : MonoBehaviour
             //change player name for sorting later
             currentPlayerPieceSOList[i].pieceObj.name = "Player" + i;
 
+            currentPlayerPieceSOList[i].categoriesToWinInt = 6;
+
             //set spawn point with an offset so player pieces are slightly spread and don't overlap;
             Vector3 spawnPoint =
                 new Vector3(currentPlayerPieceSOList[i].currentPos.x + currentPlayerPieceSOList[i].offset.x,
@@ -281,14 +283,16 @@ public class GameManager : MonoBehaviour
 
         if (currentPlayerPieceSOList[currentPlayerTurnCount].onFinalSpace)
         {
-            currentPlayerPieceSOList[currentPlayerTurnCount].winAttemptsInt++;
-            numberOfCategoriesToWin = currentPlayerPieceSOList[currentPlayerTurnCount].winAttemptsInt;
+            currentPlayerPieceSOList[currentPlayerTurnCount].categoriesToWinInt--;
+            numberOfCategoriesToWin = currentPlayerPieceSOList[currentPlayerTurnCount].categoriesToWinInt;
+           
+            
             if (numberOfCategoriesToWin > 5)
             {
                 numberOfCategoriesToWin = 5;
             }
 
-            if (numberOfCategoriesToWin >= 4)
+            if (numberOfCategoriesToWin is >= 4)
             {
                 timeToWin = 90f;
             }
@@ -299,6 +303,11 @@ public class GameManager : MonoBehaviour
             }
             else if (numberOfCategoriesToWin is >= 1 and < 3)
             {
+                timeToWin = 30f;
+            }
+            else if (numberOfCategoriesToWin < 1)
+            {
+                numberOfCategoriesToWin = 1;
                 timeToWin = 30f;
             }
             
