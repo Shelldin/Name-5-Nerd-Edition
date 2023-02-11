@@ -71,11 +71,13 @@ public class PieceMovement : MonoBehaviour
                         if (activeSO.spaceNumber + 1 == movePositionsList.Count)
                         {
                             activeSO.onFinalSpace = true;
-                            //super awesome try and win the game method
-                            Debug.Log("Sorry but you cannot win the game yet");
+                            //let player try to win the game when on the final space
+                            
+                            UIController.instance.ActivateFinalSpace();
+                            Debug.Log("Final Space magic should be happening now");
                             
                             // xxx remove when endgame method is added 
-                            GameManager.instance.EndTurn();
+                            //GameManager.instance.EndTurn();
                             // xxx
                         }
                         //if not on final space on board continue turns as normal

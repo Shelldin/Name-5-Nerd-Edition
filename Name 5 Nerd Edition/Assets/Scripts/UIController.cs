@@ -189,8 +189,9 @@ public class UIController : MonoBehaviour
         else if (GameManager.instance.currentPlayerPieceSOList[GameManager.instance.currentPlayerTurnCount].onFinalSpace)
         {
             //temporary final space magic
-            Debug.Log("final space magic not yet available");
-            GameManager.instance.EndTurn();
+            ActivateFinalSpace();
+            Debug.Log("final space magic again");
+            //GameManager.instance.EndTurn();
         }
     }
 
@@ -218,6 +219,12 @@ public class UIController : MonoBehaviour
         StartCoroutine(StandardSpaceCoroutine());
     }
     
+    //function for when player lands or starts on final space
+    public void ActivateFinalSpace()
+    {
+        StartCoroutine(FinalSpaceCoroutine());
+    }
+    
     //Disable the various space Menus
     public void SetSpaceMenusInactive()
     {
@@ -227,6 +234,7 @@ public class UIController : MonoBehaviour
         flipFlopSpaceMenu.SetActive(false);
         doubleDownSpaceMenu.SetActive(false);
         */
+       finalSpaceMenu.SetActive(false);
        timerTextObj.SetActive(false);
     }
 
@@ -248,13 +256,15 @@ public class UIController : MonoBehaviour
 
     private IEnumerator FinalSpaceCoroutine()
     {
+        GameManager.instance.AttemptToWin();
+
         yield return wfs;
         SwapRenderModeToOverlay();
         
         StopCoroutine(standardCountdownTimerCo);
         StopCoroutine(winTimeCountdownTimerCo);
         
-        standardSpaceMenu.SetActive(true);
+        finalSpaceMenu.SetActive(true);
         timerTextObj.SetActive(true);
 
         standardCountdownTimerCo = StartCoroutine(NameFiveCountdownCoroutine(GameManager.instance.timeToWin));

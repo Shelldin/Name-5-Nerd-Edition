@@ -380,14 +380,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1627433829}
-    - target: {fileID: 2638666531332660903, guid: 04150b126b3e043449b91bd9b2f41746, type: 3}
-      propertyPath: maxRoll
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2638666531332660903, guid: 04150b126b3e043449b91bd9b2f41746, type: 3}
-      propertyPath: minRoll
-      value: 1
-      objectReference: {fileID: 0}
+    - target: {fileID: 3000381696260602661, guid: 04150b126b3e043449b91bd9b2f41746, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1627433829}
     - target: {fileID: 3311384239118286572, guid: 04150b126b3e043449b91bd9b2f41746, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

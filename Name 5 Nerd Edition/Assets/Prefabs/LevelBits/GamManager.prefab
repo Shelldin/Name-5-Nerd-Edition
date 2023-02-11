@@ -58,6 +58,7 @@ MonoBehaviour:
   currentPlayerTurnCount: 0
   numberOfDiceRollsThisTurn: 0
   movePhaseDelay: 4
+  timeToWin: 90
   playerCountInt: 2
 --- !u!114 &3419754581134716606
 MonoBehaviour:
@@ -74,4 +75,5 @@ MonoBehaviour:
   isMovePhase: 0
   diceRoller: {fileID: 0}
   moveSpeed: 20
+  waitTime: 1
   movePositionsList: []

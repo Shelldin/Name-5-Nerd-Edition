@@ -285,6 +285,7 @@ public class GameManager : MonoBehaviour
         {
             currentPlayerPieceSOList[currentPlayerTurnCount].categoriesToWinInt--;
             numberOfCategoriesToWin = currentPlayerPieceSOList[currentPlayerTurnCount].categoriesToWinInt;
+            Debug.Log("categories = " + numberOfCategoriesToWin);
            
             
             if (numberOfCategoriesToWin > 5)

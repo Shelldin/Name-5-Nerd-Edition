@@ -5190,6 +5190,7 @@ MonoBehaviour:
   doubleDownSpaceMenu: {fileID: 0}
   finalSpaceMenu: {fileID: 1682070437532354993}
   timerTextObj: {fileID: 3527952794097188158}
+  standardCountdownTime: 30
   diceButton: {fileID: 825293422}
   canvas: {fileID: 0}
   colorInstructionText: {fileID: 7618414981697968942}
@@ -5211,8 +5212,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rollAnimationTime: 1.5
   rollResultInt: 0
-  minRoll: 10
-  maxRoll: 20
+  minRoll: 1
+  maxRoll: 2
   anim: {fileID: 1421025995}
 --- !u!1 &8136369349431607212
 GameObject:
