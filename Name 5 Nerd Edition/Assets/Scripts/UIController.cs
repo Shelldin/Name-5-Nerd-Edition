@@ -41,7 +41,8 @@ public class UIController : MonoBehaviour
     private WaitForSeconds wfs;
     public float timeDelay = 3f;
 
-    public Coroutine standardCountdownTimerCo;
+    public Coroutine standardCountdownTimerCo,
+        winTimeCountdownTimerCo;
 
 
     private void Awake()
@@ -74,6 +75,7 @@ public class UIController : MonoBehaviour
         wfs = new WaitForSeconds(timeDelay);
         
         standardCountdownTimerCo = StartCoroutine(NameFiveCountdownCoroutine(standardCountdownTime));
+        winTimeCountdownTimerCo = StartCoroutine(NameFiveCountdownCoroutine(GameManager.instance.timeToWin));
 
     }
 
@@ -235,12 +237,27 @@ public class UIController : MonoBehaviour
         SwapRenderModeToOverlay();
         
         StopCoroutine(standardCountdownTimerCo);
+        StopCoroutine(winTimeCountdownTimerCo);
         
         standardSpaceMenu.SetActive(true);
         timerTextObj.SetActive(true);
         
         standardCountdownTimerCo = StartCoroutine(NameFiveCountdownCoroutine(standardCountdownTime));
 
+    }
+
+    private IEnumerator FinalSpaceCoroutine()
+    {
+        yield return wfs;
+        SwapRenderModeToOverlay();
+        
+        StopCoroutine(standardCountdownTimerCo);
+        StopCoroutine(winTimeCountdownTimerCo);
+        
+        standardSpaceMenu.SetActive(true);
+        timerTextObj.SetActive(true);
+
+        standardCountdownTimerCo = StartCoroutine(NameFiveCountdownCoroutine(GameManager.instance.timeToWin));
     }
     
     public IEnumerator NameFiveCountdownCoroutine(float countdownSeconds)

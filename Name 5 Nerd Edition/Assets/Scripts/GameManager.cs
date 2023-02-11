@@ -26,11 +26,11 @@ public class GameManager : MonoBehaviour
     public float movePhaseDelay = 1f;
 
     private WaitForSeconds countdownWFS;
-    private float timeToWin = 90f;
+    public float timeToWin = 90f;
     
     
     
-        //winTimeCountdownTimerCo;
+        
     
 
     //number of players or teams playing
