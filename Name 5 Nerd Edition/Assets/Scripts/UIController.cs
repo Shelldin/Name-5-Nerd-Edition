@@ -21,6 +21,8 @@ public class UIController : MonoBehaviour
         doubleDownSpaceMenu,
         finalSpaceMenu,
         timerTextObj;
+    
+    public float standardCountdownTime = 30f;
 
     public Button diceButton;
 
@@ -38,6 +40,8 @@ public class UIController : MonoBehaviour
 
     private WaitForSeconds wfs;
     public float timeDelay = 3f;
+
+    public Coroutine standardCountdownTimerCo;
 
 
     private void Awake()
@@ -68,6 +72,8 @@ public class UIController : MonoBehaviour
         }
 
         wfs = new WaitForSeconds(timeDelay);
+        
+        standardCountdownTimerCo = StartCoroutine(NameFiveCountdownCoroutine(standardCountdownTime));
 
     }
 
@@ -228,13 +234,34 @@ public class UIController : MonoBehaviour
         yield return wfs;
         SwapRenderModeToOverlay();
         
-        StopCoroutine(GameManager.instance.standardCountdownTimerCo);
+        StopCoroutine(standardCountdownTimerCo);
         
         standardSpaceMenu.SetActive(true);
         timerTextObj.SetActive(true);
         
-        StartCoroutine(GameManager.instance.standardCountdownTimerCo);
+        standardCountdownTimerCo = StartCoroutine(NameFiveCountdownCoroutine(standardCountdownTime));
+
+    }
+    
+    public IEnumerator NameFiveCountdownCoroutine(float countdownSeconds)
+    {
+        float counter = countdownSeconds;
         
+        UIController.instance.timerText.text = counter.ToString();
+        
+        while (counter > 0)
+        {
+            yield return new WaitForSeconds(1);
+            counter--;
+            UIController.instance.timerText.text = counter.ToString();
+
+        }
+
+        if (counter <= 0)
+        {
+            UIController.instance.timerText.text = "Time's Up!!!";
+        }
+
     }
 
    

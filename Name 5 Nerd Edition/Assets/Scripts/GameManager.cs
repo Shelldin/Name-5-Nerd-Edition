@@ -27,10 +27,10 @@ public class GameManager : MonoBehaviour
 
     private WaitForSeconds countdownWFS;
     private float timeToWin = 90f;
-    public float standardCountdownTime = 30f;
     
-    public IEnumerator standardCountdownTimerCo,
-        winTimeCountdownTimerCo;
+    
+    
+        //winTimeCountdownTimerCo;
     
 
     //number of players or teams playing
@@ -58,8 +58,8 @@ public class GameManager : MonoBehaviour
 
         currentPlayerTurnCount = 0;
 
-        standardCountdownTimerCo = NameFiveCountdownCoroutine(standardCountdownTime);
-        winTimeCountdownTimerCo = NameFiveCountdownCoroutine(timeToWin);
+        
+       // winTimeCountdownTimerCo = StartCoroutine(NameFiveCountdownCoroutine(timeToWin));
 
     }
 
@@ -315,32 +315,10 @@ public class GameManager : MonoBehaviour
         
     }
 
-    public void TestCoroutine()
-    {
-        StartCoroutine(NameFiveCountdownCoroutine(10));
-    }
+    
 
     //countdown timer coroutine for timing how long players have to name categories
-    public IEnumerator NameFiveCountdownCoroutine(float countdownSeconds)
-    {
-        float counter = countdownSeconds;
-        
-        UIController.instance.timerText.text = counter.ToString();
-        
-        while (counter > 0)
-        {
-            yield return new WaitForSeconds(1);
-            counter--;
-            UIController.instance.timerText.text = counter.ToString();
-
-        }
-
-        if (counter <= 0)
-        {
-            UIController.instance.timerText.text = "Time's Up!!!";
-        }
-
-    }
+    
     
     
 
