@@ -283,7 +283,17 @@ public class GameManager : MonoBehaviour
 
         if (currentPlayerPieceSOList[currentPlayerTurnCount].onFinalSpace)
         {
-            currentPlayerPieceSOList[currentPlayerTurnCount].categoriesToWinInt--;
+            //dont let the number of categories to win drop below 1
+            if (currentPlayerPieceSOList[currentPlayerTurnCount].categoriesToWinInt <= 1)
+            {
+                currentPlayerPieceSOList[currentPlayerTurnCount].categoriesToWinInt = 1;
+            }
+            //decrease the number of categories a player needs to win by 1 each time they fail to win (until they only have 1)
+            else
+            {
+                currentPlayerPieceSOList[currentPlayerTurnCount].categoriesToWinInt--;
+            }
+            
             numberOfCategoriesToWin = currentPlayerPieceSOList[currentPlayerTurnCount].categoriesToWinInt;
             Debug.Log("categories = " + numberOfCategoriesToWin);
            
@@ -306,21 +316,14 @@ public class GameManager : MonoBehaviour
             {
                 timeToWin = 30f;
             }
-            else if (numberOfCategoriesToWin < 1)
+            else
             {
+                Debug.Log("less than 1");
                 numberOfCategoriesToWin = 1;
                 timeToWin = 30f;
             }
-            
         }
         
     }
-
     
-
-    //countdown timer coroutine for timing how long players have to name categories
-    
-    
-    
-
 }
