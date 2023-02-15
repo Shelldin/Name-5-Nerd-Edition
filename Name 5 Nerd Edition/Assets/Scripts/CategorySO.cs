@@ -6,5 +6,6 @@ using UnityEngine;
 public class CategorySO : ScriptableObject
 {
     public string categoryName;
-    
+
+    public Sprite categoryBackgroundColor;
 }
