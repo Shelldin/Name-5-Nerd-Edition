@@ -241,6 +241,10 @@ public class UIController : MonoBehaviour
         */
        finalSpaceMenu.SetActive(false);
        timerTextObj.SetActive(false);
+       for (int i = 0; i < categoryBackgroundImageList.Count; i++)
+       {
+           categoryBackgroundImageList[i].gameObject.SetActive(false);
+       }
     }
 
     //coroutine for what happens when landing on a regular space
