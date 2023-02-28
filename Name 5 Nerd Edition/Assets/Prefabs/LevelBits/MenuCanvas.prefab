@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &115015145
 RectTransform:
   m_ObjectHideFlags: 0
@@ -94,7 +94,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &457892230
 RectTransform:
   m_ObjectHideFlags: 0
@@ -324,7 +324,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.00027894974, y: 0}
+  m_AnchoredPosition: {x: 0.00027894974, y: 4}
   m_SizeDelta: {x: 310.77, y: 53.162}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &563957494
@@ -972,7 +972,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &854357820
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1241,7 +1241,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.00025768, y: 0.00039673}
+  m_AnchoredPosition: {x: -0.00025768, y: 4}
   m_SizeDelta: {x: 310.77, y: 53.161}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &936451455
@@ -1376,7 +1376,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.00031912, y: -0.000053427}
+  m_AnchoredPosition: {x: -0.00031912, y: 4}
   m_SizeDelta: {x: 310.77, y: 53.162}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &962538165
@@ -1511,7 +1511,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.00032997, y: 0.000053417}
+  m_AnchoredPosition: {x: 0.00032997, y: 4}
   m_SizeDelta: {x: 310.77, y: 53.162}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1246788593
@@ -1859,7 +1859,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1759237902
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2089,7 +2089,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.00068665, y: 0.00012962}
+  m_AnchoredPosition: {x: 0.00068665, y: 4}
   m_SizeDelta: {x: 310.77, y: 53.162}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1865608921
@@ -2206,7 +2206,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1895416470
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2457,7 +2457,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2322013432959132073
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2475,8 +2475,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2.8042, y: -139}
-  m_SizeDelta: {x: 589.8961, y: 134.7976}
+  m_AnchoredPosition: {x: -1.8094, y: -137.9848}
+  m_SizeDelta: {x: 134.2067, y: 128.8279}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3832375981289743792
 CanvasRenderer:
@@ -2610,8 +2610,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2.8042, y: 145.6853}
-  m_SizeDelta: {x: 589.8961, y: 134.7976}
+  m_AnchoredPosition: {x: -0.50026, y: 181}
+  m_SizeDelta: {x: 717.22, y: 83.3882}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &693195226775301879
 CanvasRenderer:
@@ -6300,6 +6300,19 @@ MonoBehaviour:
   timerText: {fileID: 1857214949179368976}
   colorButtonImage: {fileID: 7618414981544883659}
   timeDelay: 2
+  categoryManager: {fileID: 0}
+  categoryBackgroundImageList:
+  - {fileID: 1895416471}
+  - {fileID: 1759237903}
+  - {fileID: 115015146}
+  - {fileID: 854357821}
+  - {fileID: 457892231}
+  categoryTextUIList:
+  - {fileID: 563957493}
+  - {fileID: 962538164}
+  - {fileID: 1246788592}
+  - {fileID: 936451454}
+  - {fileID: 1865608920}
 --- !u!114 &2638666531332660903
 MonoBehaviour:
   m_ObjectHideFlags: 0

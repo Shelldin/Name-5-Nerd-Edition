@@ -2,9 +2,10 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+
+
 
 public class UIController : MonoBehaviour
 {
@@ -43,6 +44,10 @@ public class UIController : MonoBehaviour
 
     public Coroutine standardCountdownTimerCo,
         winTimeCountdownTimerCo;
+
+    public CategoryManager categoryManager;
+    public List<Image> categoryBackgroundImageList = new List<Image>();
+    public List<TMP_Text> categoryTextUIList = new List<TMP_Text>();
 
 
     private void Awake()
@@ -250,8 +255,21 @@ public class UIController : MonoBehaviour
         standardSpaceMenu.SetActive(true);
         timerTextObj.SetActive(true);
         
+        ChooseCategoryForStandardSpace();
+        
         standardCountdownTimerCo = StartCoroutine(NameFiveCountdownCoroutine(standardCountdownTime));
 
+    }
+
+    //activate category ui for a standard space and pick a random category
+    private void ChooseCategoryForStandardSpace()
+    {
+        int chosenCategory = categoryManager.PickCategory();
+        
+        categoryBackgroundImageList[0].gameObject.SetActive(true);
+        categoryTextUIList[0].text = categoryManager.categorySOList[chosenCategory].categoryName;
+        
+        categoryManager.MoveCategoryToUsedCategoryList(chosenCategory);
     }
 
     private IEnumerator FinalSpaceCoroutine()

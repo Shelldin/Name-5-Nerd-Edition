@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3419754581134716604}
   - component: {fileID: 3419754581134716607}
   - component: {fileID: 3419754581134716606}
+  - component: {fileID: 1627433830}
   m_Layer: 0
   m_Name: GamManager
   m_TagString: Untagged
@@ -77,3 +78,27 @@ MonoBehaviour:
   moveSpeed: 20
   waitTime: 1
   movePositionsList: []
+--- !u!114 &1627433830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3419754581134716593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71c4ef1d074a7aa46bb04fb2dd5b7f49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  categorySOList:
+  - {fileID: 11400000, guid: 1a00e92ff33447c4b9a6d3f64d4c3034, type: 2}
+  - {fileID: 11400000, guid: 5837dd37537cfec42b7b1853d9e15c57, type: 2}
+  - {fileID: 11400000, guid: 136267357d62463418c9db6ae54208f0, type: 2}
+  - {fileID: 11400000, guid: 40106814adddba4468a7b3b24c144b1f, type: 2}
+  - {fileID: 11400000, guid: 1c6cacd985edeb945ab4d80a8cbd5aac, type: 2}
+  - {fileID: 11400000, guid: 37ae7fa120a28a741a114388a0f62e14, type: 2}
+  - {fileID: 11400000, guid: 4fe215c7e84be5a429e1d27dbaa18013, type: 2}
+  - {fileID: 11400000, guid: e8f3c9e5ac8995743a27c56a5626c4a2, type: 2}
+  - {fileID: 11400000, guid: 82b8f8b11dd7f0f4ab205374d624fcec, type: 2}
+  - {fileID: 11400000, guid: 3851b3acf48f7a44eac23c8dfd069417, type: 2}
+  usedCategoriesList: []
