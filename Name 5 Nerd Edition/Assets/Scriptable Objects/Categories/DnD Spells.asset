@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 767feb23bd86118458f148eea6094de5, type: 3}
   m_Name: DnD Spells
   m_EditorClassIdentifier: 
-  categoryName: 
+  categoryName: D&D Spells
   categoryBackgroundColor: {fileID: 0}

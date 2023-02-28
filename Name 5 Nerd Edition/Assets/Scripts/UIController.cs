@@ -268,6 +268,8 @@ public class UIController : MonoBehaviour
     //activate category ui for a standard space and pick a random category
     private void ChooseCategoryForStandardSpace()
     {
+        categoryManager.RefillCategoryList();
+        
         int chosenCategory = categoryManager.PickCategory();
         
         categoryBackgroundImageList[0].gameObject.SetActive(true);
