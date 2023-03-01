@@ -23,7 +23,6 @@ public class PieceMovement : MonoBehaviour
     //add all move points to a list and sort them in order they appear on the board
     public void PopulateMovePositionsList()
     {
-        Debug.Log("move piece list thing");
         movePositionsList.AddRange(GameObject.FindGameObjectsWithTag("MovePoint"));
 
         movePositionsList.Sort(delegate(GameObject i1, GameObject i2)
@@ -85,8 +84,19 @@ public class PieceMovement : MonoBehaviour
                         {
                             if (GameManager.instance.numberOfDiceRollsThisTurn < 5)
                             {
-                                //card method
-                                UIController.instance.ActivateStandardSpaceMenu();
+
+                                if (activeSO.currentSpace.layer == LayerMask.NameToLayer("StandardSpace"))
+                                {
+                                    Debug.Log("This is a standard space");
+                                    UIController.instance.ActivateStandardSpaceMenu();
+                                }
+                                else
+                                {
+                                    Debug.Log("this is NOT a standard space");
+                                    //XXX CHANGE TO OTHER SPACE TYPES XXX
+                                    UIController.instance.ActivateStandardSpaceMenu();
+                                }
+                                
                             }
                             else
                             {

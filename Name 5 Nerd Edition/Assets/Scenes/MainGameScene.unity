@@ -522,7 +522,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 361780495}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MovePoint (03)
   m_TagString: MovePoint
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
@@ -1113,7 +1113,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 853873105}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MovePoint (01)
   m_TagString: MovePoint
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
@@ -1851,7 +1851,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1569328464}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: MovePoint (02)
   m_TagString: MovePoint
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
@@ -2099,7 +2099,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1781196057}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MovePoint (00)
   m_TagString: MovePoint
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
@@ -2254,7 +2254,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1960491264}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MovePoint (04)
   m_TagString: MovePoint
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
