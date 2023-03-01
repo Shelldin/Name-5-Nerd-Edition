@@ -7,6 +7,11 @@ TagManager:
   - MovePoint
   - ColorButton
   - PlayerPiece
+  - StartSpace
+  - AllPlaySpace
+  - FlipFlopSpace
+  - WildSpace
+  - DoubleDownSpace
   layers:
   - Default
   - TransparentFX
@@ -14,11 +19,11 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
+  - StandardSpace
+  - AllPlaySpace
+  - FlipFlopSpace
+  - WildSpace
+  - DoubleDownSpace
   - 
   - 
   - 
