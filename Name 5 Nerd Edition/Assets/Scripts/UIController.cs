@@ -236,15 +236,28 @@ public class UIController : MonoBehaviour
         standardSpaceMenu.SetActive(false);
        /* wildSpaceMenu.SetActive(false);
         allPlaySpaceMenu.SetActive(false);
-        flipFlopSpaceMenu.SetActive(false);
         doubleDownSpaceMenu.SetActive(false);
         */
+       flipFlopSpaceMenu.SetActive(false);
        finalSpaceMenu.SetActive(false);
        timerTextObj.SetActive(false);
        for (int i = 0; i < categoryBackgroundImageList.Count; i++)
        {
            categoryBackgroundImageList[i].gameObject.SetActive(false);
        }
+    }
+
+    private IEnumerator FlipFlopSpaceCoroutine()
+    {
+        yield return wfs;
+        SwapRenderModeToOverlay();
+        
+        StopCoroutine(standardCountdownTimerCo);
+        StopCoroutine(winTimeCountdownTimerCo);
+        
+        flipFlopSpaceMenu.SetActive(true);
+        timerTextObj.SetActive(true);
+        
     }
 
     //coroutine for what happens when landing on a regular space
