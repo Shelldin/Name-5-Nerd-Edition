@@ -23,7 +23,8 @@ public class UIController : MonoBehaviour
         finalSpaceMenu,
         timerTextObj;
     
-    public float standardCountdownTime = 30f;
+    public float standardCountdownTime = 30f,
+        flipLFlopCountdownTime = 10f;
 
     public Button diceButton;
 
@@ -43,6 +44,7 @@ public class UIController : MonoBehaviour
     public float timeDelay = 3f;
 
     public Coroutine standardCountdownTimerCo,
+        flipFlopCountdownTimerCo,
         winTimeCountdownTimerCo;
 
     public CategoryManager categoryManager;
@@ -224,6 +226,12 @@ public class UIController : MonoBehaviour
         StartCoroutine(StandardSpaceCoroutine());
     }
     
+    //function for when player lands on a flip flop space
+    public void ActivateFlipFlopSpace()
+    {
+        StartCoroutine(FlipFlopSpaceCoroutine());
+    }
+    
     //function for when player lands or starts on final space
     public void ActivateFinalSpace()
     {
@@ -290,6 +298,21 @@ public class UIController : MonoBehaviour
         
         categoryManager.MoveCategoryToUsedCategoryList(chosenCategory);
     }
+    
+    //activate category UI for flip flop space and pick initial category
+    private void ChooseCategoryForFlipFlopSpace()
+    {
+        categoryManager.RefillCategoryList();
+
+        int chosenCategory = categoryManager.PickCategory();
+        
+        categoryBackgroundImageList[0].gameObject.SetActive(true);
+        categoryTextUIList[0].text = categoryManager.categorySOList[chosenCategory].categoryName;
+        
+        categoryManager.MoveCategoryToUsedCategoryList(chosenCategory);
+    }
+    
+    
 
     private IEnumerator FinalSpaceCoroutine()
     {

@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public List<GamePieceSO> gamePieceSOList = new List<GamePieceSO>();
     public List<GamePieceSO> currentPlayerPieceSOList = new List<GamePieceSO>();
     public List<GameObject> gamePieceObjList = new List<GameObject>();
+    public List<GamePieceSO> flipFlopGamePieceSOList = new List<GamePieceSO>();
 
     public PieceMovement pieceMovement;
     public CameraController cameraCon;
@@ -27,8 +28,8 @@ public class GameManager : MonoBehaviour
 
     private WaitForSeconds countdownWFS;
     public float timeToWin = 90f;
-    
-    
+
+    public int activeFlipFlopPlayerInt;
     
         
     
@@ -324,6 +325,25 @@ public class GameManager : MonoBehaviour
             }
         }
         
+    }
+
+    //fill the flipflopgamepieceSOlist with the current players
+    public void FillFlipFlopGamePieceSOList()
+    {
+        for (int i = 0; i < currentPlayerPieceSOList.Count; i++)
+        {
+            flipFlopGamePieceSOList.Add(currentPlayerPieceSOList[i]);
+        }
+        
+        flipFlopGamePieceSOList.Sort(delegate(GamePieceSO i1, GamePieceSO i2)
+            {return String.Compare(i1.name, i2.name, StringComparison.Ordinal);});
+        
+    }
+    
+    //if a player fails during their flip flop turn, remove them from FlipFlopGamePieceSOList
+    public void RemoveActiveFlipFlopPlayer()
+    {
+        flipFlopGamePieceSOList.Remove(flipFlopGamePieceSOList[activeFlipFlopPlayerInt]);
     }
     
 }
