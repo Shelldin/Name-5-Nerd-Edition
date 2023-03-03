@@ -345,5 +345,25 @@ public class GameManager : MonoBehaviour
     {
         flipFlopGamePieceSOList.Remove(flipFlopGamePieceSOList[activeFlipFlopPlayerInt]);
     }
-    
+
+    public void ResolveFlipFLopTurn()
+    {
+        if (flipFlopGamePieceSOList.Count <= 1)
+        {
+            
+        }
+    }
+
+    private void FlipFlopEndTurn()
+    {
+        if (activeFlipFlopPlayerInt == currentPlayerTurnCount)
+        {
+            //resume turn code goes here
+        }
+        else
+        {
+            //wining player of flip flop takes control of the board
+        }
+    }
+
 }
