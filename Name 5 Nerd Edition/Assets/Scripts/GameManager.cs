@@ -362,7 +362,22 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            //wining player of flip flop takes control of the board
+            //advance the turn to next player
+            currentPlayerPieceSOList[currentPlayerTurnCount].activePiece = false;
+        
+            //reset dice related ints to 0 for next player
+            pieceMovement.diceRoller.rollResultInt = 0;
+            numberOfDiceRollsThisTurn = 0;
+
+            pieceMovement.isMovePhase = false;
+        
+            //make the flip flop winner the new active player
+            currentPlayerTurnCount = activeFlipFlopPlayerInt;
+        
+            //set next player piece as active
+            currentPlayerPieceSOList[currentPlayerTurnCount].activePiece = true;
+
+            UIController.instance.StartPlayerTurn();
         }
     }
 
