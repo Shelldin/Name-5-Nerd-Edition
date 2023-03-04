@@ -10,6 +10,8 @@ public class GamePieceSO : ScriptableObject
    public Color gamePieceColor;
 
    public bool activePiece = false;
+
+   public bool hasLostCurrentFlipFlop = false;
    
    public bool onFinalSpace = false;
    public int categoriesToWinInt = 6;

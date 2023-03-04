@@ -328,29 +328,50 @@ public class GameManager : MonoBehaviour
     }
 
     //fill the flipflopgamepieceSOlist with the current players
-    public void FillFlipFlopGamePieceSOList()
+    private void FillFlipFlopGamePieceSOList()
     {
+        //add current players to the flipflop list
         for (int i = 0; i < currentPlayerPieceSOList.Count; i++)
         {
             flipFlopGamePieceSOList.Add(currentPlayerPieceSOList[i]);
         }
         
+        //sort the players in the flip flop list
         flipFlopGamePieceSOList.Sort(delegate(GamePieceSO i1, GamePieceSO i2)
             {return String.Compare(i1.name, i2.name, StringComparison.Ordinal);});
+
+        //make sure each player is have a chance to compete for the flip flop round
+        foreach (GamePieceSO gamePieceSo in flipFlopGamePieceSOList)
+        {
+            gamePieceSo.hasLostCurrentFlipFlop = false;
+        }
+        
+    }
+
+    public void StartFlipFlopTurn()
+    {
+        activeFlipFlopPlayerInt = currentPlayerTurnCount;
+        
+        FillFlipFlopGamePieceSOList();
         
     }
     
-    //if a player fails during their flip flop turn, remove them from FlipFlopGamePieceSOList
-    public void RemoveActiveFlipFlopPlayer()
+    //reset the flip flop list at the end of the flip flop turn
+    private void EmptyFlipFlopList()
     {
-        flipFlopGamePieceSOList.Remove(flipFlopGamePieceSOList[activeFlipFlopPlayerInt]);
+        for (int i = 0; i < flipFlopGamePieceSOList.Count; i++)
+        {
+            flipFlopGamePieceSOList.Remove(flipFlopGamePieceSOList[i]);  
+        }
+        
     }
 
-    public void ResolveFlipFLopTurn()
+    public void FlipFLopSuccess()
     {
-        if (flipFlopGamePieceSOList.Count <= 1)
+        activeFlipFlopPlayerInt++;
+        if (activeFlipFlopPlayerInt > flipFlopGamePieceSOList.Count)
         {
-            
+            activeFlipFlopPlayerInt = 0;
         }
     }
 
@@ -373,6 +394,9 @@ public class GameManager : MonoBehaviour
         
             //make the flip flop winner the new active player
             currentPlayerTurnCount = activeFlipFlopPlayerInt;
+            
+            //empty flip flop list
+            EmptyFlipFlopList();
         
             //set next player piece as active
             currentPlayerPieceSOList[currentPlayerTurnCount].activePiece = true;

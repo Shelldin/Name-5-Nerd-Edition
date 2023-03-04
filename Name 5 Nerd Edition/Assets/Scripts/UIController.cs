@@ -82,6 +82,7 @@ public class UIController : MonoBehaviour
         wfs = new WaitForSeconds(timeDelay);
         
         standardCountdownTimerCo = StartCoroutine(NameFiveCountdownCoroutine(standardCountdownTime));
+        flipFlopCountdownTimerCo = StartCoroutine(NameFiveCountdownCoroutine(flipLFlopCountdownTime));
         winTimeCountdownTimerCo = StartCoroutine(NameFiveCountdownCoroutine(GameManager.instance.timeToWin));
 
     }
@@ -261,11 +262,16 @@ public class UIController : MonoBehaviour
         SwapRenderModeToOverlay();
         
         StopCoroutine(standardCountdownTimerCo);
+        StopCoroutine(flipFlopCountdownTimerCo);
         StopCoroutine(winTimeCountdownTimerCo);
         
         flipFlopSpaceMenu.SetActive(true);
         timerTextObj.SetActive(true);
         
+        ChooseCategoryForFlipFlopSpace();
+
+        flipFlopCountdownTimerCo = StartCoroutine(NameFiveCountdownCoroutine(flipLFlopCountdownTime));
+
     }
 
     //coroutine for what happens when landing on a regular space
@@ -275,6 +281,7 @@ public class UIController : MonoBehaviour
         SwapRenderModeToOverlay();
         
         StopCoroutine(standardCountdownTimerCo);
+        StopCoroutine(flipFlopCountdownTimerCo);
         StopCoroutine(winTimeCountdownTimerCo);
         
         standardSpaceMenu.SetActive(true);
@@ -311,8 +318,7 @@ public class UIController : MonoBehaviour
         
         categoryManager.MoveCategoryToUsedCategoryList(chosenCategory);
     }
-    
-    
+
 
     private IEnumerator FinalSpaceCoroutine()
     {
@@ -322,6 +328,7 @@ public class UIController : MonoBehaviour
         SwapRenderModeToOverlay();
         
         StopCoroutine(standardCountdownTimerCo);
+        StopCoroutine(flipFlopCountdownTimerCo);
         StopCoroutine(winTimeCountdownTimerCo);
         
         finalSpaceMenu.SetActive(true);
