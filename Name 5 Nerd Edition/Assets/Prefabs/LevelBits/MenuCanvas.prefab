@@ -6872,10 +6872,12 @@ MonoBehaviour:
   finalSpaceMenu: {fileID: 1682070437532354993}
   timerTextObj: {fileID: 3527952794097188158}
   standardCountdownTime: 30
+  flipLFlopCountdownTime: 10
   diceButton: {fileID: 825293422}
   canvas: {fileID: 0}
   colorInstructionText: {fileID: 7618414981697968942}
   playerTurnText: {fileID: 2471084977204051632}
+  flipFlopTeamText: {fileID: 3515215911978481373}
   timerText: {fileID: 1857214949179368976}
   colorButtonImage: {fileID: 7618414981544883659}
   timeDelay: 2

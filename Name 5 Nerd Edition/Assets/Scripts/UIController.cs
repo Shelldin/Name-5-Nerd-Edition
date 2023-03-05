@@ -32,6 +32,7 @@ public class UIController : MonoBehaviour
 
     public TMP_Text colorInstructionText,
         playerTurnText,
+        flipFlopTeamText,
         timerText;
 
     //public List<Image> colorButtonImagesList = new List<Image>();
@@ -255,7 +256,14 @@ public class UIController : MonoBehaviour
            categoryBackgroundImageList[i].gameObject.SetActive(false);
        }
     }
-
+    
+    //change the flip flop text ui to reflect who's turn it is
+    public void AdjustFlipFlopText(int currentFlipFlopTeam)
+    {
+        flipFlopTeamText.text = "Team " + currentFlipFlopTeam+1 + "name 1...";
+    }
+    
+    //what happens when landing on a flip flop space
     private IEnumerator FlipFlopSpaceCoroutine()
     {
         yield return wfs;
@@ -267,6 +275,8 @@ public class UIController : MonoBehaviour
         
         flipFlopSpaceMenu.SetActive(true);
         timerTextObj.SetActive(true);
+        
+        GameManager.instance.StartFlipFlopTurn();
         
         ChooseCategoryForFlipFlopSpace();
 
