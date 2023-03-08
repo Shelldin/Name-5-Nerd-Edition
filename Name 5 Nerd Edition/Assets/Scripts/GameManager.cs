@@ -30,6 +30,8 @@ public class GameManager : MonoBehaviour
     public float timeToWin = 90f;
 
     public int activeFlipFlopPlayerInt;
+
+    public CategoryManager categoryManager;
     
         
     
@@ -373,6 +375,7 @@ public class GameManager : MonoBehaviour
         {
             activeFlipFlopPlayerInt = 0;
         }
+        
     }
 
     private void FlipFlopEndTurn()

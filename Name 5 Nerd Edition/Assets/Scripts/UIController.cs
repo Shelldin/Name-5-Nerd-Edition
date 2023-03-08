@@ -278,6 +278,8 @@ public class UIController : MonoBehaviour
         
         GameManager.instance.StartFlipFlopTurn();
         
+        AdjustFlipFlopText(GameManager.instance.activeFlipFlopPlayerInt);
+        
         ChooseCategoryForFlipFlopSpace();
 
         flipFlopCountdownTimerCo = StartCoroutine(NameFiveCountdownCoroutine(flipLFlopCountdownTime));

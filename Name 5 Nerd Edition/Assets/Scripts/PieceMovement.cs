@@ -90,6 +90,12 @@ public class PieceMovement : MonoBehaviour
                                     Debug.Log("This is a standard space");
                                     UIController.instance.ActivateStandardSpaceMenu();
                                 }
+                                else if (activeSO.currentSpace.layer == LayerMask.NameToLayer("FlipFlopSpace"))
+                                {
+                                    Debug.Log("this is a Flip Flop space");
+                                    
+                                    UIController.instance.ActivateFlipFlopSpace();
+                                }
                                 else
                                 {
                                     Debug.Log("this is NOT a standard space");

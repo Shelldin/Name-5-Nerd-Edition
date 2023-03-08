@@ -53,6 +53,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e5746715fbb7ba544b7d498bd3c79f12, type: 2}
   currentPlayerPieceSOList: []
   gamePieceObjList: []
+  flipFlopGamePieceSOList: []
   pieceMovement: {fileID: 0}
   cameraCon: {fileID: 0}
   currentSceneName: 
@@ -60,6 +61,8 @@ MonoBehaviour:
   numberOfDiceRollsThisTurn: 0
   movePhaseDelay: 4
   timeToWin: 90
+  activeFlipFlopPlayerInt: 0
+  categoryManager: {fileID: 1627433830}
   playerCountInt: 2
 --- !u!114 &3419754581134716606
 MonoBehaviour:
