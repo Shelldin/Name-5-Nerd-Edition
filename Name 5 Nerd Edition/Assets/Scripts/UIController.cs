@@ -319,7 +319,7 @@ public class UIController : MonoBehaviour
     }
     
     //activate category UI for flip flop space and pick initial category
-    private void ChooseCategoryForFlipFlopSpace()
+    public void ChooseCategoryForFlipFlopSpace()
     {
         categoryManager.RefillCategoryList();
 

@@ -370,12 +370,24 @@ public class GameManager : MonoBehaviour
 
     public void FlipFLopSuccess()
     {
+        SelectNextFlipFlopPlayer();
+        while (flipFlopGamePieceSOList[activeFlipFlopPlayerInt].hasLostCurrentFlipFlop)
+        {
+            SelectNextFlipFlopPlayer();
+        }
+
+        UIController.instance.AdjustFlipFlopText(activeFlipFlopPlayerInt);
+        UIController.instance.ChooseCategoryForFlipFlopSpace();
+        
+    }
+
+    public void SelectNextFlipFlopPlayer()
+    {
         activeFlipFlopPlayerInt++;
         if (activeFlipFlopPlayerInt > flipFlopGamePieceSOList.Count)
         {
             activeFlipFlopPlayerInt = 0;
-        }
-        
+        } 
     }
 
     private void FlipFlopEndTurn()
