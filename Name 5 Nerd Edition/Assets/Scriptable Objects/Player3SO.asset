@@ -16,6 +16,12 @@ MonoBehaviour:
   pieceSprite: {fileID: 2575936999107763733, guid: ef32f003c015dc24fa4e4724a2e3bfee, type: 3}
   gamePieceColor: {r: 0.9597633, g: 1, b: 0, a: 1}
   activePiece: 0
+  hasLostCurrentFlipFlop: 0
+  onFinalSpace: 0
+  categoriesToWinInt: 6
   currentPos: {x: -20.718765, y: 9.208452, z: 0.16133153}
-  nextPos: {x: 0, y: 0, z: 0}
+  nextPos: {x: -20.718765, y: 9.208452, z: 0.16133153}
+  currentSpace: {fileID: 0}
+  nextSpace: {fileID: 0}
+  spaceNumber: 0
   offset: {x: 1.5, y: 3, z: 0}

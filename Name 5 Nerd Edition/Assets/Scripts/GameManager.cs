@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
@@ -370,10 +371,17 @@ public class GameManager : MonoBehaviour
 
     public void FlipFLopSuccess()
     {
+        int exitCounter = 5;
+        
         SelectNextFlipFlopPlayer();
-        while (flipFlopGamePieceSOList[activeFlipFlopPlayerInt].hasLostCurrentFlipFlop)
+        while (flipFlopGamePieceSOList[activeFlipFlopPlayerInt].hasLostCurrentFlipFlop && exitCounter > 0)
         {
+            exitCounter--;
             SelectNextFlipFlopPlayer();
+            
+        Debug.Log(exitCounter);
+        Debug.Log(activeFlipFlopPlayerInt);
+            
         }
 
         UIController.instance.AdjustFlipFlopText(activeFlipFlopPlayerInt);
