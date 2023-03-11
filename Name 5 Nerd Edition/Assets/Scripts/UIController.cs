@@ -260,7 +260,7 @@ public class UIController : MonoBehaviour
     //change the flip flop text ui to reflect who's turn it is
     public void AdjustFlipFlopText(int currentFlipFlopTeam)
     {
-        flipFlopTeamText.text = "Team " + currentFlipFlopTeam+1 + "name 1...";
+        flipFlopTeamText.text = "Team " + (currentFlipFlopTeam+1) + " name one...";
     }
     
     //what happens when landing on a flip flop space

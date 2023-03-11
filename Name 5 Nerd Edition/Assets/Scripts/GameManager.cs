@@ -392,9 +392,11 @@ public class GameManager : MonoBehaviour
     public void SelectNextFlipFlopPlayer()
     {
         activeFlipFlopPlayerInt++;
-        if (activeFlipFlopPlayerInt > flipFlopGamePieceSOList.Count)
+        Debug.Log(activeFlipFlopPlayerInt);
+        if (activeFlipFlopPlayerInt >= flipFlopGamePieceSOList.Count)
         {
             activeFlipFlopPlayerInt = 0;
+            Debug.Log("resetting to " + activeFlipFlopPlayerInt);
         } 
     }
 
