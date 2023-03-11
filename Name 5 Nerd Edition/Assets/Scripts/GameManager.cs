@@ -369,6 +369,7 @@ public class GameManager : MonoBehaviour
         
     }
 
+    //when pressing success button during flip flop: select the next player who hasn't failed and reset timer
     public void FlipFLopSuccess()
     {
         int exitCounter = 5;
@@ -383,6 +384,11 @@ public class GameManager : MonoBehaviour
         Debug.Log(activeFlipFlopPlayerInt);
             
         }
+        
+        UIController.instance.StopAllCountdownCoroutines();
+
+        UIController.instance.flipFlopCountdownTimerCo = StartCoroutine(
+            UIController.instance.NameFiveCountdownCoroutine(UIController.instance.flipLFlopCountdownTime));
 
         UIController.instance.AdjustFlipFlopText(activeFlipFlopPlayerInt);
         UIController.instance.ChooseCategoryForFlipFlopSpace();
@@ -398,6 +404,8 @@ public class GameManager : MonoBehaviour
             activeFlipFlopPlayerInt = 0;
             Debug.Log("resetting to " + activeFlipFlopPlayerInt);
         } 
+        
+        
     }
 
     private void FlipFlopEndTurn()

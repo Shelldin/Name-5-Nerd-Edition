@@ -269,9 +269,7 @@ public class UIController : MonoBehaviour
         yield return wfs;
         SwapRenderModeToOverlay();
         
-        StopCoroutine(standardCountdownTimerCo);
-        StopCoroutine(flipFlopCountdownTimerCo);
-        StopCoroutine(winTimeCountdownTimerCo);
+        StopAllCountdownCoroutines();
         
         flipFlopSpaceMenu.SetActive(true);
         timerTextObj.SetActive(true);
@@ -292,9 +290,7 @@ public class UIController : MonoBehaviour
         yield return wfs;
         SwapRenderModeToOverlay();
         
-        StopCoroutine(standardCountdownTimerCo);
-        StopCoroutine(flipFlopCountdownTimerCo);
-        StopCoroutine(winTimeCountdownTimerCo);
+        StopAllCountdownCoroutines();
         
         standardSpaceMenu.SetActive(true);
         timerTextObj.SetActive(true);
@@ -339,9 +335,7 @@ public class UIController : MonoBehaviour
         yield return wfs;
         SwapRenderModeToOverlay();
         
-        StopCoroutine(standardCountdownTimerCo);
-        StopCoroutine(flipFlopCountdownTimerCo);
-        StopCoroutine(winTimeCountdownTimerCo);
+        StopAllCountdownCoroutines();
         
         finalSpaceMenu.SetActive(true);
         timerTextObj.SetActive(true);
@@ -368,6 +362,14 @@ public class UIController : MonoBehaviour
             UIController.instance.timerText.text = "Time's Up!!!";
         }
 
+    }
+
+    public void StopAllCountdownCoroutines()
+    {
+        StopCoroutine(standardCountdownTimerCo);
+        StopCoroutine(flipFlopCountdownTimerCo);
+        StopCoroutine(winTimeCountdownTimerCo);
+        
     }
 
    
