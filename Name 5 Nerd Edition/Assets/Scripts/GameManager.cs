@@ -30,7 +30,8 @@ public class GameManager : MonoBehaviour
     private WaitForSeconds countdownWFS;
     public float timeToWin = 90f;
 
-    public int activeFlipFlopPlayerInt;
+    public int activeFlipFlopPlayerInt,
+        flipFlopLosersInt = 0;
 
     public CategoryManager categoryManager;
     
@@ -354,7 +355,9 @@ public class GameManager : MonoBehaviour
     public void StartFlipFlopTurn()
     {
         activeFlipFlopPlayerInt = currentPlayerTurnCount;
-        
+
+        flipFlopLosersInt = 0;
+
         FillFlipFlopGamePieceSOList();
         
     }
@@ -383,6 +386,41 @@ public class GameManager : MonoBehaviour
         Debug.Log(exitCounter);
         Debug.Log(activeFlipFlopPlayerInt);
             
+        }
+        
+        UIController.instance.StopAllCountdownCoroutines();
+
+        UIController.instance.flipFlopCountdownTimerCo = StartCoroutine(
+            UIController.instance.NameFiveCountdownCoroutine(UIController.instance.flipLFlopCountdownTime));
+
+        UIController.instance.AdjustFlipFlopText(activeFlipFlopPlayerInt);
+        UIController.instance.ChooseCategoryForFlipFlopSpace();
+        
+    }
+
+    public void flipFlopFailure()
+    {
+        flipFlopGamePieceSOList[activeFlipFlopPlayerInt].hasLostCurrentFlipFlop = true;
+
+        flipFlopLosersInt++;
+
+        int exitCounter = 5;
+        
+        SelectNextFlipFlopPlayer();
+        while (flipFlopGamePieceSOList[activeFlipFlopPlayerInt].hasLostCurrentFlipFlop && exitCounter > 0)
+        {
+            exitCounter--;
+            SelectNextFlipFlopPlayer();
+            
+            Debug.Log(exitCounter);
+            Debug.Log(activeFlipFlopPlayerInt);
+            
+        }
+
+        if (flipFlopLosersInt >= flipFlopGamePieceSOList.Count-1)
+        {
+            //flip flop win method
+            flipFlopLosersInt = 0;
         }
         
         UIController.instance.StopAllCountdownCoroutines();
