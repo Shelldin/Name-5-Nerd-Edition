@@ -251,6 +251,7 @@ public class UIController : MonoBehaviour
        flipFlopSpaceMenu.SetActive(false);
        finalSpaceMenu.SetActive(false);
        timerTextObj.SetActive(false);
+       
        for (int i = 0; i < categoryBackgroundImageList.Count; i++)
        {
            categoryBackgroundImageList[i].gameObject.SetActive(false);

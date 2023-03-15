@@ -406,6 +406,7 @@ public class GameManager : MonoBehaviour
 
         int exitCounter = 5;
         
+        
         SelectNextFlipFlopPlayer();
         while (flipFlopGamePieceSOList[activeFlipFlopPlayerInt].hasLostCurrentFlipFlop && exitCounter > 0)
         {
@@ -416,10 +417,11 @@ public class GameManager : MonoBehaviour
             Debug.Log(activeFlipFlopPlayerInt);
             
         }
-
+        
         if (flipFlopLosersInt >= flipFlopGamePieceSOList.Count-1)
         {
-            //flip flop win method
+           UIController.instance.SetSpaceMenusInactive();
+            FlipFlopEndTurn();
             flipFlopLosersInt = 0;
         }
         
@@ -468,6 +470,8 @@ public class GameManager : MonoBehaviour
             
             //empty flip flop list
             EmptyFlipFlopList();
+            
+            UIController.instance.StopAllCountdownCoroutines();
         
             //set next player piece as active
             currentPlayerPieceSOList[currentPlayerTurnCount].activePiece = true;
