@@ -423,6 +423,8 @@ public class GameManager : MonoBehaviour
            UIController.instance.SetSpaceMenusInactive();
             FlipFlopEndTurn();
             flipFlopLosersInt = 0;
+            
+            return;
         }
         
         UIController.instance.StopAllCountdownCoroutines();
