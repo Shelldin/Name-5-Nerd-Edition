@@ -96,6 +96,10 @@ public class PieceMovement : MonoBehaviour
                                     
                                     UIController.instance.ActivateFlipFlopSpace();
                                 }
+                                else if (activeSO.currentSpace.layer == LayerMask.NameToLayer("WildSpace"))
+                                {
+                                    Debug.Log("This is a Wild Space");
+                                }
                                 else
                                 {
                                     Debug.Log("this is NOT a standard space");
