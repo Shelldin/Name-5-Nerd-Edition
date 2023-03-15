@@ -27,6 +27,9 @@ public class GameManager : MonoBehaviour
     private WaitForSeconds movePhaseWFS;
     public float movePhaseDelay = 1f;
 
+    private WaitForSeconds turnTextWFS;
+    public float turnTextDelay = 3f;
+
     private WaitForSeconds countdownWFS;
     public float timeToWin = 90f;
 
@@ -60,6 +63,7 @@ public class GameManager : MonoBehaviour
         currentSceneName = currentScene.name;
 
         movePhaseWFS = new WaitForSeconds(movePhaseDelay);
+        turnTextWFS = new WaitForSeconds(turnTextDelay);
 
         currentPlayerTurnCount = 0;
 
@@ -158,7 +162,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            //end turn function
+            EndTurn();
         }
     }
 
@@ -365,9 +369,9 @@ public class GameManager : MonoBehaviour
     //reset the flip flop list at the end of the flip flop turn
     private void EmptyFlipFlopList()
     {
-        for (int i = 0; i < flipFlopGamePieceSOList.Count; i++)
+        for (int i = flipFlopGamePieceSOList.Count - 1; i >= 0; i--)
         {
-            flipFlopGamePieceSOList.Remove(flipFlopGamePieceSOList[i]);  
+            flipFlopGamePieceSOList.Remove(flipFlopGamePieceSOList[i]);
         }
         
     }
@@ -454,7 +458,14 @@ public class GameManager : MonoBehaviour
     {
         if (activeFlipFlopPlayerInt == currentPlayerTurnCount)
         {
-            //resume turn code goes here
+            if (numberOfDiceRollsThisTurn < 5)
+            {
+                UIController.instance.StartPlayerTurn();
+            }
+            else
+            {
+                StartCoroutine(OutOfDiceRollsCoroutine());
+            }
         }
         else
         {
@@ -480,6 +491,18 @@ public class GameManager : MonoBehaviour
 
             UIController.instance.StartPlayerTurn();
         }
+    }
+
+    public IEnumerator OutOfDiceRollsCoroutine()
+    {
+        UIController.instance.playerTurnText.gameObject.SetActive(true);
+        UIController.instance.playerTurnText.text = "Team " + (GameManager.instance.currentPlayerTurnCount + 1) + "\nYou're out of Dice Rolls\n for this turn";
+
+        yield return turnTextWFS;
+
+        EndTurn();
+
+
     }
 
 }
