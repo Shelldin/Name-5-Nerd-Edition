@@ -244,8 +244,8 @@ public class UIController : MonoBehaviour
     public void SetSpaceMenusInactive()
     {
         standardSpaceMenu.SetActive(false);
-       /* wildSpaceMenu.SetActive(false);
-        allPlaySpaceMenu.SetActive(false);
+        wildSpaceMenu.SetActive(false);
+       /* allPlaySpaceMenu.SetActive(false);
         doubleDownSpaceMenu.SetActive(false);
         */
        flipFlopSpaceMenu.SetActive(false);

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3419754581134716607}
   - component: {fileID: 3419754581134716606}
   - component: {fileID: 1627433830}
+  - component: {fileID: 802177818190316451}
   m_Layer: 0
   m_Name: GamManager
   m_TagString: Untagged
@@ -56,12 +57,15 @@ MonoBehaviour:
   flipFlopGamePieceSOList: []
   pieceMovement: {fileID: 0}
   cameraCon: {fileID: 0}
+  wildSpaceTurn: {fileID: 802177818190316451}
   currentSceneName: 
   currentPlayerTurnCount: 0
   numberOfDiceRollsThisTurn: 0
   movePhaseDelay: 4
+  turnTextDelay: 3
   timeToWin: 90
   activeFlipFlopPlayerInt: 0
+  flipFlopLosersInt: 0
   categoryManager: {fileID: 1627433830}
   playerCountInt: 2
 --- !u!114 &3419754581134716606
@@ -105,3 +109,15 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 82b8f8b11dd7f0f4ab205374d624fcec, type: 2}
   - {fileID: 11400000, guid: 3851b3acf48f7a44eac23c8dfd069417, type: 2}
   usedCategoriesList: []
+--- !u!114 &802177818190316451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3419754581134716593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef083fd62eccadf42882b5faeec481d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
 
     public PieceMovement pieceMovement;
     public CameraController cameraCon;
+    public WildSpaceTurn wildSpaceTurn;
 
     private Scene currentScene;
     public String currentSceneName;
