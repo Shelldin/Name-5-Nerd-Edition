@@ -285,6 +285,17 @@ public class UIController : MonoBehaviour
 
     }
 
+    private IEnumerator WildSpaceCoroutine()
+    {
+        yield return wfs;
+        SwapRenderModeToOverlay();
+        
+        StopAllCountdownCoroutines();
+        
+        standardSpaceMenu.SetActive(true);
+        
+    }
+
     //coroutine for what happens when landing on a regular space
     private IEnumerator StandardSpaceCoroutine()
     {
@@ -326,6 +337,12 @@ public class UIController : MonoBehaviour
         categoryTextUIList[0].text = categoryManager.categorySOList[chosenCategory].categoryName;
         
         categoryManager.MoveCategoryToUsedCategoryList(chosenCategory);
+    }
+    
+    //activate category UI for Wild space and pick initial categories for player to choose from
+    public void ChooseCategoriesForWildSpace()
+    {
+        categoryManager.RefillCategoryList();
     }
 
 
