@@ -22,9 +22,10 @@ public class UIController : MonoBehaviour
         doubleDownSpaceMenu,
         finalSpaceMenu,
         timerTextObj;
-    
+
     public float standardCountdownTime = 30f,
-        flipLFlopCountdownTime = 10f;
+        flipLFlopCountdownTime = 10f,
+        categorySelectTime = 10f;
 
     public Button diceButton;
 
@@ -46,9 +47,11 @@ public class UIController : MonoBehaviour
 
     public Coroutine standardCountdownTimerCo,
         flipFlopCountdownTimerCo,
-        winTimeCountdownTimerCo;
+        winTimeCountdownTimerCo,
+        wildSpaceCategorySelectionTimerCo;
 
     public CategoryManager categoryManager;
+    public List<SelectWildSpaceCategoryEvent> selectWildSpaceEventList = new List<SelectWildSpaceCategoryEvent>();
     public List<Image> categoryBackgroundImageList = new List<Image>();
     public List<TMP_Text> categoryTextUIList = new List<TMP_Text>();
 
@@ -85,6 +88,7 @@ public class UIController : MonoBehaviour
         standardCountdownTimerCo = StartCoroutine(NameFiveCountdownCoroutine(standardCountdownTime));
         flipFlopCountdownTimerCo = StartCoroutine(NameFiveCountdownCoroutine(flipLFlopCountdownTime));
         winTimeCountdownTimerCo = StartCoroutine(NameFiveCountdownCoroutine(GameManager.instance.timeToWin));
+        wildSpaceCategorySelectionTimerCo = StartCoroutine(NameFiveCountdownCoroutine(categorySelectTime));
 
     }
 
@@ -292,8 +296,16 @@ public class UIController : MonoBehaviour
         
         StopAllCountdownCoroutines();
         
-        standardSpaceMenu.SetActive(true);
+        ChooseCategoriesForWildSpace();
+
+        for (int i = 0; i < selectWildSpaceEventList.Count; i++)
+        {
+            selectWildSpaceEventList[i].categoryHasBeenSelected = false;
+        }
         
+        timerTextObj.SetActive(true);
+
+        wildSpaceCategorySelectionTimerCo = StartCoroutine(NameFiveCountdownCoroutine(categorySelectTime));
     }
 
     //coroutine for what happens when landing on a regular space
@@ -342,7 +354,18 @@ public class UIController : MonoBehaviour
     //activate category UI for Wild space and pick initial categories for player to choose from
     public void ChooseCategoriesForWildSpace()
     {
-        categoryManager.RefillCategoryList();
+
+        for (int i = 0; i < categoryBackgroundImageList.Count; i++)
+        {
+            categoryManager.RefillCategoryList();
+            
+            int chosenCategory = categoryManager.PickCategory();
+            
+            categoryBackgroundImageList[i].gameObject.SetActive(true);
+            categoryTextUIList[i].text = categoryManager.categorySOList[chosenCategory].categoryName;
+            
+            categoryManager.MoveCategoryToUsedCategoryList(chosenCategory);
+        }
     }
 
 
@@ -387,6 +410,7 @@ public class UIController : MonoBehaviour
         StopCoroutine(standardCountdownTimerCo);
         StopCoroutine(flipFlopCountdownTimerCo);
         StopCoroutine(winTimeCountdownTimerCo);
+        StopCoroutine(wildSpaceCategorySelectionTimerCo);
         
     }
     

@@ -6,17 +6,22 @@ using UnityEngine.EventSystems;
 
 public class SelectWildSpaceCategoryEvent : MonoBehaviour, IPointerUpHandler, IPointerDownHandler
 {
+    public bool categoryHasBeenSelected = false;
     public List<GameObject> categoryGameObjList = new List<GameObject>();
 
 
     public void OnPointerUp(PointerEventData eventData)
     {
-        if (GameManager.instance.currentPlayerPieceSOList[GameManager.instance.currentPlayerTurnCount].currentSpace.layer == LayerMask.NameToLayer("WildSpace"))
+        if (GameManager.instance.currentPlayerPieceSOList[GameManager.instance.currentPlayerTurnCount].currentSpace.layer == LayerMask.NameToLayer("WildSpace") 
+            && !categoryHasBeenSelected)
         {
             for (int i = 0; i < categoryGameObjList.Count; i++)
             {
                 categoryGameObjList[i].gameObject.SetActive(false);
             }
+            UIController.instance.wildSpaceMenu.SetActive(true);
+
+            categoryHasBeenSelected = true;
         }
     }
 
