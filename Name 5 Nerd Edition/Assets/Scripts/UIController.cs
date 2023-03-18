@@ -34,6 +34,7 @@ public class UIController : MonoBehaviour
     public TMP_Text colorInstructionText,
         playerTurnText,
         flipFlopTeamText,
+        wildSpaceText,
         timerText;
 
     //public List<Image> colorButtonImagesList = new List<Image>();
@@ -304,6 +305,8 @@ public class UIController : MonoBehaviour
         }
         
         timerTextObj.SetActive(true);
+
+        wildSpaceText.text = "Team " + (GameManager.instance.currentPlayerTurnCount + 1) + "\nchoose a category";
 
         wildSpaceCategorySelectionTimerCo = StartCoroutine(NameFiveCountdownCoroutine(categorySelectTime));
     }

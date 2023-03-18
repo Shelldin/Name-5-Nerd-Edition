@@ -22,6 +22,9 @@ public class SelectWildSpaceCategoryEvent : MonoBehaviour, IPointerUpHandler, IP
             UIController.instance.wildSpaceMenu.SetActive(true);
 
             categoryHasBeenSelected = true;
+
+            UIController.instance.wildSpaceText.text =
+                "Team " + (GameManager.instance.currentPlayerTurnCount + 1) + "\n name 5...";
         }
     }
 
