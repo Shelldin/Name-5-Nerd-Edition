@@ -502,8 +502,8 @@ public class GameManager : MonoBehaviour
         yield return turnTextWFS;
 
         EndTurn();
-
-
     }
 
+    
+    //METHOD TO RESET "HAS BEEN SELECTED" BOOL IN SELECTWILDSPACECATEGORYEVENT SCRIPT
 }

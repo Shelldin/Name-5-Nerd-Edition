@@ -15,16 +15,23 @@ public class SelectWildSpaceCategoryEvent : MonoBehaviour, IPointerUpHandler, IP
         if (GameManager.instance.currentPlayerPieceSOList[GameManager.instance.currentPlayerTurnCount].currentSpace.layer == LayerMask.NameToLayer("WildSpace") 
             && !categoryHasBeenSelected)
         {
+            categoryHasBeenSelected = true;
+            
             for (int i = 0; i < categoryGameObjList.Count; i++)
             {
-                categoryGameObjList[i].gameObject.SetActive(false);
+                if (!categoryHasBeenSelected)
+                {
+                    categoryGameObjList[i].gameObject.SetActive(false);
+                }
             }
+            
             UIController.instance.wildSpaceMenu.SetActive(true);
-
-            categoryHasBeenSelected = true;
+            
 
             UIController.instance.wildSpaceText.text =
                 "Team " + (GameManager.instance.currentPlayerTurnCount + 1) + "\n name 5...";
+            
+            
         }
     }
 

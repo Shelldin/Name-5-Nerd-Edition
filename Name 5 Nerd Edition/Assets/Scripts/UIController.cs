@@ -25,7 +25,8 @@ public class UIController : MonoBehaviour
 
     public float standardCountdownTime = 30f,
         flipLFlopCountdownTime = 10f,
-        categorySelectTime = 10f;
+        wildSpaceCountdownTime = 30f,
+        categorySelectTime = 15f;
 
     public Button diceButton;
 
@@ -48,6 +49,7 @@ public class UIController : MonoBehaviour
 
     public Coroutine standardCountdownTimerCo,
         flipFlopCountdownTimerCo,
+        wildSpaceCountdownTimerCo,
         winTimeCountdownTimerCo,
         wildSpaceCategorySelectionTimerCo;
 
@@ -88,6 +90,7 @@ public class UIController : MonoBehaviour
         
         standardCountdownTimerCo = StartCoroutine(NameFiveCountdownCoroutine(standardCountdownTime));
         flipFlopCountdownTimerCo = StartCoroutine(NameFiveCountdownCoroutine(flipLFlopCountdownTime));
+        wildSpaceCountdownTimerCo = StartCoroutine(NameFiveCountdownCoroutine(wildSpaceCountdownTime));
         winTimeCountdownTimerCo = StartCoroutine(NameFiveCountdownCoroutine(GameManager.instance.timeToWin));
         wildSpaceCategorySelectionTimerCo = StartCoroutine(NameFiveCountdownCoroutine(categorySelectTime));
 
@@ -412,6 +415,7 @@ public class UIController : MonoBehaviour
     {
         StopCoroutine(standardCountdownTimerCo);
         StopCoroutine(flipFlopCountdownTimerCo);
+        StopCoroutine(wildSpaceCountdownTimerCo);
         StopCoroutine(winTimeCountdownTimerCo);
         StopCoroutine(wildSpaceCategorySelectionTimerCo);
         
