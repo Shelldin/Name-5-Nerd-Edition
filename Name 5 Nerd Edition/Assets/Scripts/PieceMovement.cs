@@ -99,6 +99,7 @@ public class PieceMovement : MonoBehaviour
                                 else if (activeSO.currentSpace.layer == LayerMask.NameToLayer("WildSpace"))
                                 {
                                     Debug.Log("This is a Wild Space");
+                                    UIController.instance.ActivateWildSpace();
                                 }
                                 else
                                 {

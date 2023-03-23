@@ -57,6 +57,7 @@ public class UIController : MonoBehaviour
     public List<SelectWildSpaceCategoryEvent> selectWildSpaceEventList = new List<SelectWildSpaceCategoryEvent>();
     public List<Image> categoryBackgroundImageList = new List<Image>();
     public List<TMP_Text> categoryTextUIList = new List<TMP_Text>();
+    
 
 
     private void Awake()
@@ -242,6 +243,13 @@ public class UIController : MonoBehaviour
         StartCoroutine(FlipFlopSpaceCoroutine());
     }
     
+    //function for when player lands on wild space
+    public void ActivateWildSpace()
+    {
+        StartCoroutine(WildSpaceCoroutine());
+    }
+    
+    
     //function for when player lands or starts on final space
     public void ActivateFinalSpace()
     {
@@ -312,6 +320,23 @@ public class UIController : MonoBehaviour
         wildSpaceText.text = "Team " + (GameManager.instance.currentPlayerTurnCount + 1) + "\nchoose a category";
 
         wildSpaceCategorySelectionTimerCo = StartCoroutine(NameFiveCountdownCoroutine(categorySelectTime));
+    }
+
+    //activate main wild space menu after player has selected 1 out of the 5 categories they wish to name
+    public void WildCategoryChosen()
+    {
+        wildSpaceMenu.SetActive(true);
+            
+
+        wildSpaceText.text =
+            "Team " + (GameManager.instance.currentPlayerTurnCount + 1) + "\n name 5...";
+            
+        StopAllCountdownCoroutines();
+
+        wildSpaceCountdownTimerCo = 
+            StartCoroutine(UIController.instance.NameFiveCountdownCoroutine(wildSpaceCountdownTime));
+            
+        wildSpaceMenu.SetActive(true);
     }
 
     //coroutine for what happens when landing on a regular space

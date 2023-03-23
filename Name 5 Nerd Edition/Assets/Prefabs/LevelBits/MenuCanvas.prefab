@@ -146,13 +146,14 @@ GameObject:
   - component: {fileID: 115015145}
   - component: {fileID: 115015147}
   - component: {fileID: 115015146}
+  - component: {fileID: 7618414980704027068}
   m_Layer: 5
   m_Name: CategoryImage3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &115015145
 RectTransform:
   m_ObjectHideFlags: 0
@@ -212,6 +213,24 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &7618414980704027068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 115015144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86219658634a18346948ea037d1c26b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  categoryHasBeenSelected: 0
+  categoryGameObjList:
+  - {fileID: 1895416469}
+  - {fileID: 1759237901}
+  - {fileID: 854357819}
+  - {fileID: 457892229}
 --- !u!1 &119370137
 GameObject:
   m_ObjectHideFlags: 0
@@ -480,13 +499,14 @@ GameObject:
   - component: {fileID: 457892230}
   - component: {fileID: 457892232}
   - component: {fileID: 457892231}
+  - component: {fileID: 7618414980704027071}
   m_Layer: 5
   m_Name: CategoryImage5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &457892230
 RectTransform:
   m_ObjectHideFlags: 0
@@ -546,6 +566,24 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &7618414980704027071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 457892229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86219658634a18346948ea037d1c26b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  categoryHasBeenSelected: 0
+  categoryGameObjList:
+  - {fileID: 1895416469}
+  - {fileID: 1759237901}
+  - {fileID: 115015144}
+  - {fileID: 854357819}
 --- !u!1 &523152533
 GameObject:
   m_ObjectHideFlags: 0
@@ -1358,13 +1396,14 @@ GameObject:
   - component: {fileID: 854357820}
   - component: {fileID: 854357822}
   - component: {fileID: 854357821}
+  - component: {fileID: 7618414980704027067}
   m_Layer: 5
   m_Name: CategoryImage4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &854357820
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1424,6 +1463,24 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &7618414980704027067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 854357819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86219658634a18346948ea037d1c26b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  categoryHasBeenSelected: 0
+  categoryGameObjList:
+  - {fileID: 1895416469}
+  - {fileID: 1759237901}
+  - {fileID: 115015144}
+  - {fileID: 457892229}
 --- !u!1 &902766635
 GameObject:
   m_ObjectHideFlags: 0
@@ -2406,13 +2463,14 @@ GameObject:
   - component: {fileID: 1759237902}
   - component: {fileID: 1759237904}
   - component: {fileID: 1759237903}
+  - component: {fileID: 7618414980704027069}
   m_Layer: 5
   m_Name: CategoryImage2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1759237902
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2472,6 +2530,24 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &7618414980704027069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1759237901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86219658634a18346948ea037d1c26b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  categoryHasBeenSelected: 0
+  categoryGameObjList:
+  - {fileID: 1895416469}
+  - {fileID: 115015144}
+  - {fileID: 854357819}
+  - {fileID: 457892229}
 --- !u!1 &1790717920
 GameObject:
   m_ObjectHideFlags: 0
@@ -2888,13 +2964,14 @@ GameObject:
   - component: {fileID: 1895416470}
   - component: {fileID: 1895416472}
   - component: {fileID: 1895416471}
+  - component: {fileID: 7618414980704027070}
   m_Layer: 5
   m_Name: CategoryImage1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1895416470
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2954,6 +3031,24 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &7618414980704027070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1895416469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86219658634a18346948ea037d1c26b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  categoryHasBeenSelected: 0
+  categoryGameObjList:
+  - {fileID: 1759237901}
+  - {fileID: 115015144}
+  - {fileID: 854357819}
+  - {fileID: 457892229}
 --- !u!1 &1955713440
 GameObject:
   m_ObjectHideFlags: 0
@@ -7562,6 +7657,7 @@ MonoBehaviour:
   timerTextObj: {fileID: 3527952794097188158}
   standardCountdownTime: 30
   flipLFlopCountdownTime: 10
+  wildSpaceCountdownTime: 30
   categorySelectTime: 10
   diceButton: {fileID: 825293422}
   canvas: {fileID: 0}

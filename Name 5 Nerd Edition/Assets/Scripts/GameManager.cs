@@ -505,5 +505,5 @@ public class GameManager : MonoBehaviour
     }
 
     
-    //METHOD TO RESET "HAS BEEN SELECTED" BOOL IN SELECTWILDSPACECATEGORYEVENT SCRIPT
+    
 }
