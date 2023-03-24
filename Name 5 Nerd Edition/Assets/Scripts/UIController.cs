@@ -21,7 +21,8 @@ public class UIController : MonoBehaviour
         wildSpaceMenu,
         doubleDownSpaceMenu,
         finalSpaceMenu,
-        timerTextObj;
+        timerTextObj,
+        wildInstructionObj;
 
     public float standardCountdownTime = 30f,
         flipLFlopCountdownTime = 10f,
@@ -36,6 +37,7 @@ public class UIController : MonoBehaviour
         playerTurnText,
         flipFlopTeamText,
         wildSpaceText,
+        wildInstructionText,
         timerText;
 
     //public List<Image> colorButtonImagesList = new List<Image>();
@@ -316,8 +318,10 @@ public class UIController : MonoBehaviour
         }
         
         timerTextObj.SetActive(true);
+        wildInstructionObj.SetActive(true);
+        
 
-        wildSpaceText.text = "Team " + (GameManager.instance.currentPlayerTurnCount + 1) + "choose a category";
+        wildInstructionText.text = "Team " + (GameManager.instance.currentPlayerTurnCount + 1) + "choose a category";
 
         wildSpaceCategorySelectionTimerCo = StartCoroutine(NameFiveCountdownCoroutine(categorySelectTime));
     }
@@ -325,6 +329,8 @@ public class UIController : MonoBehaviour
     //activate main wild space menu after player has selected 1 out of the 5 categories they wish to name
     public void WildCategoryChosen()
     {
+        wildInstructionObj.SetActive(false);
+        
         wildSpaceMenu.SetActive(true);
             
 
@@ -419,19 +425,19 @@ public class UIController : MonoBehaviour
     {
         float counter = countdownSeconds;
         
-        UIController.instance.timerText.text = counter.ToString();
+        timerText.text = counter.ToString();
         
         while (counter > 0)
         {
             yield return new WaitForSeconds(1);
             counter--;
-            UIController.instance.timerText.text = counter.ToString();
+            timerText.text = counter.ToString();
 
         }
 
         if (counter <= 0)
         {
-            UIController.instance.timerText.text = "Time's Up!!!";
+            instance.timerText.text = "Time's Up!!!";
         }
 
     }

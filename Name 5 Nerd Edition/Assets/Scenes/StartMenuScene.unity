@@ -387,22 +387,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Target
       value: 
       objectReference: {fileID: 1627433829}
-    - target: {fileID: 937615412, guid: 04150b126b3e043449b91bd9b2f41746, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1603778028, guid: 04150b126b3e043449b91bd9b2f41746, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1627433829}
-    - target: {fileID: 1885204937, guid: 04150b126b3e043449b91bd9b2f41746, type: 3}
-      propertyPath: m_text
-      value: Team 1 Name 1...
-      objectReference: {fileID: 0}
-    - target: {fileID: 1885204937, guid: 04150b126b3e043449b91bd9b2f41746, type: 3}
-      propertyPath: m_fontSize
-      value: 47.7
-      objectReference: {fileID: 0}
     - target: {fileID: 3000381696260602661, guid: 04150b126b3e043449b91bd9b2f41746, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
