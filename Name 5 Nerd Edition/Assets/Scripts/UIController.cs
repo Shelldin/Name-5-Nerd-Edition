@@ -317,7 +317,7 @@ public class UIController : MonoBehaviour
         
         timerTextObj.SetActive(true);
 
-        wildSpaceText.text = "Team " + (GameManager.instance.currentPlayerTurnCount + 1) + "\nchoose a category";
+        wildSpaceText.text = "Team " + (GameManager.instance.currentPlayerTurnCount + 1) + "choose a category";
 
         wildSpaceCategorySelectionTimerCo = StartCoroutine(NameFiveCountdownCoroutine(categorySelectTime));
     }
@@ -329,7 +329,7 @@ public class UIController : MonoBehaviour
             
 
         wildSpaceText.text =
-            "Team " + (GameManager.instance.currentPlayerTurnCount + 1) + "\n name 5...";
+            "Team " + (GameManager.instance.currentPlayerTurnCount + 1) + " name 5...";
             
         StopAllCountdownCoroutines();
 
