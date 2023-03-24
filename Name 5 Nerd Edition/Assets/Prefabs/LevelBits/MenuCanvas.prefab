@@ -7696,8 +7696,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rollAnimationTime: 1.5
   rollResultInt: 0
-  minRoll: 3
-  maxRoll: 3
+  minRoll: 14
+  maxRoll: 14
   anim: {fileID: 1421025995}
 --- !u!1 &7824679697584383091
 GameObject:
