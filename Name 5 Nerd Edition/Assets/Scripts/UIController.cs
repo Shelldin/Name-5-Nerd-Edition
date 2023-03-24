@@ -340,7 +340,7 @@ public class UIController : MonoBehaviour
         StopAllCountdownCoroutines();
 
         wildSpaceCountdownTimerCo = 
-            StartCoroutine(UIController.instance.NameFiveCountdownCoroutine(wildSpaceCountdownTime));
+            StartCoroutine(NameFiveCountdownCoroutine(wildSpaceCountdownTime));
             
         wildSpaceMenu.SetActive(true);
     }
