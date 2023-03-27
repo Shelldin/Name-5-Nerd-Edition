@@ -1,14 +1,13 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class SelectWildSpaceCategoryEvent : MonoBehaviour, IPointerUpHandler, IPointerDownHandler
+public class DoubleDownCategorySelectionEvent : MonoBehaviour, IPointerUpHandler, IPointerDownHandler
 {
     public bool categoryHasBeenSelected = false;
 
-    public bool isWildSpaceTurn;
+    public bool isDoubleDownTurn;
     
     public List<GameObject> categoryGameObjList = new List<GameObject>();
 
@@ -16,7 +15,7 @@ public class SelectWildSpaceCategoryEvent : MonoBehaviour, IPointerUpHandler, IP
     public void OnPointerUp(PointerEventData eventData)
     {
 
-        if (isWildSpaceTurn)
+        if (isDoubleDownTurn)
         {
             if (GameManager.instance.currentPlayerPieceSOList[GameManager.instance.currentPlayerTurnCount].currentSpace.layer == LayerMask.NameToLayer("WildSpace") 
                 && !categoryHasBeenSelected)
@@ -32,7 +31,7 @@ public class SelectWildSpaceCategoryEvent : MonoBehaviour, IPointerUpHandler, IP
             
                 categoryHasBeenSelected = true;
             
-                UIController.instance.WildCategoryChosen();
+                //UIController.instance.WildCategoryChosen();
 
             }
         }
@@ -41,5 +40,4 @@ public class SelectWildSpaceCategoryEvent : MonoBehaviour, IPointerUpHandler, IP
     public void OnPointerDown(PointerEventData eventData)
     {
     }
-    
 }

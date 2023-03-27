@@ -53,7 +53,7 @@ public class UIController : MonoBehaviour
         flipFlopCountdownTimerCo,
         wildSpaceCountdownTimerCo,
         winTimeCountdownTimerCo,
-        wildSpaceCategorySelectionTimerCo;
+        CategorySelectionTimerCo;
 
     public CategoryManager categoryManager;
     public List<SelectWildSpaceCategoryEvent> selectWildSpaceEventList = new List<SelectWildSpaceCategoryEvent>();
@@ -95,7 +95,7 @@ public class UIController : MonoBehaviour
         flipFlopCountdownTimerCo = StartCoroutine(NameFiveCountdownCoroutine(flipLFlopCountdownTime));
         wildSpaceCountdownTimerCo = StartCoroutine(NameFiveCountdownCoroutine(wildSpaceCountdownTime));
         winTimeCountdownTimerCo = StartCoroutine(NameFiveCountdownCoroutine(GameManager.instance.timeToWin));
-        wildSpaceCategorySelectionTimerCo = StartCoroutine(NameFiveCountdownCoroutine(categorySelectTime));
+        CategorySelectionTimerCo = StartCoroutine(NameFiveCountdownCoroutine(categorySelectTime));
 
     }
 
@@ -264,9 +264,9 @@ public class UIController : MonoBehaviour
         standardSpaceMenu.SetActive(false);
         wildSpaceMenu.SetActive(false);
        /* allPlaySpaceMenu.SetActive(false);
-        doubleDownSpaceMenu.SetActive(false);
         */
-       flipFlopSpaceMenu.SetActive(false);
+        doubleDownSpaceMenu.SetActive(false);
+        flipFlopSpaceMenu.SetActive(false);
        finalSpaceMenu.SetActive(false);
        timerTextObj.SetActive(false);
        
@@ -323,7 +323,7 @@ public class UIController : MonoBehaviour
 
         wildInstructionText.text = "Team " + (GameManager.instance.currentPlayerTurnCount + 1) + "choose a category";
 
-        wildSpaceCategorySelectionTimerCo = StartCoroutine(NameFiveCountdownCoroutine(categorySelectTime));
+        CategorySelectionTimerCo = StartCoroutine(NameFiveCountdownCoroutine(categorySelectTime));
     }
 
     //activate main wild space menu after player has selected 1 out of the 5 categories they wish to name
@@ -448,7 +448,7 @@ public class UIController : MonoBehaviour
         StopCoroutine(flipFlopCountdownTimerCo);
         StopCoroutine(wildSpaceCountdownTimerCo);
         StopCoroutine(winTimeCountdownTimerCo);
-        StopCoroutine(wildSpaceCategorySelectionTimerCo);
+        StopCoroutine(CategorySelectionTimerCo);
         
     }
     
