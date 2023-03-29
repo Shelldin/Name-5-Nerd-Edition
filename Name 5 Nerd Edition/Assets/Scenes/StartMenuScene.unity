@@ -314,6 +314,50 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1627433830, guid: c066136e83ca03043b1bb1133f20d5fa, type: 3}
+      propertyPath: categorySOList.Array.size
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1627433830, guid: c066136e83ca03043b1bb1133f20d5fa, type: 3}
+      propertyPath: categorySOList.Array.data[10]
+      value: 
+      objectReference: {fileID: 11400000, guid: 37c8e433dfad21145afda3a25d793278, type: 2}
+    - target: {fileID: 1627433830, guid: c066136e83ca03043b1bb1133f20d5fa, type: 3}
+      propertyPath: categorySOList.Array.data[11]
+      value: 
+      objectReference: {fileID: 11400000, guid: 2895230773a47ab459ccb8c542068346, type: 2}
+    - target: {fileID: 1627433830, guid: c066136e83ca03043b1bb1133f20d5fa, type: 3}
+      propertyPath: categorySOList.Array.data[12]
+      value: 
+      objectReference: {fileID: 11400000, guid: 6069ae3e36c73bf42a69dde0a3805789, type: 2}
+    - target: {fileID: 1627433830, guid: c066136e83ca03043b1bb1133f20d5fa, type: 3}
+      propertyPath: categorySOList.Array.data[13]
+      value: 
+      objectReference: {fileID: 11400000, guid: d9dd487a6bb175b489a6dea6b9a6f582, type: 2}
+    - target: {fileID: 1627433830, guid: c066136e83ca03043b1bb1133f20d5fa, type: 3}
+      propertyPath: categorySOList.Array.data[14]
+      value: 
+      objectReference: {fileID: 11400000, guid: f5a11332b8152924d88521853f288c88, type: 2}
+    - target: {fileID: 1627433830, guid: c066136e83ca03043b1bb1133f20d5fa, type: 3}
+      propertyPath: categorySOList.Array.data[15]
+      value: 
+      objectReference: {fileID: 11400000, guid: 6c825d8c2d045bb4ab007fd0ae69e375, type: 2}
+    - target: {fileID: 1627433830, guid: c066136e83ca03043b1bb1133f20d5fa, type: 3}
+      propertyPath: categorySOList.Array.data[16]
+      value: 
+      objectReference: {fileID: 11400000, guid: 6df67c5c4b9048a488c0736619fc6ae5, type: 2}
+    - target: {fileID: 1627433830, guid: c066136e83ca03043b1bb1133f20d5fa, type: 3}
+      propertyPath: categorySOList.Array.data[17]
+      value: 
+      objectReference: {fileID: 11400000, guid: 51fe74ea8c068e44995a86dfd135d1f2, type: 2}
+    - target: {fileID: 1627433830, guid: c066136e83ca03043b1bb1133f20d5fa, type: 3}
+      propertyPath: categorySOList.Array.data[18]
+      value: 
+      objectReference: {fileID: 11400000, guid: 94e4f15da878f3b42a976ff7a477fd63, type: 2}
+    - target: {fileID: 1627433830, guid: c066136e83ca03043b1bb1133f20d5fa, type: 3}
+      propertyPath: categorySOList.Array.data[19]
+      value: 
+      objectReference: {fileID: 11400000, guid: 3296c78c50d1f9e43b701e3abaebcb9c, type: 2}
     - target: {fileID: 3419754581134716593, guid: c066136e83ca03043b1bb1133f20d5fa, type: 3}
       propertyPath: m_Name
       value: GamManager
