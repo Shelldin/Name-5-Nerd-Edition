@@ -5,6 +5,8 @@ using UnityEngine.EventSystems;
 
 public class DoubleDownCategorySelectionEvent : MonoBehaviour, IPointerUpHandler, IPointerDownHandler
 {
+    public CategoryChoiceCounterSO categoryChoiceCountSO;
+    
     public bool categoryHasBeenSelected = false;
 
     public bool isDoubleDownTurn;
@@ -17,8 +19,8 @@ public class DoubleDownCategorySelectionEvent : MonoBehaviour, IPointerUpHandler
 
         if (isDoubleDownTurn)
         {
-            if (GameManager.instance.currentPlayerPieceSOList[GameManager.instance.currentPlayerTurnCount].currentSpace.layer == LayerMask.NameToLayer("WildSpace") 
-                && !categoryHasBeenSelected)
+            if (GameManager.instance.currentPlayerPieceSOList[GameManager.instance.currentPlayerTurnCount].currentSpace.layer
+                == LayerMask.NameToLayer("DoubleDownSpace") && !categoryHasBeenSelected)
             {
 
                 for (int i = 0; i < categoryGameObjList.Count; i++)
