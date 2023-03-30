@@ -1,9 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
-using Microsoft.Unity.VisualStudio.Editor;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class DoubleDownCategorySelectionEvent : MonoBehaviour, IPointerUpHandler, IPointerDownHandler
 {
@@ -19,6 +20,8 @@ public class DoubleDownCategorySelectionEvent : MonoBehaviour, IPointerUpHandler
     public List<GameObject> categoryGameObjList = new List<GameObject>();
 
 
+    
+
     public void OnPointerUp(PointerEventData eventData)
     {
 
@@ -29,7 +32,7 @@ public class DoubleDownCategorySelectionEvent : MonoBehaviour, IPointerUpHandler
             {
                 categoryHasBeenSelected = true;
                 
-                //CODE TO CHANGE ALPHA VALUE OF IMAGE AND TEXT
+               ReduceImageAndTextAlpha();
 
                 //UIController.instance.WildCategoryChosen();
 
@@ -59,5 +62,19 @@ public class DoubleDownCategorySelectionEvent : MonoBehaviour, IPointerUpHandler
 
     public void OnPointerDown(PointerEventData eventData)
     {
+    }
+
+    //reduce the alpha to signify the category has been chosen
+    public void ReduceImageAndTextAlpha()
+    {
+        Color categoryTextColor = categoryText.color;
+        Color categoryImageColor = categoryImage.color;
+
+        categoryImageColor.a = .5f;
+        categoryTextColor.a = .5f;
+
+        categoryImage.color = categoryImageColor;
+        categoryText.color = categoryTextColor;
+
     }
 }
