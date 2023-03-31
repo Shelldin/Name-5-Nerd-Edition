@@ -77,4 +77,17 @@ public class DoubleDownCategorySelectionEvent : MonoBehaviour, IPointerUpHandler
         categoryText.color = categoryTextColor;
 
     }
+    
+    //reset the alpha to full
+    public void RestoreImageAndTextAlpha()
+    {
+        Color categoryTextColor = categoryText.color;
+        Color categoryImageColor = categoryImage.color;
+
+        categoryImageColor.a = 1f;
+        categoryTextColor.a = 1f;
+
+        categoryImage.color = categoryImageColor;
+        categoryText.color = categoryTextColor;
+    }
 }
