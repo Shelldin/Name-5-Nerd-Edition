@@ -17,7 +17,7 @@ public class DoubleDownCategorySelectionEvent : MonoBehaviour, IPointerUpHandler
 
     public bool isDoubleDownTurn;
     
-    public List<GameObject> categoryGameObjList = new List<GameObject>();
+    public List<DoubleDownCategorySelectionEvent> categoryGameObjList = new List<DoubleDownCategorySelectionEvent>();
 
 
     
@@ -27,14 +27,15 @@ public class DoubleDownCategorySelectionEvent : MonoBehaviour, IPointerUpHandler
 
         if (isDoubleDownTurn)
         {
+            //check for on double down space & category selected is false & category counter SO is <1
             if (GameManager.instance.currentPlayerPieceSOList[GameManager.instance.currentPlayerTurnCount].currentSpace.layer
                 == LayerMask.NameToLayer("DoubleDownSpace") && !categoryHasBeenSelected && categoryChoiceCountSO.categoriesChosenInt < 1)
             {
                 categoryHasBeenSelected = true;
                 
                ReduceImageAndTextAlpha();
-
-                //UIController.instance.WildCategoryChosen();
+               
+               categoryChoiceCountSO.IncreaseCategoriesChosenCounterInt();
 
             }
         }
@@ -44,13 +45,15 @@ public class DoubleDownCategorySelectionEvent : MonoBehaviour, IPointerUpHandler
         {
             for (int i = 0; i < categoryGameObjList.Count; i++)
             {
-                if (!categoryHasBeenSelected)
+                if (!categoryGameObjList[i].categoryHasBeenSelected)
                 {
                     categoryGameObjList[i].gameObject.SetActive(false);
                 }
             }
             
             categoryHasBeenSelected = true;
+            
+            categoryChoiceCountSO.IncreaseCategoriesChosenCounterInt();
         }
 
         /*else if (GameManager.instance.currentPlayerPieceSOList[GameManager.instance.currentPlayerTurnCount].currentSpace.layer

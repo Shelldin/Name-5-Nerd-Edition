@@ -616,9 +616,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ba7434a6222a4141b874b5d841c0b06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  categoryChoiceCountSO: {fileID: 0}
+  categoryChoiceCountSO: {fileID: 11400000, guid: 6df9e21de4d116c419bea0f459f780cb, type: 2}
   categoryImage: {fileID: 7618414980704027064}
   categoryText: {fileID: 7618414980704027063}
   categoryHasBeenSelected: 0
   isDoubleDownTurn: 0
-  categoryGameObjList: []
+  categoryGameObjList:
+  - {fileID: 7618414980704027068}
+  - {fileID: 7618414980704027067}
+  - {fileID: 7618414980704027066}
+  - {fileID: 7618414980704027069}
+--- !u!1 &7618414980704027066 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 854357819, guid: 04150b126b3e043449b91bd9b2f41746, type: 3}
+  m_PrefabInstance: {fileID: 7618414980704027061}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7618414980704027067 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 115015144, guid: 04150b126b3e043449b91bd9b2f41746, type: 3}
+  m_PrefabInstance: {fileID: 7618414980704027061}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7618414980704027068 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1759237901, guid: 04150b126b3e043449b91bd9b2f41746, type: 3}
+  m_PrefabInstance: {fileID: 7618414980704027061}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7618414980704027069 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 457892229, guid: 04150b126b3e043449b91bd9b2f41746, type: 3}
+  m_PrefabInstance: {fileID: 7618414980704027061}
+  m_PrefabAsset: {fileID: 0}
