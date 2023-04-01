@@ -62,7 +62,8 @@ public class UIController : MonoBehaviour
     public List<DoubleDownCategorySelectionEvent> selectDoubleDownEventList = new List<DoubleDownCategorySelectionEvent>();
     public List<Image> categoryBackgroundImageList = new List<Image>();
     public List<TMP_Text> categoryTextUIList = new List<TMP_Text>();
-    
+
+    public CategoryChoiceCounterSO catChoiceCounterSO;
 
 
     private void Awake()
@@ -253,6 +254,12 @@ public class UIController : MonoBehaviour
     {
         StartCoroutine(WildSpaceCoroutine());
     }
+
+    public void ActivateDoubleDownSpace()
+    {
+        StartCoroutine(DoubleDownCoroutine());
+    }
+    
     
     
     //function for when player lands or starts on final space
@@ -345,7 +352,8 @@ public class UIController : MonoBehaviour
         
         timerTextObj.SetActive(true);
        doubleDownInstructionObj.SetActive(true);
-        
+       
+       catChoiceCounterSO.ResetCategoriesChosenInt();
 
         doubleDownInstructionText.text = "Team " + (GameManager.instance.currentPlayerTurnCount + 1) + "choose two categories";
 
