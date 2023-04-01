@@ -22,7 +22,8 @@ public class UIController : MonoBehaviour
         doubleDownSpaceMenu,
         finalSpaceMenu,
         timerTextObj,
-        wildInstructionObj;
+        wildInstructionObj,
+        doubleDownInstructionObj;
 
     public float standardCountdownTime = 30f,
         flipLFlopCountdownTime = 10f,
@@ -38,6 +39,7 @@ public class UIController : MonoBehaviour
         flipFlopTeamText,
         wildSpaceText,
         wildInstructionText,
+        doubleDownInstructionText,
         timerText;
 
     //public List<Image> colorButtonImagesList = new List<Image>();
@@ -57,6 +59,7 @@ public class UIController : MonoBehaviour
 
     public CategoryManager categoryManager;
     public List<SelectWildSpaceCategoryEvent> selectWildSpaceEventList = new List<SelectWildSpaceCategoryEvent>();
+    public List<DoubleDownCategorySelectionEvent> selectDoubleDownEventList = new List<DoubleDownCategorySelectionEvent>();
     public List<Image> categoryBackgroundImageList = new List<Image>();
     public List<TMP_Text> categoryTextUIList = new List<TMP_Text>();
     
@@ -322,6 +325,29 @@ public class UIController : MonoBehaviour
         
 
         wildInstructionText.text = "Team " + (GameManager.instance.currentPlayerTurnCount + 1) + "choose a category";
+
+        CategorySelectionTimerCo = StartCoroutine(NameFiveCountdownCoroutine(categorySelectTime));
+    }
+
+    private IEnumerator DoubleDownCoroutine()
+    {
+        yield return wfs;
+        SwapRenderModeToOverlay();
+        
+        StopAllCountdownCoroutines();
+        
+        ChooseCategoriesForWildSpace();
+
+        for (int i = 0; i < selectDoubleDownEventList.Count; i++)
+        {
+            selectDoubleDownEventList[i].categoryHasBeenSelected = false;
+        }
+        
+        timerTextObj.SetActive(true);
+       doubleDownInstructionObj.SetActive(true);
+        
+
+        doubleDownInstructionText.text = "Team " + (GameManager.instance.currentPlayerTurnCount + 1) + "choose two categories";
 
         CategorySelectionTimerCo = StartCoroutine(NameFiveCountdownCoroutine(categorySelectTime));
     }
