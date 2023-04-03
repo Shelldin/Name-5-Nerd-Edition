@@ -101,6 +101,10 @@ public class PieceMovement : MonoBehaviour
                                     Debug.Log("This is a Wild Space");
                                     UIController.instance.ActivateWildSpace();
                                 }
+                                else if (activeSO.currentSpace.layer == LayerMask.NameToLayer("DoubleDownSpace"))
+                                {
+                                    UIController.instance.ActivateDoubleDownSpace();
+                                }
                                 else
                                 {
                                     Debug.Log("this is NOT a standard space");

@@ -147,6 +147,7 @@ GameObject:
   - component: {fileID: 115015147}
   - component: {fileID: 115015146}
   - component: {fileID: 7618414980704027068}
+  - component: {fileID: 7660862654189697801}
   m_Layer: 5
   m_Name: CategoryImage3
   m_TagString: Untagged
@@ -226,11 +227,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   categoryHasBeenSelected: 0
+  isWildSpaceTurn: 0
   categoryGameObjList:
   - {fileID: 1895416469}
   - {fileID: 1759237901}
   - {fileID: 854357819}
   - {fileID: 457892229}
+--- !u!114 &7660862654189697801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 115015144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ba7434a6222a4141b874b5d841c0b06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  categoryChoiceCountSO: {fileID: 11400000, guid: 6df9e21de4d116c419bea0f459f780cb, type: 2}
+  categoryImage: {fileID: 115015146}
+  categoryText: {fileID: 1246788592}
+  categoryHasBeenSelected: 0
+  isDoubleDownTurn: 0
+  categoryGameObjList:
+  - {fileID: 7618414980704027065}
+  - {fileID: 7338224253903841805}
+  - {fileID: 7597403386047525186}
+  - {fileID: 1460794123134839089}
 --- !u!1 &119370137
 GameObject:
   m_ObjectHideFlags: 0
@@ -512,6 +536,7 @@ GameObject:
   - component: {fileID: 457892232}
   - component: {fileID: 457892231}
   - component: {fileID: 7618414980704027071}
+  - component: {fileID: 1460794123134839089}
   m_Layer: 5
   m_Name: CategoryImage5
   m_TagString: Untagged
@@ -591,11 +616,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   categoryHasBeenSelected: 0
+  isWildSpaceTurn: 0
   categoryGameObjList:
   - {fileID: 1895416469}
   - {fileID: 1759237901}
   - {fileID: 115015144}
   - {fileID: 854357819}
+--- !u!114 &1460794123134839089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 457892229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ba7434a6222a4141b874b5d841c0b06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  categoryChoiceCountSO: {fileID: 11400000, guid: 6df9e21de4d116c419bea0f459f780cb, type: 2}
+  categoryImage: {fileID: 457892231}
+  categoryText: {fileID: 1865608920}
+  categoryHasBeenSelected: 0
+  isDoubleDownTurn: 0
+  categoryGameObjList:
+  - {fileID: 7618414980704027065}
+  - {fileID: 7338224253903841805}
+  - {fileID: 7660862654189697801}
+  - {fileID: 7597403386047525186}
 --- !u!1 &523152533
 GameObject:
   m_ObjectHideFlags: 0
@@ -1410,6 +1458,7 @@ GameObject:
   - component: {fileID: 854357822}
   - component: {fileID: 854357821}
   - component: {fileID: 7618414980704027067}
+  - component: {fileID: 7597403386047525186}
   m_Layer: 5
   m_Name: CategoryImage4
   m_TagString: Untagged
@@ -1489,11 +1538,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   categoryHasBeenSelected: 0
+  isWildSpaceTurn: 0
   categoryGameObjList:
   - {fileID: 1895416469}
   - {fileID: 1759237901}
   - {fileID: 115015144}
   - {fileID: 457892229}
+--- !u!114 &7597403386047525186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 854357819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ba7434a6222a4141b874b5d841c0b06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  categoryChoiceCountSO: {fileID: 11400000, guid: 6df9e21de4d116c419bea0f459f780cb, type: 2}
+  categoryImage: {fileID: 854357821}
+  categoryText: {fileID: 936451454}
+  categoryHasBeenSelected: 0
+  isDoubleDownTurn: 0
+  categoryGameObjList:
+  - {fileID: 7618414980704027065}
+  - {fileID: 7338224253903841805}
+  - {fileID: 7660862654189697801}
+  - {fileID: 1460794123134839089}
 --- !u!1 &902766635
 GameObject:
   m_ObjectHideFlags: 0
@@ -2636,6 +2708,7 @@ GameObject:
   - component: {fileID: 1759237904}
   - component: {fileID: 1759237903}
   - component: {fileID: 7618414980704027069}
+  - component: {fileID: 7338224253903841805}
   m_Layer: 5
   m_Name: CategoryImage2
   m_TagString: Untagged
@@ -2715,11 +2788,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   categoryHasBeenSelected: 0
+  isWildSpaceTurn: 0
   categoryGameObjList:
   - {fileID: 1895416469}
   - {fileID: 115015144}
   - {fileID: 854357819}
   - {fileID: 457892229}
+--- !u!114 &7338224253903841805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1759237901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ba7434a6222a4141b874b5d841c0b06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  categoryChoiceCountSO: {fileID: 11400000, guid: 6df9e21de4d116c419bea0f459f780cb, type: 2}
+  categoryImage: {fileID: 1759237903}
+  categoryText: {fileID: 962538164}
+  categoryHasBeenSelected: 0
+  isDoubleDownTurn: 0
+  categoryGameObjList:
+  - {fileID: 7618414980704027065}
+  - {fileID: 7660862654189697801}
+  - {fileID: 7597403386047525186}
+  - {fileID: 1460794123134839089}
 --- !u!1 &1790717920
 GameObject:
   m_ObjectHideFlags: 0
@@ -3137,6 +3233,7 @@ GameObject:
   - component: {fileID: 1895416472}
   - component: {fileID: 1895416471}
   - component: {fileID: 7618414980704027070}
+  - component: {fileID: 7618414980704027065}
   m_Layer: 5
   m_Name: CategoryImage1
   m_TagString: Untagged
@@ -3216,11 +3313,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   categoryHasBeenSelected: 0
+  isWildSpaceTurn: 0
   categoryGameObjList:
   - {fileID: 1759237901}
   - {fileID: 115015144}
   - {fileID: 854357819}
   - {fileID: 457892229}
+--- !u!114 &7618414980704027065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1895416469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ba7434a6222a4141b874b5d841c0b06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  categoryChoiceCountSO: {fileID: 11400000, guid: 6df9e21de4d116c419bea0f459f780cb, type: 2}
+  categoryImage: {fileID: 1895416471}
+  categoryText: {fileID: 563957493}
+  categoryHasBeenSelected: 0
+  isDoubleDownTurn: 0
+  categoryGameObjList:
+  - {fileID: 7338224253903841805}
+  - {fileID: 7660862654189697801}
+  - {fileID: 7597403386047525186}
+  - {fileID: 1460794123134839089}
 --- !u!1 &1955713440
 GameObject:
   m_ObjectHideFlags: 0
@@ -8552,10 +8672,11 @@ MonoBehaviour:
   doubleDownSpaceMenu: {fileID: 843141862479431407}
   finalSpaceMenu: {fileID: 1682070437532354993}
   timerTextObj: {fileID: 3527952794097188158}
-  wildInstructionObj: {fileID: 1676410801}
+  instructionObj: {fileID: 1676410801}
   standardCountdownTime: 30
   flipLFlopCountdownTime: 10
   wildSpaceCountdownTime: 30
+  doubleDownCountdownTime: 30
   categorySelectTime: 10
   diceButton: {fileID: 825293422}
   canvas: {fileID: 0}
@@ -8563,7 +8684,8 @@ MonoBehaviour:
   playerTurnText: {fileID: 2471084977204051632}
   flipFlopTeamText: {fileID: 3515215911978481373}
   wildSpaceText: {fileID: 1885204937}
-  wildInstructionText: {fileID: 1676410804}
+  doubleDownText: {fileID: 654184863081775959}
+  instructionText: {fileID: 1676410804}
   timerText: {fileID: 1857214949179368976}
   colorButtonImage: {fileID: 7618414981544883659}
   timeDelay: 2
@@ -8574,6 +8696,7 @@ MonoBehaviour:
   - {fileID: 7618414980704027068}
   - {fileID: 7618414980704027067}
   - {fileID: 7618414980704027071}
+  selectDoubleDownEventList: []
   categoryBackgroundImageList:
   - {fileID: 1895416471}
   - {fileID: 1759237903}
@@ -8586,6 +8709,7 @@ MonoBehaviour:
   - {fileID: 1246788592}
   - {fileID: 936451454}
   - {fileID: 1865608920}
+  catChoiceCounterSO: {fileID: 0}
 --- !u!114 &2638666531332660903
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8600,8 +8724,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rollAnimationTime: 1.5
   rollResultInt: 0
-  minRoll: 14
-  maxRoll: 14
+  minRoll: 10
+  maxRoll: 10
   anim: {fileID: 1421025995}
 --- !u!1 &7824679697584383091
 GameObject:

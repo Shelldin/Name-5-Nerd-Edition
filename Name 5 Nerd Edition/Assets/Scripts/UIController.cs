@@ -22,12 +22,12 @@ public class UIController : MonoBehaviour
         doubleDownSpaceMenu,
         finalSpaceMenu,
         timerTextObj,
-        wildInstructionObj,
-        doubleDownInstructionObj;
+        instructionObj;
 
     public float standardCountdownTime = 30f,
         flipLFlopCountdownTime = 10f,
         wildSpaceCountdownTime = 30f,
+        doubleDownCountdownTime = 30f,
         categorySelectTime = 15f;
 
     public Button diceButton;
@@ -38,8 +38,8 @@ public class UIController : MonoBehaviour
         playerTurnText,
         flipFlopTeamText,
         wildSpaceText,
-        wildInstructionText,
-        doubleDownInstructionText,
+        doubleDownText,
+        instructionText,
         timerText;
 
     //public List<Image> colorButtonImagesList = new List<Image>();
@@ -54,6 +54,7 @@ public class UIController : MonoBehaviour
     public Coroutine standardCountdownTimerCo,
         flipFlopCountdownTimerCo,
         wildSpaceCountdownTimerCo,
+        doubleDownCountdownTimerCo,
         winTimeCountdownTimerCo,
         CategorySelectionTimerCo;
 
@@ -98,6 +99,7 @@ public class UIController : MonoBehaviour
         standardCountdownTimerCo = StartCoroutine(NameFiveCountdownCoroutine(standardCountdownTime));
         flipFlopCountdownTimerCo = StartCoroutine(NameFiveCountdownCoroutine(flipLFlopCountdownTime));
         wildSpaceCountdownTimerCo = StartCoroutine(NameFiveCountdownCoroutine(wildSpaceCountdownTime));
+        doubleDownCountdownTimerCo = StartCoroutine(NameFiveCountdownCoroutine(doubleDownCountdownTime));
         winTimeCountdownTimerCo = StartCoroutine(NameFiveCountdownCoroutine(GameManager.instance.timeToWin));
         CategorySelectionTimerCo = StartCoroutine(NameFiveCountdownCoroutine(categorySelectTime));
 
@@ -328,14 +330,16 @@ public class UIController : MonoBehaviour
         }
         
         timerTextObj.SetActive(true);
-        wildInstructionObj.SetActive(true);
+        instructionObj.SetActive(true);
         
 
-        wildInstructionText.text = "Team " + (GameManager.instance.currentPlayerTurnCount + 1) + "choose a category";
+        instructionText.text = "Team " + (GameManager.instance.currentPlayerTurnCount + 1) + "choose a category";
 
         CategorySelectionTimerCo = StartCoroutine(NameFiveCountdownCoroutine(categorySelectTime));
     }
+    
 
+    //Coroutine to start double down turn
     private IEnumerator DoubleDownCoroutine()
     {
         yield return wfs;
@@ -343,7 +347,7 @@ public class UIController : MonoBehaviour
         
         StopAllCountdownCoroutines();
         
-        ChooseCategoriesForWildSpace();
+        ChooseCategoriesForDoubleDownSpace();
 
         for (int i = 0; i < selectDoubleDownEventList.Count; i++)
         {
@@ -351,19 +355,19 @@ public class UIController : MonoBehaviour
         }
         
         timerTextObj.SetActive(true);
-       doubleDownInstructionObj.SetActive(true);
+       instructionObj.SetActive(true);
        
        catChoiceCounterSO.ResetCategoriesChosenInt();
 
-        doubleDownInstructionText.text = "Team " + (GameManager.instance.currentPlayerTurnCount + 1) + "choose two categories";
+        instructionText.text = "Team " + (GameManager.instance.currentPlayerTurnCount + 1) + "choose two categories";
 
         CategorySelectionTimerCo = StartCoroutine(NameFiveCountdownCoroutine(categorySelectTime));
     }
 
-    //activate main wild space menu after player has selected 1 out of the 5 categories they wish to name
+    //activate main wild space menu after player has selected 1 out of the 5 categories they wish to name. Called in SelectWildSpaceCategoryEvent
     public void WildCategoryChosen()
     {
-        wildInstructionObj.SetActive(false);
+        instructionObj.SetActive(false);
         
         wildSpaceMenu.SetActive(true);
             
@@ -375,8 +379,23 @@ public class UIController : MonoBehaviour
 
         wildSpaceCountdownTimerCo = 
             StartCoroutine(NameFiveCountdownCoroutine(wildSpaceCountdownTime));
-            
-        wildSpaceMenu.SetActive(true);
+        
+    }
+
+    //acitvate double down space menu after 2 categories have been selected. called in DoubleDownCategorySelectionEvent
+    public void DoubleDownCategoriesChosen()
+    {
+       instructionObj.SetActive(false);
+        
+        doubleDownSpaceMenu.SetActive(true);
+        
+        //RESET IMAGE ALPHA METHOD
+
+        doubleDownText.text = "Team " + (GameManager.instance.currentPlayerTurnCount + 1) + " name 5...";
+        
+        StopAllCountdownCoroutines();
+
+        doubleDownCountdownTimerCo = StartCoroutine(NameFiveCountdownCoroutine(doubleDownCountdownTime));
     }
 
     //coroutine for what happens when landing on a regular space
@@ -426,6 +445,21 @@ public class UIController : MonoBehaviour
     public void ChooseCategoriesForWildSpace()
     {
 
+        for (int i = 0; i < categoryBackgroundImageList.Count; i++)
+        {
+            categoryManager.RefillCategoryList();
+            
+            int chosenCategory = categoryManager.PickCategory();
+            
+            categoryBackgroundImageList[i].gameObject.SetActive(true);
+            categoryTextUIList[i].text = categoryManager.categorySOList[chosenCategory].categoryName;
+            
+            categoryManager.MoveCategoryToUsedCategoryList(chosenCategory);
+        }
+    }
+
+    public void ChooseCategoriesForDoubleDownSpace()
+    {
         for (int i = 0; i < categoryBackgroundImageList.Count; i++)
         {
             categoryManager.RefillCategoryList();

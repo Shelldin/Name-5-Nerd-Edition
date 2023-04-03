@@ -54,6 +54,8 @@ public class DoubleDownCategorySelectionEvent : MonoBehaviour, IPointerUpHandler
             categoryHasBeenSelected = true;
             
             categoryChoiceCountSO.IncreaseCategoriesChosenCounterInt();
+            
+            UIController.instance.DoubleDownCategoriesChosen();
         }
 
         /*else if (GameManager.instance.currentPlayerPieceSOList[GameManager.instance.currentPlayerTurnCount].currentSpace.layer
