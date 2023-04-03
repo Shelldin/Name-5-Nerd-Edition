@@ -518,6 +518,7 @@ public class UIController : MonoBehaviour
         StopCoroutine(standardCountdownTimerCo);
         StopCoroutine(flipFlopCountdownTimerCo);
         StopCoroutine(wildSpaceCountdownTimerCo);
+        StopCoroutine(doubleDownCountdownTimerCo);
         StopCoroutine(winTimeCountdownTimerCo);
         StopCoroutine(CategorySelectionTimerCo);
         
