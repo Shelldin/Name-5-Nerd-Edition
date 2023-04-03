@@ -25,20 +25,19 @@ public class DoubleDownCategorySelectionEvent : MonoBehaviour, IPointerUpHandler
     public void OnPointerUp(PointerEventData eventData)
     {
 
-        if (isDoubleDownTurn)
-        {
-            //check for on double down space & category selected is false & category counter SO is <1
-            if (GameManager.instance.currentPlayerPieceSOList[GameManager.instance.currentPlayerTurnCount].currentSpace.layer
+        
+        //check for on double down space & category selected is false & category counter SO is <1
+        if (GameManager.instance.currentPlayerPieceSOList[GameManager.instance.currentPlayerTurnCount].currentSpace.layer
                 == LayerMask.NameToLayer("DoubleDownSpace") && !categoryHasBeenSelected && categoryChoiceCountSO.categoriesChosenInt < 1)
-            {
-                categoryHasBeenSelected = true;
-                
-               ReduceImageAndTextAlpha();
-               
-               categoryChoiceCountSO.IncreaseCategoriesChosenCounterInt();
+        {
+            categoryHasBeenSelected = true;
+            
+            ReduceImageAndTextAlpha();
+            
+            categoryChoiceCountSO.IncreaseCategoriesChosenCounterInt();
 
-            }
         }
+        
 
         else if (GameManager.instance.currentPlayerPieceSOList[GameManager.instance.currentPlayerTurnCount].currentSpace.layer
                  == LayerMask.NameToLayer("DoubleDownSpace") && !categoryHasBeenSelected && categoryChoiceCountSO.categoriesChosenInt == 1)
@@ -83,16 +82,4 @@ public class DoubleDownCategorySelectionEvent : MonoBehaviour, IPointerUpHandler
 
     }
     
-    //reset the alpha to full
-    public void RestoreImageAndTextAlpha()
-    {
-        Color categoryTextColor = categoryText.color;
-        Color categoryImageColor = categoryImage.color;
-
-        categoryImageColor.a = 1f;
-        categoryTextColor.a = 1f;
-
-        categoryImage.color = categoryImageColor;
-        categoryText.color = categoryTextColor;
-    }
 }

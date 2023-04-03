@@ -16,26 +16,24 @@ public class SelectWildSpaceCategoryEvent : MonoBehaviour, IPointerUpHandler, IP
     public void OnPointerUp(PointerEventData eventData)
     {
 
-        if (isWildSpaceTurn)
-        {
-            if (GameManager.instance.currentPlayerPieceSOList[GameManager.instance.currentPlayerTurnCount].currentSpace.layer == LayerMask.NameToLayer("WildSpace") 
+        
+        
+        if (GameManager.instance.currentPlayerPieceSOList[GameManager.instance.currentPlayerTurnCount].currentSpace.layer == LayerMask.NameToLayer("WildSpace") 
                 && !categoryHasBeenSelected)
-            {
-
-                for (int i = 0; i < categoryGameObjList.Count; i++)
+        {
+            for (int i = 0; i < categoryGameObjList.Count; i++)
+            { 
+                if (!categoryHasBeenSelected)
                 {
-                    if (!categoryHasBeenSelected)
-                    {
-                        categoryGameObjList[i].gameObject.SetActive(false);
-                    }
-                }
-            
-                categoryHasBeenSelected = true;
-            
-                UIController.instance.WildCategoryChosen();
-
+                    categoryGameObjList[i].gameObject.SetActive(false);
+                } 
             }
+            categoryHasBeenSelected = true;
+            
+            UIController.instance.WildCategoryChosen();
+
         }
+        
     }
 
     public void OnPointerDown(PointerEventData eventData)

@@ -388,8 +388,11 @@ public class UIController : MonoBehaviour
        instructionObj.SetActive(false);
         
         doubleDownSpaceMenu.SetActive(true);
-        
-        //RESET IMAGE ALPHA METHOD
+
+        for (int i = 0; i < categoryBackgroundImageList.Count; i++)
+        {
+            ResetCategoryImageAlpha(categoryBackgroundImageList[i], categoryTextUIList[i]);
+        }
 
         doubleDownText.text = "Team " + (GameManager.instance.currentPlayerTurnCount + 1) + " name 5...";
         
@@ -519,8 +522,19 @@ public class UIController : MonoBehaviour
         StopCoroutine(CategorySelectionTimerCo);
         
     }
-    
-    
+
+    private void ResetCategoryImageAlpha(Image image, TMP_Text text)
+    {
+        Color categoryImageColor = image.color;
+        Color categoryTextColor = text.color;
+        
+
+        categoryImageColor.a = 1f;
+        categoryTextColor.a = 1f;
+
+        image.color = categoryImageColor;
+        text.color = categoryTextColor;
+    }
 
    
 }

@@ -8709,7 +8709,7 @@ MonoBehaviour:
   - {fileID: 1246788592}
   - {fileID: 936451454}
   - {fileID: 1865608920}
-  catChoiceCounterSO: {fileID: 0}
+  catChoiceCounterSO: {fileID: 11400000, guid: 6df9e21de4d116c419bea0f459f780cb, type: 2}
 --- !u!114 &2638666531332660903
 MonoBehaviour:
   m_ObjectHideFlags: 0
