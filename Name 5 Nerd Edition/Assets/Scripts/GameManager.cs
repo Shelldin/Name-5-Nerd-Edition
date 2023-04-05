@@ -39,6 +39,7 @@ public class GameManager : MonoBehaviour
 
     public CategoryManager categoryManager;
     
+    
         
     
 

@@ -37,14 +37,22 @@ public class DiceRoller : MonoBehaviour
       //randomly select which number the dice "lands" on and reflect that in the animation.
       rollResultInt = Random.Range(minRoll, maxRoll);
       anim.SetInteger("RollResultInt", rollResultInt);
-      
 
+      //double the result after a successful double down turn
+      if (GameManager.instance.currentPlayerPieceSOList[GameManager.instance.currentPlayerTurnCount].currentSpace.layer
+          == LayerMask.NameToLayer("DoubleDownSpace") && GameManager.instance.numberOfDiceRollsThisTurn >= 2)
+      {
+         rollResultInt += rollResultInt;
+      }
+      
       yield return wfs;
       
       //set dice menu inactive after seeing dice result
       UIController.instance.SetDiceMenuInactive();
       UIController.instance.SwapRenderModeToCamera();
    }
+   
+   
 
    public void RollDiceButton()
    {
