@@ -8696,7 +8696,12 @@ MonoBehaviour:
   - {fileID: 7618414980704027068}
   - {fileID: 7618414980704027067}
   - {fileID: 7618414980704027071}
-  selectDoubleDownEventList: []
+  selectDoubleDownEventList:
+  - {fileID: 7618414980704027065}
+  - {fileID: 7338224253903841805}
+  - {fileID: 7660862654189697801}
+  - {fileID: 7597403386047525186}
+  - {fileID: 1460794123134839089}
   categoryBackgroundImageList:
   - {fileID: 1895416471}
   - {fileID: 1759237903}
