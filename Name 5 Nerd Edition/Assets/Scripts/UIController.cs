@@ -49,7 +49,9 @@ public class UIController : MonoBehaviour
     private int playerColorChoiceCoutdown;
 
     private WaitForSeconds wfs;
+    private WaitForSeconds allPlayWFS;
     public float timeDelay = 3f;
+    public float allPlayInstructionDelay = 5f;
 
     public Coroutine standardCountdownTimerCo,
         flipFlopCountdownTimerCo,
@@ -95,6 +97,7 @@ public class UIController : MonoBehaviour
         }
 
         wfs = new WaitForSeconds(timeDelay);
+        allPlayWFS = new WaitForSeconds(allPlayInstructionDelay);
         
         standardCountdownTimerCo = StartCoroutine(NameFiveCountdownCoroutine(standardCountdownTime));
         flipFlopCountdownTimerCo = StartCoroutine(NameFiveCountdownCoroutine(flipLFlopCountdownTime));
@@ -361,6 +364,39 @@ public class UIController : MonoBehaviour
         instructionText.text = "Team " + (GameManager.instance.currentPlayerTurnCount + 1) + "choose two categories";
 
         CategorySelectionTimerCo = StartCoroutine(NameFiveCountdownCoroutine(categorySelectTime));
+    }
+
+    private IEnumerator AllPlayCoroutine()
+    {
+        yield return wfs;
+        SwapRenderModeToOverlay();
+        
+        StopAllCountdownCoroutines();
+        
+        
+        //CHANGE TO ALLPLAY CATEGORY CHOOSING
+        ChooseCategoriesForDoubleDownSpace();
+        
+        instructionObj.SetActive(true);
+
+        int currentPlayerInt = GameManager.instance.currentPlayerTurnCount + 1;
+        int opposingPlayerInt;
+
+        if (GameManager.instance.currentPlayerTurnCount == 3)
+        {
+            opposingPlayerInt = 1;
+        }
+        else
+        {
+            opposingPlayerInt = GameManager.instance.currentPlayerTurnCount + 2;
+        }
+
+        instructionText.text = "Team " + currentPlayerInt + " and Team " + opposingPlayerInt +
+                               "\n Name 5 of your Category before the other team.";
+
+        yield return allPlayWFS;
+        
+        //ACTIVATE ALLPLAY MENU AND TIMER AND STUFF LIKE THAT
     }
 
     //activate main wild space menu after player has selected 1 out of the 5 categories they wish to name. Called in SelectWildSpaceCategoryEvent
