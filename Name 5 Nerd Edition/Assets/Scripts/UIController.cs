@@ -32,6 +32,9 @@ public class UIController : MonoBehaviour
 
     public Button diceButton;
 
+    public Button allPlayCurrentTeamButton,
+        allPlayOpposingTeamButton;
+
     public Canvas canvas;
 
     public TMP_Text colorInstructionText,
@@ -397,6 +400,15 @@ public class UIController : MonoBehaviour
         yield return allPlayWFS;
         
         //ACTIVATE ALLPLAY MENU AND TIMER AND STUFF LIKE THAT
+        instructionObj.SetActive(false);
+        
+        allPlaySpaceMenu.SetActive(true);
+
+        allPlayCurrentTeamButton.image.color =
+            GameManager.instance.currentPlayerPieceSOList[currentPlayerInt].gamePieceColor;
+        allPlayOpposingTeamButton.image.color =
+            GameManager.instance.currentPlayerPieceSOList[opposingPlayerInt].gamePieceColor;
+
     }
 
     //activate main wild space menu after player has selected 1 out of the 5 categories they wish to name. Called in SelectWildSpaceCategoryEvent
