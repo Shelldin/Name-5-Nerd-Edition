@@ -380,8 +380,7 @@ public class UIController : MonoBehaviour
         StopAllCountdownCoroutines();
         
         
-        //CHANGE TO ALLPLAY CATEGORY CHOOSING
-        ChooseCategoriesForDoubleDownSpace();
+        ChooseCategoriesForAllPlaySpace();
         
         instructionObj.SetActive(true);
 
@@ -402,7 +401,6 @@ public class UIController : MonoBehaviour
 
         yield return allPlayWFS;
         
-        //ACTIVATE ALLPLAY MENU AND TIMER AND STUFF LIKE THAT
         instructionObj.SetActive(false);
         
         allPlaySpaceMenu.SetActive(true);
@@ -523,6 +521,25 @@ public class UIController : MonoBehaviour
             categoryTextUIList[i].text = categoryManager.categorySOList[chosenCategory].categoryName;
             
             categoryManager.MoveCategoryToUsedCategoryList(chosenCategory);
+        }
+    }
+
+    public void ChooseCategoriesForAllPlaySpace()
+    {
+        int categoriesToChooseInt = 2;
+
+        while (categoriesToChooseInt > 0)
+        {
+            categoryManager.RefillCategoryList();
+        
+            int chosenCategory = categoryManager.PickCategory();
+        
+            categoryBackgroundImageList[5 - categoriesToChooseInt].gameObject.SetActive(true);
+            categoryTextUIList[5 - categoriesToChooseInt].text = categoryManager.categorySOList[chosenCategory].categoryName;
+        
+            categoryManager.MoveCategoryToUsedCategoryList(chosenCategory);
+
+            categoriesToChooseInt--;
         }
     }
 
