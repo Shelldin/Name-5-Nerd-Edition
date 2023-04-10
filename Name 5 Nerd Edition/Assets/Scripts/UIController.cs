@@ -384,19 +384,19 @@ public class UIController : MonoBehaviour
         
         instructionObj.SetActive(true);
 
-        int currentPlayerInt = GameManager.instance.currentPlayerTurnCount + 1;
+        int currentPlayerInt = GameManager.instance.currentPlayerTurnCount;
         int opposingPlayerInt;
 
-        if (GameManager.instance.currentPlayerTurnCount == 3)
+        if (GameManager.instance.currentPlayerTurnCount == GameManager.instance.currentPlayerPieceSOList.Count - 1)
         {
-            opposingPlayerInt = 1;
+            opposingPlayerInt = 0;
         }
         else
         {
-            opposingPlayerInt = GameManager.instance.currentPlayerTurnCount + 2;
+            opposingPlayerInt = GameManager.instance.currentPlayerTurnCount + 1;
         }
 
-        instructionText.text = "Team " + currentPlayerInt + " and Team " + opposingPlayerInt +
+        instructionText.text = "Team " + (currentPlayerInt + 1) + " and Team " + (opposingPlayerInt + 1) +
                                "\n Name 5 of your Category before the other team.";
 
         yield return allPlayWFS;
@@ -404,6 +404,9 @@ public class UIController : MonoBehaviour
         instructionObj.SetActive(false);
         
         allPlaySpaceMenu.SetActive(true);
+        
+        categoryBackgroundImageList[3].gameObject.SetActive(true);
+        categoryBackgroundImageList[4].gameObject.SetActive(true);
 
         allPlayCurrentTeamButton.image.color =
             GameManager.instance.currentPlayerPieceSOList[currentPlayerInt].gamePieceColor;
@@ -533,8 +536,7 @@ public class UIController : MonoBehaviour
             categoryManager.RefillCategoryList();
         
             int chosenCategory = categoryManager.PickCategory();
-        
-            categoryBackgroundImageList[5 - categoriesToChooseInt].gameObject.SetActive(true);
+            
             categoryTextUIList[5 - categoriesToChooseInt].text = categoryManager.categorySOList[chosenCategory].categoryName;
         
             categoryManager.MoveCategoryToUsedCategoryList(chosenCategory);
