@@ -105,6 +105,10 @@ public class PieceMovement : MonoBehaviour
                                 {
                                     UIController.instance.ActivateDoubleDownSpace();
                                 }
+                                else if (activeSO.currentSpace.layer == LayerMask.NameToLayer("AllPlaySpace"))
+                                {
+                                    UIController.instance.ActivateAllPlaySpace();
+                                }
                                 else
                                 {
                                     Debug.Log("this is NOT a standard space");

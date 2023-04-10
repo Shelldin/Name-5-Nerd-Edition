@@ -543,7 +543,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &457892230
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1465,7 +1465,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &854357820
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4293,7 +4293,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &9009456076697498063
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5141,7 +5141,7 @@ GameObject:
   - component: {fileID: 4088338042719796173}
   - component: {fileID: 2989904754186169261}
   m_Layer: 5
-  m_Name: SuccessButton
+  m_Name: CurrentTeamButton
   m_TagString: ColorButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5252,7 +5252,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: FlipFLopSuccess
+        m_MethodName: RollDiceAgain
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9395,6 +9395,8 @@ MonoBehaviour:
   doubleDownCountdownTime: 30
   categorySelectTime: 10
   diceButton: {fileID: 825293422}
+  allPlayCurrentTeamButton: {fileID: 2989904754186169261}
+  allPlayOpposingTeamButton: {fileID: 2987117636251897426}
   canvas: {fileID: 0}
   colorInstructionText: {fileID: 7618414981697968942}
   playerTurnText: {fileID: 2471084977204051632}
@@ -9405,6 +9407,7 @@ MonoBehaviour:
   timerText: {fileID: 1857214949179368976}
   colorButtonImage: {fileID: 7618414981544883659}
   timeDelay: 2
+  allPlayInstructionDelay: 5
   categoryManager: {fileID: 0}
   selectWildSpaceEventList:
   - {fileID: 7618414980704027070}
@@ -9445,8 +9448,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rollAnimationTime: 1.5
   rollResultInt: 0
-  minRoll: 10
-  maxRoll: 10
+  minRoll: 4
+  maxRoll: 4
   anim: {fileID: 1421025995}
 --- !u!1 &7824679697584383091
 GameObject:
@@ -9864,7 +9867,7 @@ GameObject:
   - component: {fileID: 3510327336979281832}
   - component: {fileID: 2987117636251897426}
   m_Layer: 5
-  m_Name: FailureButton
+  m_Name: OpposingTeamButton
   m_TagString: ColorButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9975,7 +9978,19 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: flipFlopFailure
+        m_MethodName: EndTurn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 7618414982324988524}
+        m_TargetAssemblyTypeName: UIController, Assembly-CSharp
+        m_MethodName: SetSpaceMenusInactive
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

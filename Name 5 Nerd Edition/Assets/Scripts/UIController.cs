@@ -267,8 +267,11 @@ public class UIController : MonoBehaviour
     {
         StartCoroutine(DoubleDownCoroutine());
     }
-    
-    
+
+    public void ActivateAllPlaySpace()
+    {
+        StartCoroutine(AllPlayCoroutine());
+    }
     
     //function for when player lands or starts on final space
     public void ActivateFinalSpace()
