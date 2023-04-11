@@ -22,7 +22,8 @@ public class UIController : MonoBehaviour
         doubleDownSpaceMenu,
         finalSpaceMenu,
         timerTextObj,
-        instructionObj;
+        instructionObj,
+        allPlayInstructionObj;
 
     public float standardCountdownTime = 30f,
         flipLFlopCountdownTime = 10f,
@@ -43,7 +44,10 @@ public class UIController : MonoBehaviour
         wildSpaceText,
         doubleDownText,
         instructionText,
-        timerText;
+        allPlayInstructionText,
+        timerText,
+        allPlayCurrentTeamText,
+        allPlayOpposingTeamText;
 
     //public List<Image> colorButtonImagesList = new List<Image>();
 
@@ -382,7 +386,7 @@ public class UIController : MonoBehaviour
         
         ChooseCategoriesForAllPlaySpace();
         
-        instructionObj.SetActive(true);
+        allPlayInstructionObj.SetActive(true);
 
         int currentPlayerInt = GameManager.instance.currentPlayerTurnCount;
         int opposingPlayerInt;
@@ -396,12 +400,15 @@ public class UIController : MonoBehaviour
             opposingPlayerInt = GameManager.instance.currentPlayerTurnCount + 1;
         }
 
-        instructionText.text = "Team " + (currentPlayerInt + 1) + " and Team " + (opposingPlayerInt + 1) +
+        allPlayInstructionText.text = "Team " + (currentPlayerInt + 1) + " and Team " + (opposingPlayerInt + 1) +
                                "\n Name 5 of your Category before the other team.";
 
         yield return allPlayWFS;
+
+        allPlayCurrentTeamText.text = "Team " + (currentPlayerInt + 1);
+        allPlayOpposingTeamText.text = "Team " + (opposingPlayerInt + 1);
         
-        instructionObj.SetActive(false);
+        allPlayInstructionObj.SetActive(false);
         
         allPlaySpaceMenu.SetActive(true);
         
