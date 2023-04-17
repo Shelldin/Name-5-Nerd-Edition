@@ -261,6 +261,9 @@ public class GameManager : MonoBehaviour
     //swap to next player at the end of the turn
     public void EndTurn()
     {
+        //offset the player's position so they don't overlap
+        gamePieceObjList[currentPlayerTurnCount].transform.position += currentPlayerPieceSOList[currentPlayerTurnCount].offset;
+        
         //advance the turn to next player
         currentPlayerPieceSOList[currentPlayerTurnCount].activePiece = false;
         
@@ -360,6 +363,7 @@ public class GameManager : MonoBehaviour
 
     public void StartFlipFlopTurn()
     {
+
         activeFlipFlopPlayerInt = currentPlayerTurnCount;
 
         flipFlopLosersInt = 0;
@@ -446,11 +450,10 @@ public class GameManager : MonoBehaviour
     public void SelectNextFlipFlopPlayer()
     {
         activeFlipFlopPlayerInt++;
-        Debug.Log(activeFlipFlopPlayerInt);
+        
         if (activeFlipFlopPlayerInt >= flipFlopGamePieceSOList.Count)
         {
             activeFlipFlopPlayerInt = 0;
-            Debug.Log("resetting to " + activeFlipFlopPlayerInt);
         } 
         
         
@@ -471,6 +474,9 @@ public class GameManager : MonoBehaviour
         }
         else
         {
+            //offset the player's position so they don't overlap
+            gamePieceObjList[currentPlayerTurnCount].transform.position += currentPlayerPieceSOList[currentPlayerTurnCount].offset;
+
             //advance the turn to next player
             currentPlayerPieceSOList[currentPlayerTurnCount].activePiece = false;
         
