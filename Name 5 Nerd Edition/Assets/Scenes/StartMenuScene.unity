@@ -316,7 +316,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1627433830, guid: c066136e83ca03043b1bb1133f20d5fa, type: 3}
       propertyPath: categorySOList.Array.size
-      value: 23
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 1627433830, guid: c066136e83ca03043b1bb1133f20d5fa, type: 3}
       propertyPath: categorySOList.Array.data[20]
@@ -330,6 +330,10 @@ PrefabInstance:
       propertyPath: categorySOList.Array.data[22]
       value: 
       objectReference: {fileID: 11400000, guid: 7ae6be7adb271cf4b9601220477ca8d1, type: 2}
+    - target: {fileID: 1627433830, guid: c066136e83ca03043b1bb1133f20d5fa, type: 3}
+      propertyPath: categorySOList.Array.data[23]
+      value: 
+      objectReference: {fileID: 11400000, guid: c94164f7e6c811c4a94a535ea18815fb, type: 2}
     - target: {fileID: 3419754581134716593, guid: c066136e83ca03043b1bb1133f20d5fa, type: 3}
       propertyPath: m_Name
       value: GamManager
