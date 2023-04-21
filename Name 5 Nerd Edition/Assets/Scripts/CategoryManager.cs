@@ -6,6 +6,10 @@ using Random = UnityEngine.Random;
 
 public class CategoryManager : MonoBehaviour
 {
+    public List<CategorySO> easyCategoryList = new List<CategorySO>(),
+        mediumCategoryList = new List<CategorySO>(),
+        hardCategoryList = new List<CategorySO>();
+
     public List<CategorySO> categorySOList = new List<CategorySO>();
 
     public List<CategorySO> usedCategoriesList = new List<CategorySO>();
