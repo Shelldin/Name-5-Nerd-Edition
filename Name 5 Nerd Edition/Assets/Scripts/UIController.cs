@@ -14,6 +14,7 @@ public class UIController : MonoBehaviour
     public GameObject startMenu,
         playerCountMenu,
         colorSelectMenu,
+        difficultyMenu,
         diceRollMenu,
         standardSpaceMenu,
         allPlaySpaceMenu,
@@ -152,7 +153,8 @@ public class UIController : MonoBehaviour
         {
             GameManager.instance.gamePieceSOList[playerColorChoiceCoutdown-1].SetPieceColor(colorButtonImage.color);
             colorSelectMenu.SetActive(false);
-            GameManager.instance.LoadMainGameScene();
+            difficultyMenu.SetActive(true);
+           // GameManager.instance.LoadMainGameScene();
         }
         
     }

@@ -17,15 +17,9 @@ public class CategoryManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        categorySOList.Sort(delegate(CategorySO i1, CategorySO i2)
-            {return String.Compare(i1.name, i2.name, StringComparison.Ordinal);});
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
         
     }
+    
 
     //if all the categories are used during the game refill them from the usedCategoryList and empty the usedCategoryList
     public void RefillCategoryList()
@@ -56,5 +50,39 @@ public class CategoryManager : MonoBehaviour
     {
         usedCategoriesList.Add(categorySOList[categoryToBeMoved]);
         categorySOList.Remove(categorySOList[categoryToBeMoved]);
+    }
+
+    public void LoadEasyCategories()
+    {
+        for (int i = 0; i < easyCategoryList.Count; i++)
+        {
+            categorySOList.Add(categorySOList[i]);
+        } 
+        
+        categorySOList.Sort(delegate(CategorySO i1, CategorySO i2)
+            {return String.Compare(i1.name, i2.name, StringComparison.Ordinal);});
+        
+    }
+
+    public void LoadMediumCategories()
+    {
+        for (int i = 0; i < mediumCategoryList.Count; i++)
+        {
+            categorySOList.Add(categorySOList[i]);
+        } 
+        
+        categorySOList.Sort(delegate(CategorySO i1, CategorySO i2)
+            {return String.Compare(i1.name, i2.name, StringComparison.Ordinal);});
+    }
+
+    public void LoadHardCategories()
+    {
+        for (int i = 0; i < hardCategoryList.Count; i++)
+        {
+            categorySOList.Add(categorySOList[i]);
+        } 
+        
+        categorySOList.Sort(delegate(CategorySO i1, CategorySO i2)
+            {return String.Compare(i1.name, i2.name, StringComparison.Ordinal);});
     }
 }
