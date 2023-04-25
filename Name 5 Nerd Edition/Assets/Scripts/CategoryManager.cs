@@ -62,6 +62,10 @@ public class CategoryManager : MonoBehaviour
         categorySOList.Sort(delegate(CategorySO i1, CategorySO i2)
             {return String.Compare(i1.name, i2.name, StringComparison.Ordinal);});
         
+        UIController.instance.difficultyMenu.SetActive(false);
+        
+        GameManager.instance.LoadMainGameScene();
+        
     }
 
     public void LoadMediumCategories()
@@ -73,6 +77,10 @@ public class CategoryManager : MonoBehaviour
         
         categorySOList.Sort(delegate(CategorySO i1, CategorySO i2)
             {return String.Compare(i1.name, i2.name, StringComparison.Ordinal);});
+        
+        UIController.instance.difficultyMenu.SetActive(false);
+        
+        GameManager.instance.LoadMainGameScene();
     }
 
     public void LoadHardCategories()
@@ -84,5 +92,9 @@ public class CategoryManager : MonoBehaviour
         
         categorySOList.Sort(delegate(CategorySO i1, CategorySO i2)
             {return String.Compare(i1.name, i2.name, StringComparison.Ordinal);});
+        
+        UIController.instance.difficultyMenu.SetActive(false);
+        
+        GameManager.instance.LoadMainGameScene();
     }
 }
