@@ -56,7 +56,8 @@ public class CategoryManager : MonoBehaviour
     {
         for (int i = 0; i < easyCategoryList.Count; i++)
         {
-            categorySOList.Add(categorySOList[i]);
+            //change list in the paretheseses
+            categorySOList.Add(easyCategoryList[i]);
         } 
         
         categorySOList.Sort(delegate(CategorySO i1, CategorySO i2)
@@ -72,7 +73,7 @@ public class CategoryManager : MonoBehaviour
     {
         for (int i = 0; i < mediumCategoryList.Count; i++)
         {
-            categorySOList.Add(categorySOList[i]);
+            categorySOList.Add(mediumCategoryList[i]);
         } 
         
         categorySOList.Sort(delegate(CategorySO i1, CategorySO i2)
@@ -87,7 +88,7 @@ public class CategoryManager : MonoBehaviour
     {
         for (int i = 0; i < hardCategoryList.Count; i++)
         {
-            categorySOList.Add(categorySOList[i]);
+            categorySOList.Add(hardCategoryList[i]);
         } 
         
         categorySOList.Sort(delegate(CategorySO i1, CategorySO i2)
