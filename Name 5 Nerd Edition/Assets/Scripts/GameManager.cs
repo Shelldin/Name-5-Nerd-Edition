@@ -39,6 +39,8 @@ public class GameManager : MonoBehaviour
         flipFlopLosersInt = 0;
 
     public CategoryManager categoryManager;
+
+    public AudioManager audioManager;
     
     
         
@@ -515,7 +517,7 @@ public class GameManager : MonoBehaviour
     public void FinalSpaceSuccessButton()
     {
         UIController.instance.SetVictoryUI();
-        
+        audioManager.PlaySound("Victory");
     }
 
     

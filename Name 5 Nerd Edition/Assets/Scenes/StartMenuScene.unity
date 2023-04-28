@@ -314,6 +314,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1682380284165558285, guid: c066136e83ca03043b1bb1133f20d5fa, type: 3}
+      propertyPath: soundsArray.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1682380284165558285, guid: c066136e83ca03043b1bb1133f20d5fa, type: 3}
+      propertyPath: soundsArray.Array.data[2].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 48419096d21415541bf5e157de5bf8cf, type: 3}
+    - target: {fileID: 1682380284165558285, guid: c066136e83ca03043b1bb1133f20d5fa, type: 3}
+      propertyPath: soundsArray.Array.data[2].name
+      value: Victory
+      objectReference: {fileID: 0}
+    - target: {fileID: 1682380284165558285, guid: c066136e83ca03043b1bb1133f20d5fa, type: 3}
+      propertyPath: soundsArray.Array.data[2].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1682380284165558285, guid: c066136e83ca03043b1bb1133f20d5fa, type: 3}
+      propertyPath: soundsArray.Array.data[2].volume
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3419754581134716593, guid: c066136e83ca03043b1bb1133f20d5fa, type: 3}
       propertyPath: m_Name
       value: GamManager

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3419754581134716607}
   - component: {fileID: 3419754581134716606}
   - component: {fileID: 1627433830}
+  - component: {fileID: 1682380284165558285}
   - component: {fileID: 802177818190316451}
   m_Layer: 0
   m_Name: GamManager
@@ -67,6 +68,7 @@ MonoBehaviour:
   activeFlipFlopPlayerInt: 0
   flipFlopLosersInt: 0
   categoryManager: {fileID: 1627433830}
+  audioManager: {fileID: 1682380284165558285}
   playerCountInt: 2
 --- !u!114 &3419754581134716606
 MonoBehaviour:
@@ -132,6 +134,31 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 4fe977013ea75894d9f59429759aaeca, type: 2}
   categorySOList: []
   usedCategoriesList: []
+--- !u!114 &1682380284165558285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3419754581134716593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12b89329484d3354f9c86c5d00e56ea8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundsArray:
+  - name: 
+    clip: {fileID: 8300000, guid: 48419096d21415541bf5e157de5bf8cf, type: 3}
+    volume: 0
+    pitch: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: Victory
+    clip: {fileID: 8300000, guid: 48419096d21415541bf5e157de5bf8cf, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
 --- !u!114 &802177818190316451
 MonoBehaviour:
   m_ObjectHideFlags: 0
