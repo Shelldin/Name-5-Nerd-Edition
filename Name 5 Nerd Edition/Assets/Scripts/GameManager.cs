@@ -512,6 +512,12 @@ public class GameManager : MonoBehaviour
         EndTurn();
     }
 
+    public void FinalSpaceSuccessButton()
+    {
+        UIController.instance.SetVictoryUI();
+        
+    }
+
     
     
 }

@@ -24,7 +24,8 @@ public class UIController : MonoBehaviour
         finalSpaceMenu,
         timerTextObj,
         instructionObj,
-        allPlayInstructionObj;
+        allPlayInstructionObj,
+        victoryUIObj;
 
     public float standardCountdownTime = 30f,
         flipLFlopCountdownTime = 10f,
@@ -48,7 +49,8 @@ public class UIController : MonoBehaviour
         allPlayInstructionText,
         timerText,
         allPlayCurrentTeamText,
-        allPlayOpposingTeamText;
+        allPlayOpposingTeamText,
+        victoryText;
 
     //public List<Image> colorButtonImagesList = new List<Image>();
 
@@ -613,6 +615,14 @@ public class UIController : MonoBehaviour
 
         image.color = categoryImageColor;
         text.color = categoryTextColor;
+    }
+
+    public void SetVictoryUI()
+    {
+        SetSpaceMenusInactive();
+        victoryUIObj.SetActive(true);
+        victoryText.text = "Congratulations Team " + GameManager.instance.currentPlayerTurnCount + 1 + "!!! You are the most"
+                           + " intelligent and beautiful team of all time. \n All other players are uneducated fart-sacks.";
     }
 
    
