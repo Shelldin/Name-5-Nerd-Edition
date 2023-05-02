@@ -159,6 +159,12 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - name: ButtonPress
+    clip: {fileID: 8300000, guid: ee13ee6498034114fb6127a42103dc23, type: 3}
+    volume: 1
+    pitch: 2.01
+    loop: 0
+    source: {fileID: 0}
 --- !u!114 &802177818190316451
 MonoBehaviour:
   m_ObjectHideFlags: 0
